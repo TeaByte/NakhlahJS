@@ -11,8 +11,6 @@ require(["vs/editor/editor.main"], () => {
     minimap: { enabled: false },
   });
 
-  console.log(window.editor);
-
   setInterval(() => {
     editor.layout();
   }, 50);

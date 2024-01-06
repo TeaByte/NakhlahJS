@@ -19,7 +19,7 @@ export default function NavBar() {
           <li>
             <a
               href={menu.href}
-              class={"text-gray-500 hover:text-gray-700 py-1 border-gray-500"}
+              class={"text-gray-500 hover:text-gray-700 py-1 border-gray-500 hidden"}
             >
               {menu.name}
             </a>

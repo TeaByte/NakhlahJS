@@ -10,6 +10,10 @@ body .markdown-body {
   background-color: inherit !important;
 }
 
+.markdown-body h2 {
+  width: fit-content;
+}
+
 .split {
   display: flex;
   flex-direction: row;
@@ -37,10 +41,9 @@ pre {
 mark {
   background-color: transparent;
   color: inherit;
-
-  border: 1px solid #cccccc; /* Border color, you can change it */
-  padding: 10px; /* Adjust padding as needed */
-  display: inline-block; /* Display as inline-block to contain content */
+  border: 1px solid #cccccc;
+  padding: 10px;
+  display: inline-block; 
   position: relative; 
   border-radius: 10px;
   margin-bottom: 10px;

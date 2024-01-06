@@ -52,18 +52,18 @@ export default function Editor(props: CounterProps) {
 
   return (
     <>
-      <div class="flex gap-2 px-2">
+      <div class="flex gap-2 px-2 overflow-hidden">
         <button
           class="btn btn-info grow"
           onClick={handleCodeRun}
         >
-          Run
+          تشغيل
         </button>
         <button
           class="btn btn-active btn-ghost grow"
           onClick={handleCodeClear}
         >
-          Clear
+          مسح
         </button>
       </div>
 

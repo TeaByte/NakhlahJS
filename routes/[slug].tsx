@@ -55,7 +55,15 @@ export default function CoursePage(props: PageProps<Course>) {
 
       <main>
         <div dir="ltr" class="split flex-grow max-h-screen min-h-screen">
-          <div id="split-0" class="overflow-y-scroll">
+          <div id="split-0" class="flex flex-col gap-2">
+            <p class="py-2 bg-[#1E1E1E]"></p>
+            <div dir="ltr" class="h-[400px]" id="editor"></div>
+            <Editor
+              preCode={'console.log("Hello World!")'}
+              testCode={"x == x"}
+            />
+          </div>
+          <div id="split-1" class="overflow-y-scroll">
             <section dir="rtl" class="p-3 py-5">
               <div class="flex flex-col gap-2 md:flex-row justify-between items-center mb-4">
                 <h1 class="text-3xl">{course.title}</h1>
@@ -91,14 +99,6 @@ export default function CoursePage(props: PageProps<Course>) {
                 dangerouslySetInnerHTML={{ __html: render(course.content) }}
               />
             </section>
-          </div>
-          <div id="split-1" class="flex flex-col gap-2">
-            <p class="py-2 bg-[#1E1E1E]"></p>
-            <div dir="ltr" class="h-[400px]" id="editor"></div>
-            <Editor
-              preCode={'console.log("Hello World!")'}
-              testCode={"x == x"}
-            />
           </div>
         </div>
       </main>

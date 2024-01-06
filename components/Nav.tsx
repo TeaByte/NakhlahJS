@@ -8,7 +8,7 @@ export default function NavBar() {
     <nav class="bg-base-300 w-full py-4 px-8 flex flex-col md:flex-row gap-4">
       <div class="flex items-center flex-1">
         <div class="flex items-center gap-1">
-          <image alt="Website logo" src="/logo.png" class="h-8 w-8" />
+          <image alt="Website logo" src="/logo.webp" class="h-8 w-8" />
           <a href="/" class="text-2xl ml-1 font-bold hover:animate-pulse">
             NakhlahJS
           </a>

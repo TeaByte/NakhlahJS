@@ -22,10 +22,10 @@ export async function getCourse(
 
   const course: Course = {
     slug,
-    title: courseAttrs.title || "Untitled",
-    content: body || "",
-    snippet: courseAttrs.snippet || "",
-    order: courseAttrs.order || 69,
+    title: courseAttrs.title || "بدون عنوان",
+    content: body || "لايوجد محتوى",
+    snippet: courseAttrs.snippet || "لا يوجد",
+    order: courseAttrs.order || 999,
   };
 
   return course;
@@ -42,7 +42,6 @@ async function getGroupOrder(
     };
     return { ...jsonData };
   } catch (error) {
-    // Handle the case where there is no data.json or it's invalid
     return undefined;
   }
 }
@@ -92,9 +91,7 @@ export async function getCourses(): Promise<
   }
 
   const merged: (Course | CourseGroup)[] = [...nonGroups, ...groups];
-
-  // Sort the merged array based on the order property
-  merged.sort((a, b) => (a.order || 69) - (b.order || 69));
+  merged.sort((a, b) => (a.order || 999) - (b.order || 999));
   cache.merged = merged;
 
   return cache;
@@ -114,9 +111,8 @@ export default function BlogIndexPage(
 
   return (
     <main class="max-w-screen-md px-4 pt-12 mx-auto">
-      {/* <h1 class="text-5xl font-bold z-10">المحتوى</h1> */}
-
-      <section class="flex flex-col gap-4">
+      <h1 class="text-5xl font-bold z-10">المحتوى</h1>
+      <section class="flex flex-col gap-2">
         {merged.map((course, index) => {
           if ("courses" in course) {
             return (
@@ -124,7 +120,7 @@ export default function BlogIndexPage(
                 <h2 class="text-3xl font-bold">
                   {course.label}
                 </h2>
-                <div class="flex flex-col mt-2">
+                <div class="flex flex-col mt-2 pr-3">
                   {course.courses.map((innerCourse) => (
                     <CourseCard key={innerCourse.slug} course={innerCourse} />
                   ))}
@@ -149,14 +145,14 @@ function CourseCard(props: { course: Course }) {
   const { course } = props;
   return (
     <div
-      class={`py-4 border-t gray-200 hover:opacity-75 `}
+      class={`py-4 gray-200 hover:opacity-75 `}
       style={{ order: course.order }}
     >
       <a href={btoa(`/${course.slug}`)}>
         <h3 class="gray-900 font-bold">
           {course.title}
         </h3>
-        <div class="text-gray-500">
+        <div class="text-gray-500 truncate text-ellipsis max-w-[300px] md:max-w-full overflow-hidden">
           {course.snippet}
         </div>
       </a>

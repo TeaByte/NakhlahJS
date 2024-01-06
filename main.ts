@@ -10,4 +10,33 @@ import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
 import config from "./fresh.config.ts";
 
-await start(manifest, config);
+import { freshSEOPlugin } from "https://deno.land/x/fresh_seo/mod.ts";
+import { walk } from "https://deno.land/std/fs/mod.ts";
+
+async function getAllPaths(directory: string): Promise<string[]> {
+  const paths: string[] = [];
+  for await (const entry of walk(directory, { includeDirs: false })) {
+    if (entry.isFile && entry.name.endsWith(".md")) {
+      const relativePath = entry.path.replace(/^courses[\\/]/, "").replace(
+        /\.md$/,
+        "",
+      );
+      if (!relativePath.endsWith(".json")) {
+        paths.push(btoa(relativePath));
+      }
+    }
+  }
+  return paths;
+}
+
+const allPaths = await getAllPaths("courses");
+const coursesPath = allPaths.slice(1);
+console.log(coursesPath);
+
+await start(manifest, {
+  plugins: [
+    freshSEOPlugin(manifest, {
+      include: [...coursesPath],
+    }),
+  ],
+});

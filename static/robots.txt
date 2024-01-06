@@ -1,0 +1,17 @@
+User-agent: All
+Allow: /*
+
+User-agent: Googlebot
+Allow: /*
+
+User-agent: Googlebot-Video
+Allow: /*
+
+User-agent: Googlebot-Image
+Allow: /*
+
+User-agent: Mediapartners-Google
+Allow: /*
+
+User-agent: Googlebot-Mobile
+Allow: /*

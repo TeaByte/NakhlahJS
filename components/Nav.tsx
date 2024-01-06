@@ -9,12 +9,16 @@ export default function NavBar() {
       <div class="flex items-center flex-1">
         <div class="flex items-center gap-1">
           <img
-            title="NakhlahJS Logo"
+            title="نخله جي اس"
             alt="Website logo"
             src="/logo.webp"
             class="h-8 w-8"
           />
-          <a href="/" class="text-2xl ml-1 font-bold hover:animate-pulse">
+          <a
+            href="/"
+            title="نخله جي اس"
+            class="text-2xl ml-1 font-bold hover:animate-pulse"
+          >
             NakhlahJS
           </a>
         </div>

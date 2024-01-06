@@ -20,7 +20,9 @@ export default function Error404() {
           <p class="my-4">
             الصفحة التي تبحث عنها غير موجودة.
           </p>
-          <a href="/" class="underline">العودى الى الصفحة الرئيسية</a>
+          <a title="العودى الى الصفحة الرئيسية" href="/" class="underline">
+            العودى الى الصفحة الرئيسية
+          </a>
         </div>
       </div>
     </>

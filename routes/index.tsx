@@ -69,12 +69,14 @@ export default function BlogIndexPage(
   return (
     <>
       <Head>
-        <title>الصفحه غير موجوده</title>
         <meta
           name="description"
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
         />
-        <meta name="keywords" content="JavaScript" />
+        <meta
+          name="keywords"
+          content="Nakhlahjs, Nakhlah, تعلم جافاسكربت, جافاسكربت, تعليم جافاسكربت, كورس جافاسربت, كورس جافاسكربت مجاني, كورس جافاسكربت"
+        />
         <meta property="og:title" content="Nakhlahjs" />
         <meta
           property="og:description"

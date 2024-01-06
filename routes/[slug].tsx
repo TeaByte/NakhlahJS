@@ -28,7 +28,7 @@ export default function CoursePage(props: PageProps<Course>) {
       <Head>
         <title>Nakhlahjs - {course.title}</title>
         <meta name="description" content={course.snippet} />
-        <meta name="keywords" content={course.title} />
+        <meta name="keywords" content={`${course.title}, ${course.snippet}`} />
         <meta property="og:title" content={course.title} />
         <meta property="og:description" content={course.snippet} />
 

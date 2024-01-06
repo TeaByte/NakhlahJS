@@ -8,9 +8,12 @@ require(["vs/editor/editor.main"], () => {
   window.editor = monaco.editor.create(document.getElementById("editor"), {
     language: "javascript",
     theme: "vs-dark",
+    minimap: { enabled: false },
   });
+
+  console.log(window.editor);
 
   setInterval(() => {
     editor.layout();
-  }, 100);
+  }, 50);
 });

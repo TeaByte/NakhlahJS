@@ -1,6 +1,6 @@
 ---
 title: عوامل مركبه
-snippet: This is an excerpt of my first blog post.
+snippet: في عالم البرمجة، تُستخدم المشغلات او العوامل
 order: 5
 ---
 

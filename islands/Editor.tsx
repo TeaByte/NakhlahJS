@@ -52,7 +52,7 @@ export default function Editor(props: CounterProps) {
 
   return (
     <>
-      <div class="flex gap-2 px-2 overflow-hidden">
+      <div dir="rtl" class="flex gap-2 px-2">
         <button
           class="btn btn-info grow"
           onClick={handleCodeRun}

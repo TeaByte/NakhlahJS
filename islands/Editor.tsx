@@ -1,5 +1,4 @@
-import { StateUpdater, useEffect, useState } from "preact/hooks";
-import { Button } from "../components/Button.tsx";
+import { useEffect, useState } from "preact/hooks";
 
 interface CounterProps {
   preCode: string;
@@ -8,7 +7,7 @@ interface CounterProps {
 
 declare var window: Window & typeof globalThis;
 interface Window {
-  editor: any; // Replace 'any' with the actual type of your 'editor' property
+  editor: any;
 }
 
 export default function Editor(props: CounterProps) {

@@ -1,5 +1,5 @@
-import { Course } from "../utils/course.ts";
-import { getCourse } from "./index.tsx";
+import { Course } from "../utils/types.ts";
+import { getCourse } from "../utils/course.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS, render } from "$gfm";

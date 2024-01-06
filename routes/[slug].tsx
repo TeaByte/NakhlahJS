@@ -57,23 +57,23 @@ export default function CoursePage(props: PageProps<Course>) {
       <main>
         <div>
           <div dir="ltr" class="split flex-grow max-h-screen min-h-screen">
-            <div id="split-0" class="flex flex-col gap-2">
+            <div id="split-0" class="flex flex-col">
               <p class="py-2 bg-[#1E1E1E]"></p>
-              <div dir="ltr" class="h-[400px]" id="editor"></div>
+              <div dir="ltr" class="h-[400px] mb-2" id="editor"></div>
               <Editor
                 preCode={'console.log("Hello World!")'}
                 testCode={"x == x"}
               />
             </div>
             <div id="split-1" class="overflow-y-scroll">
-              <section dir="rtl" class="p-3 py-5">
-                <div class="flex flex-col gap-2 md:flex-row justify-between items-center mb-4">
+              <section dir="rtl" class="p-3 py-5 mb-40">
+                <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
                   <h1 class="text-3xl">{course.title}</h1>
                   <EditButton slug={course.slug} />
                 </div>
                 <div
                   id="document"
-                  class="markdown-body mb-28"
+                  class="markdown-body"
                   data-color-mode="dark"
                   data-dark-theme="dark"
                   style={{ backgroundColor: "inherit" }}
@@ -83,33 +83,6 @@ export default function CoursePage(props: PageProps<Course>) {
             </div>
           </div>
         </div>
-        {/* PHONE VIEW */}
-        {
-          /* <section class="md:hidden">
-          <div dir="rtl" class="p-3 py-5">
-            <div class="flex flex-col gap-2 md:flex-row justify-between items-center mb-4">
-              <h1 class="text-3xl">{course.title}</h1>
-              <EditButton slug={course.slug} />
-            </div>
-            <div
-              id="document"
-              class="markdown-body"
-              data-color-mode="dark"
-              data-dark-theme="dark"
-              style={{ backgroundColor: "inherit" }}
-              dangerouslySetInnerHTML={{ __html: render(course.content) }}
-            />
-          </div>
-          <div class="flex flex-col gap-2">
-            <p class="py-2 bg-[#1E1E1E]"></p>
-            <div dir="ltr" class="h-[400px] grow w-full" id="editor"></div>
-            <Editor
-              preCode={'console.log("Hello World!")'}
-              testCode={"x == x"}
-            />
-          </div>
-        </section> */
-        }
       </main>
     </>
   );

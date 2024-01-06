@@ -13,7 +13,8 @@ export default function Error404() {
             src="/logo.webp"
             width="128"
             height="128"
-            alt="the Fresh logo: a sliced lemon dripping with juice"
+            title="NakhlahJS Logo"
+            alt="Website logo"
           />
           <h1 class="text-4xl font-bold">الصفحه غير موجوده</h1>
           <p class="my-4">

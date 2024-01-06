@@ -7,7 +7,7 @@ export default function CourseCard(props: { course: Course }) {
       class="py-4 gray-200 hover:opacity-75"
       style={{ order: course.order }}
     >
-      <a href={btoa(`/${course.slug}`)}>
+      <a title={course.title} href={btoa(`/${course.slug}`)}>
         <h3 class="gray-900 font-bold">
           {course.title}
         </h3>

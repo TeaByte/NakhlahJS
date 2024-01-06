@@ -1,4 +1,5 @@
 import { Handlers } from "$fresh/server.ts";
+import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
 import { join } from "$std/path/mod.ts";
 
@@ -66,33 +67,48 @@ export default function BlogIndexPage(
   const { merged } = props.data;
 
   return (
-    <main class="max-w-screen-md px-4 pt-12 mx-auto">
-      <h1 class="text-5xl font-bold z-10">المحتوى</h1>
-      <section class="flex flex-col gap-2">
-        {merged.map((course, index) => {
-          if ("courses" in course) {
-            return (
-              <div class="" key={index}>
-                <h2 class="text-3xl font-bold">
-                  {course.label}
-                </h2>
-                <div class="flex flex-col mt-2 pr-3">
-                  {course.courses.map((innerCourse) => (
-                    <CourseCard key={innerCourse.slug} course={innerCourse} />
-                  ))}
+    <>
+      <Head>
+        <title>الصفحه غير موجوده</title>
+        <meta
+          name="description"
+          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
+        />
+        <meta name="keywords" content="JavaScript" />
+        <meta property="og:title" content="Nakhlahjs" />
+        <meta
+          property="og:description"
+          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
+        />
+      </Head>
+      <main class="max-w-screen-md px-4 pt-12 mx-auto">
+        <h1 class="text-5xl font-bold z-10">المحتوى</h1>
+        <section class="flex flex-col gap-2">
+          {merged.map((course, index) => {
+            if ("courses" in course) {
+              return (
+                <div class="" key={index}>
+                  <h2 class="text-3xl font-bold">
+                    {course.label}
+                  </h2>
+                  <div class="flex flex-col mt-2 pr-3">
+                    {course.courses.map((innerCourse) => (
+                      <CourseCard key={innerCourse.slug} course={innerCourse} />
+                    ))}
+                  </div>
                 </div>
-              </div>
-            );
-          } else {
-            // This is a Course
-            return (
-              <div class="" key={course.slug}>
-                <CourseCard course={course} />
-              </div>
-            );
-          }
-        })}
-      </section>
-    </main>
+              );
+            } else {
+              // This is a Course
+              return (
+                <div class="" key={course.slug}>
+                  <CourseCard course={course} />
+                </div>
+              );
+            }
+          })}
+        </section>
+      </main>
+    </>
   );
 }

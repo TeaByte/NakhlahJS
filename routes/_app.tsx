@@ -8,18 +8,6 @@ export default function App({ Component }: PageProps) {
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nakhlahjs</title>
-        <meta
-          name="description"
-          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
-        />
-
-        <meta name="keywords" content="JavaScript" />
-        <meta property="og:title" content="Nakhlahjs" />
-        <meta
-          property="og:description"
-          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
-        />
-
         <link rel="stylesheet" href="/styles.css" />
         <link
           href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css"
@@ -30,7 +18,6 @@ export default function App({ Component }: PageProps) {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="true"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"

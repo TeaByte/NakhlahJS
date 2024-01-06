@@ -1,4 +1,6 @@
 import { type PageProps } from "$fresh/server.ts";
+import NavBar from "../components/Nav.tsx";
+
 export default function App({ Component }: PageProps) {
   return (
     <html data-theme="sunset" dir="rtl">
@@ -24,6 +26,7 @@ export default function App({ Component }: PageProps) {
         />
       </head>
       <body>
+        <NavBar />
         <Component />
       </body>
     </html>

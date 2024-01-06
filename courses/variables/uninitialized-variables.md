@@ -1,10 +1,8 @@
 ---
 title: فهم المتغيرات غير المهيأة
-snippet: This is an excerpt of my first blog post.
+snippet: عندما يتم الإعلان عن متغيرات JavaScript، تكون قيمتها الأولية غير محددة
 order: 3
 ---
-
-# فهم المتغيرات غير المهيأة
 
 عندما يتم الإعلان عن متغيرات JavaScript، تكون قيمتها الأولية غير محددة (
 [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
@@ -26,8 +24,8 @@ console.log(c); // "undefined String!"
 
 كما تلاحظ المخرجات داخل التعليقات السابقة.
 
-:::note ملاحظة
+<mark>
 
 سنتعرف قريبًا على العمليات الحسابيه على الارقام والسلاسل قريبا
 
-:::
+</mark>

@@ -1,10 +1,8 @@
 ---
 title: المتغيرات والتعامل معها
-snippet: This is an excerpt of my first blog post.
+snippet: البيانات هي أي شيء له معنى بالنسبة للكمبيوتر
 order: 1
 ---
-
-# المتغيرات والتعامل معها
 
 في علوم الكمبيوتر، البيانات هي أي شيء له معنى بالنسبة للكمبيوتر. توفر JavaScript
 ثمانية أنواع مختلفة من البيانات:
@@ -18,11 +16,11 @@ order: 1
 - [null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
 - [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/symbol)
 
-:::note ملاحظة
+<mark>
 
 سنتعرف قريبًا على جميع المتغيرات بالتفصيل في مراحل قادمة
 
-:::
+</mark>
 
 ## تعريف المتغيرات
 

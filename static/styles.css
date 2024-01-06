@@ -11,8 +11,6 @@ body .markdown-body {
   color: initial !important;
 }
 
-
-
 .split {
   display: flex;
   flex-direction: row;
@@ -31,4 +29,27 @@ body .markdown-body {
 
 pre {
   direction: ltr !important;
+}
+
+.markdown-body .highlight pre {
+  background-color: var(--fallback-b3,oklch(var(--b3)/1)) !important;
+}
+
+mark {
+  background-color: transparent;
+  color: inherit;
+
+  border: 1px solid #cccccc; /* Border color, you can change it */
+  padding: 10px; /* Adjust padding as needed */
+  display: inline-block; /* Display as inline-block to contain content */
+  position: relative; 
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+mark::before {
+  content: "ملاحظة";
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
 }

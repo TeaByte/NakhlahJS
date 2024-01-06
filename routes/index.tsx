@@ -114,9 +114,9 @@ export default function BlogIndexPage(
 
   return (
     <main class="max-w-screen-md px-4 pt-12 mx-auto">
-      <h1 class="text-5xl font-bold z-10">المحتوى</h1>
+      {/* <h1 class="text-5xl font-bold z-10">المحتوى</h1> */}
 
-      <section class="flex flex-col gap-6">
+      <section class="flex flex-col gap-4">
         {merged.map((course, index) => {
           if ("courses" in course) {
             return (
@@ -149,7 +149,7 @@ function CourseCard(props: { course: Course }) {
   const { course } = props;
   return (
     <div
-      class={`py-4 border-t gray-200 hover:bg-gray-400`}
+      class={`py-4 border-t gray-200 hover:opacity-75 `}
       style={{ order: course.order }}
     >
       <a href={btoa(`/${course.slug}`)}>

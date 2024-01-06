@@ -4,6 +4,7 @@ import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS, render } from "$gfm";
 import { Head } from "$fresh/runtime.ts";
+import Editor from "../islands/Editor.tsx";
 
 export const handler: Handlers<Course> = {
   async GET(_req, ctx) {
@@ -44,18 +45,15 @@ export default function CoursePage(props: PageProps<Course>) {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.1.1/split.min.js">
         </script>
 
-        <script src="/resizer.js" />
         <script src="/moaco.js"></script>
+        <script src="/resizer.js" />
       </Head>
 
       <main>
-        <div dir="ltr" class="split">
-          <div id="split-0">
-            <section dir="rtl" class="p-2">
-              <h1 class="text-3xl">{course.title}</h1>
-              <div class="text-gray-500 mt-1 mb-2">
-                {course.snippet}
-              </div>
+        <div dir="ltr" class="split flex-grow max-h-screen min-h-screen">
+          <div id="split-0" class="overflow-y-scroll">
+            <section dir="rtl" class="p-3 py-5">
+              <h1 class="text-3xl mb-3">{course.title}</h1>
               <div
                 id="document"
                 class="markdown-body"
@@ -66,8 +64,13 @@ export default function CoursePage(props: PageProps<Course>) {
               />
             </section>
           </div>
-          <div id="split-1">
-            <div dir="ltr" class="h-full w-full grow" id="editor"></div>
+          <div id="split-1" class="flex flex-col gap-2">
+            <p class="py-2 bg-[#1E1E1E]"></p>
+            <div dir="ltr" class="h-[400px]" id="editor"></div>
+            <Editor
+              preCode={'console.log("Hello World!")'}
+              testCode={"x == x"}
+            />
           </div>
         </div>
       </main>

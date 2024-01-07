@@ -1,12 +1,13 @@
 import { Handlers } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-
 import CourseCard from "../components/CourseCard.tsx";
 import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
 import { cache, populateCache } from "../utils/course-cache.ts";
 import Footer from "../components/Footer.tsx";
+
+import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
 
 populateCache();
 
@@ -46,9 +47,12 @@ export default function BlogIndexPage(
             if ("courses" in course) {
               return (
                 <div class="" key={index}>
-                  <h2 class="text-3xl font-bold">
-                    {course.label}
-                  </h2>
+                  <div class="flex gap-1 items-center">
+                    <h2 class="text-3xl font-bold hover:opacity-75">
+                      <a href={`/group/${course.order}`}>{course.label}</a>
+                    </h2>
+                    <IconChevronDown />
+                  </div>
                   <div class="flex flex-col mt-2 pr-3">
                     {course.courses.map((innerCourse) => (
                       <CourseCard key={innerCourse.slug} course={innerCourse} />

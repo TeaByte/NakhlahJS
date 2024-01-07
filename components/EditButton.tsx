@@ -2,7 +2,7 @@ export default function EditButton({ slug }: { slug: string }) {
   return (
     <a
       target="_blank"
-      href={`https://github.com/TeaByte/NakhlahJS/edit/main/courses/${slug}.md`}
+      href={`https://github.com/TeaByte/NakhlahJS/blob/main/courses/${slug}.md`}
       class="pl-3 flex items-center gap-1 hover:opacity-75"
       title="تعديل الملف"
     >

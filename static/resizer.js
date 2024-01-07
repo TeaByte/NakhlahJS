@@ -7,15 +7,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
   if (isMobile()) {
     Split(["#split-0", "#split-1"], {
-      sizes: [0, 100],
+      sizes: [2, 100],
       gutterAlign: "start",
-      minSize: 0,
-      gutterSize: 13,
+      minSize: 1,
+      gutterSize: 15,
     });
   } else {
     Split(["#split-0", "#split-1"], {
       sizes: [50, 50],
-      gutterAlign: "start",
+      gutterAlign: "end",
       minSize: 0,
       gutterSize: 13,
     });

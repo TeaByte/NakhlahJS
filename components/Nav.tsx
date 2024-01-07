@@ -19,7 +19,10 @@ export default function NavBar() {
             title="نخله جي اس"
             class="text-2xl ml-1 font-bold hover:animate-pulse"
           >
-            NakhlahJS
+            <div class="flex items-center">
+              <span class="text-yellow-500">JS</span>
+              <span class="ml-2 font-bold text-2xl">نخلة</span>
+            </div>
           </a>
         </div>
       </div>

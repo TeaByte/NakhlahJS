@@ -22,7 +22,8 @@ async function getAllPaths(directory: string): Promise<string[]> {
         "",
       );
       if (!relativePath.endsWith(".json")) {
-        paths.push(btoa(relativePath));
+        const normalizedPath = relativePath.replace(/\\/g, "/");
+        paths.push(normalizedPath);
       }
     }
   }

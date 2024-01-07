@@ -20,8 +20,8 @@ body .markdown-body {
 }
 
 .gutter {
-  z-index: 99;
-  background-color: #796666;
+  z-index: 2;
+  background-color: var(--fallback-bc,oklch(var(--bc)/.2));
   background-repeat: no-repeat;
   background-position: 50%;
 }

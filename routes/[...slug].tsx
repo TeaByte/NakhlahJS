@@ -10,8 +10,7 @@ import EditButton from "../components/EditButton.tsx";
 export const handler: Handlers<Course> = {
   async GET(_req, ctx) {
     try {
-      const slug = atob(ctx.params.slug);
-      const course = await getCourse(slug);
+      const course = await getCourse(ctx.params.slug);
       if (course === null) return ctx.renderNotFound();
       return ctx.render(course);
     } catch {

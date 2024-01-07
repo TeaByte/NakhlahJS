@@ -2,6 +2,7 @@
 
 [ TODO LIST ]
 
+- [ ] Blog
 - [ ] Quizes System
 - [ ] Fixing janky ts-types
 - [ ] Main-Page ( Better design )

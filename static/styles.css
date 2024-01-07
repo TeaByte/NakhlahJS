@@ -6,10 +6,20 @@ body, .markdown-body {
     font-family: 'Cairo', sans-serif !important;
 }
 
-.no-user-select {
-  padding-top: 10px;
+.h-full-minus-bar {
+  /* screen - navbar */
+  height: calc(100vh - 64px);
 }
 
+/* Monaco Editor */
+.iPadShowKeyboard{
+  display: none;
+}
+.no-user-select, .showUnused {
+  padding-top: 10px !important;
+}
+
+/* Markdown */
 body .markdown-body {
   background-color: inherit !important;
   color: oklch(var(--bc)) !important;
@@ -18,47 +28,6 @@ body .markdown-body {
 .markdown-body h2 {
   width: fit-content;
 }
-
-.split {
-  display: flex;
-  flex-direction: row;
-}
-
-.h-full-minus-bar {
-  /* screen - navbar */
-  height: calc(100vh - 64px);
-}
-
-.gutter {
-  position: relative;
-  z-index: 2;
-  background-color: oklch(var(--b3));
-  background-repeat: no-repeat;
-  background-position: 50%;
-}
-
-.gutter::before {
-  content: '';
-  position: absolute;
-  top: 50%;
-  right: 0;
-  bottom: 0;
-  left: 5px;
-  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
-  filter: invert(100%);
-  background-repeat: no-repeat;
-  pointer-events: none; 
-}
-
-[data-theme="dracula"] .gutter::before {
-  filter: none;
-}
-
-
-.gutter.gutter-horizontal::before {
-  content: ''; 
-}
-
 
 pre {
   direction: ltr !important;
@@ -86,6 +55,42 @@ mark::before {
   margin-bottom: 5px;
 }
 
+/* Split Panel */
+.split {
+  display: flex;
+  flex-direction: row;
+}
+
+.gutter {
+  position: relative;
+  z-index: 2;
+  background-color: oklch(var(--b3));
+  background-repeat: no-repeat;
+  background-position: 50%;
+}
+
+.gutter::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 5px;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
+  filter: invert(100%);
+  background-repeat: no-repeat;
+  pointer-events: none; 
+}
+
+[data-theme="dracula"] .gutter::before {
+  filter: none;
+}
+
+.gutter.gutter-horizontal::before {
+  content: ''; 
+}
+
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 10px;
 }
@@ -98,7 +103,6 @@ mark::before {
 ::-webkit-scrollbar-track {
   background-color: transparent;
 }
-
 
 body {
   scrollbar-width: thin;

@@ -41,18 +41,21 @@ export default function BlogIndexPage(
       </Head>
       <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <h1 class="text-5xl font-bold z-10">المحتوى</h1>
-        <section class="flex flex-col gap-4">
+        <section class="flex flex-col">
           {merged.map((course, index) => {
             // Group of courses
             if ("courses" in course) {
               return (
-                <div class="" key={index}>
-                  <div class="flex gap-1 items-center">
+                <div class="mt-4" key={index}>
+                  <a
+                    href={`/group/${course.order}`}
+                    class="flex gap-1 items-center"
+                  >
                     <h2 class="text-3xl font-bold hover:opacity-75">
-                      <a href={`/group/${course.order}`}>{course.label}</a>
+                      {course.label}
                     </h2>
                     <IconChevronDown />
-                  </div>
+                  </a>
                   <div class="flex flex-col mt-2 pr-3">
                     {course.courses.map((innerCourse) => (
                       <CourseCard key={innerCourse.slug} course={innerCourse} />

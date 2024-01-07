@@ -21,7 +21,7 @@ export async function getGroupOrder(
 
 export async function getCourse(
   slug: string,
-): Promise<Course | null> {
+): Promise<Course> {
   const text = await Deno.readTextFile(join("./courses", `${slug}.md`));
   const { attrs, body } = extract(text);
   const courseAttrs = attrs as CourseAttributes;
@@ -33,6 +33,14 @@ export async function getCourse(
     order: courseAttrs.order || 999,
   };
   return course;
+}
+
+export async function getJson(
+  slug: string,
+): Promise<string> {
+  const text = await Deno.readTextFile(join("./courses", `${slug}/_data.json`));
+  const json: { label: string } = JSON.parse(text);
+  return json.label;
 }
 
 export async function getCourses(

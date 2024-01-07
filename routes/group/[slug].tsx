@@ -1,4 +1,4 @@
-import { CourseGroup } from "../../utils/types.ts";
+import { Course, CourseGroup } from "../../utils/types.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
@@ -13,10 +13,25 @@ populateCache();
 // TODO - FIX TYPES
 export const handler: Handlers<CourseGroup> = {
   GET(_req, ctx) {
-    const foundCourseGroup = cache.merged.find((c) => {
-      return "courses" in c && c.courses.length > 0 &&
-        c.order === parseInt(ctx.params.slug, 10);
-    });
+    let foundCourseGroup: CourseGroup | Course | undefined = undefined;
+    const toFind = isNaN(parseInt(ctx.params.slug))
+      ? decodeURIComponent(ctx.params.slug)
+      : parseInt(ctx.params.slug);
+
+    console.log("toFind", toFind);
+    if (typeof toFind === "number") {
+      foundCourseGroup = cache.merged.find((c) => {
+        return "courses" in c && c.courses.length > 0 &&
+          c.order === toFind;
+      });
+    } else {
+      console.log("label", toFind);
+      foundCourseGroup = cache.merged.find((c) => {
+        return "courses" in c && c.courses.length > 0 &&
+          c.label === toFind;
+      });
+    }
+
     if (!foundCourseGroup) return ctx.renderNotFound();
     return ctx.render(foundCourseGroup as CourseGroup);
   },

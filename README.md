@@ -7,6 +7,7 @@
 - [ ] Main-Page ( Better design )
 - [ ] Markdown and cache ( Better code )
 - [ ] Login || LocalStorage and save progress
+- [ ] Next and Prev buttons
 - [ ] Themes, theme settings
 
 ---

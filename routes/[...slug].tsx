@@ -1,5 +1,5 @@
 import { Course } from "../utils/types.ts";
-import { getCourse } from "../utils/course.ts";
+import { getCourse, getJson } from "../utils/course.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS, render } from "$gfm";
@@ -7,21 +7,28 @@ import { Head } from "$fresh/runtime.ts";
 import Editor from "../islands/Editor.tsx";
 import EditButton from "../components/EditButton.tsx";
 
-export const handler: Handlers<Course> = {
-  async GET(_req, ctx) {
-    try {
-      const course = await getCourse(ctx.params.slug);
-      if (course === null) return ctx.renderNotFound();
-      return ctx.render(course);
-    } catch {
-      return ctx.renderNotFound();
-    }
-  },
-};
+export const handler: Handlers<{ course: Course; lable: string | undefined }> =
+  {
+    async GET(_req, ctx) {
+      try {
+        let lable: string | undefined;
+        const course = await getCourse(ctx.params.slug);
+        if (ctx.params.slug.includes("/")) {
+          lable = await getJson(ctx.params.slug.split("/")[0]);
+          console.log(lable);
+        }
+        if (course === null) return ctx.renderNotFound();
+        return ctx.render({ course, lable });
+      } catch {
+        return ctx.renderNotFound();
+      }
+    },
+  };
 
-export default function CoursePage(props: PageProps<Course>) {
-  const course = props.data;
-
+export default function CoursePage(
+  props: PageProps<{ course: Course; lable: string | undefined }>,
+) {
+  const { course, lable } = props.data;
   return (
     <>
       <Head>
@@ -34,7 +41,6 @@ export default function CoursePage(props: PageProps<Course>) {
           property="og:url"
           content={`https://nakhlahjs.com/${course.slug}`}
         />
-
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
         <link
           rel="stylesheet"
@@ -62,10 +68,28 @@ export default function CoursePage(props: PageProps<Course>) {
             </div>
             <div id="split-1" class="overflow-y-scroll">
               <section dir="rtl" class="p-3 py-5 mb-40">
-                <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
-                  <h1 class="text-3xl">{course.title}</h1>
-                  <EditButton slug={course.slug} />
+                <div>
+                  <div class="text-sm breadcrumbs" dir="rtl">
+                    <ul>
+                      <li>
+                        <a href="/">الرئيسية</a>
+                      </li>
+                      {lable && (
+                        <li>
+                          <a href={`/group/${lable}`}>
+                            {lable}
+                          </a>
+                        </li>
+                      )}
+                      <li class="underline">{course.title}</li>
+                    </ul>
+                  </div>
+                  <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
+                    <h1 class="text-3xl">{course.title}</h1>
+                    <EditButton slug={course.slug} />
+                  </div>
                 </div>
+
                 <div
                   id="document"
                   class="markdown-body"

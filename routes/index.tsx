@@ -41,7 +41,7 @@ export default function BlogIndexPage(
       </Head>
       <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <h1 class="text-5xl font-bold z-10">المحتوى</h1>
-        <section class="flex flex-col gap-2">
+        <section class="flex flex-col gap-4">
           {merged.map((course, index) => {
             // Group of courses
             if ("courses" in course) {
@@ -63,7 +63,7 @@ export default function BlogIndexPage(
             } else {
               // Single course
               return (
-                <div class="" key={course.slug}>
+                <div key={course.slug}>
                   <CourseCard course={course} />
                 </div>
               );

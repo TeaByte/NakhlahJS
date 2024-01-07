@@ -47,32 +47,61 @@ export default function NavBar() {
           </a>
         </div>
       </div>
-      <div dir="ltr" class="dropdown dropdown-bottom">
-        <div tabindex={0} role="button" class="btn m-1">تجربه</div>
-        <ul
-          dir="rtl"
-          tabindex={0}
-          class="dropdown-content z-[3] menu p-2 shadow bg-base-100 rounded-box w-72 gap-2 overflow-y-scroll"
-        >
-          {cache.merged.map((course, index) => {
-            if ("courses" in course) {
-              return (
-                <Collapse
-                  titile={course.label || "بدون عنوان"}
-                  courses={course.courses}
-                />
-              );
-            } else {
-              return (
-                <li class="" key={course.slug}>
-                  <a title={course.title} href={`/${course.slug}`}>
-                    {course.title}
-                  </a>
-                </li>
-              );
-            }
-          })}
-        </ul>
+      <div class="drawer">
+        <input
+          id="my-drawer-4"
+          type="checkbox"
+          class="drawer-toggle"
+        />
+        <div class="drawer-content">
+          <label
+            for="my-drawer-4"
+            class="drawer-button btn btn-active btn-ghost top-[-24px] left-0 absolute"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="w-6 h-6"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M6 13.5V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m12-3V3.75m0 9.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 3.75V16.5m-6-9V3.75m0 3.75a1.5 1.5 0 0 1 0 3m0-3a1.5 1.5 0 0 0 0 3m0 9.75V10.5"
+              />
+            </svg>
+          </label>
+        </div>
+        <div class="drawer-side z-50">
+          <label
+            for="my-drawer-4"
+            aria-label="close sidebar"
+            class="drawer-overlay"
+          >
+          </label>
+          <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+            {cache.merged.map((course, index) => {
+              if ("courses" in course) {
+                return (
+                  <Collapse
+                    titile={course.label || "بدون عنوان"}
+                    courses={course.courses}
+                  />
+                );
+              } else {
+                return (
+                  <li class="" key={course.slug}>
+                    <a title={course.title} href={`/${course.slug}`}>
+                      {course.title}
+                    </a>
+                  </li>
+                );
+              }
+            })}
+          </ul>
+        </div>
       </div>
     </nav>
   );

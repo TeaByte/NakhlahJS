@@ -3,8 +3,10 @@
 [ TODO LIST ]
 
 - [ ] Quizes System
+- [ ] Fixing janky ts-types
 - [ ] Main-Page ( Better design )
-- [ ] Login and save progress
+- [ ] Markdown and cache ( Better code )
+- [ ] Login || LocalStorage and save progress
 - [ ] Themes, theme settings
 
 ---

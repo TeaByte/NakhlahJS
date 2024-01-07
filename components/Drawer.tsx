@@ -28,7 +28,7 @@ export default function Drawer(
           class="drawer-overlay"
         >
         </label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content">
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content gap-2">
           {courses.map((course, index) => {
             if ("courses" in course) {
               return (

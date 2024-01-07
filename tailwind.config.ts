@@ -6,4 +6,7 @@ export default {
     "{routes,islands,components}/**/*.{ts,tsx}",
   ],
   plugins: [daisyui],
+  daisyui: {
+    themes: ["sunset"],
+  },
 } satisfies Config;

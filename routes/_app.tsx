@@ -25,8 +25,10 @@ export default function App({ Component }: PageProps) {
         />
       </head>
       <body>
-        <NavBar />
-        <Component />
+        <div class="h-screen">
+          <NavBar />
+          <Component />
+        </div>
       </body>
     </html>
   );

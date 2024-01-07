@@ -19,6 +19,10 @@ body .markdown-body {
   flex-direction: row;
 }
 
+.h-full-minus-bar {
+  height: calc(100vh - 88px);
+}
+
 .gutter {
   z-index: 2;
   background-color: var(--fallback-bc,oklch(var(--bc)/.2));

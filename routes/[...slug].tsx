@@ -55,7 +55,7 @@ export default function CoursePage(props: PageProps<Course>) {
 
       <main>
         <div>
-          <div dir="ltr" class="split flex-grow max-h-screen min-h-screen">
+          <div dir="ltr" class="split flex-grow h-full-minus-bar">
             <div id="split-0" class="flex flex-col">
               <p class="py-2 bg-[#1E1E1E]"></p>
               <div dir="ltr" class="h-[400px] mb-2" id="editor"></div>
@@ -82,6 +82,33 @@ export default function CoursePage(props: PageProps<Course>) {
             </div>
           </div>
         </div>
+
+        {
+          /* <div>
+          <section dir="rtl" class="p-3 py-5 mb-40">
+            <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
+              <h1 class="text-3xl">{course.title}</h1>
+              <EditButton slug={course.slug} />
+            </div>
+            <div
+              id="document"
+              class="markdown-body"
+              data-color-mode="dark"
+              data-dark-theme="dark"
+              style={{ backgroundColor: "inherit" }}
+              dangerouslySetInnerHTML={{ __html: render(course.content) }}
+            />
+          </section>
+        </div>
+        <div>
+          <p class="py-2 bg-[#1E1E1E]"></p>
+          <div dir="ltr" class="h-[400px] mb-2" id="editor"></div>
+          <Editor
+            preCode={'console.log("Hello World!")'}
+            testCode={"x == x"}
+          />
+        </div> */
+        }
       </main>
     </>
   );

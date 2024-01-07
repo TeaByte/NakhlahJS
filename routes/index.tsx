@@ -1,71 +1,25 @@
 import { Handlers } from "$fresh/server.ts";
 import { Head } from "$fresh/runtime.ts";
 import { PageProps } from "$fresh/server.ts";
-import { join } from "$std/path/mod.ts";
 
 import CourseCard from "../components/CourseCard.tsx";
-import { getCourse, getGroupOrder } from "../utils/course.ts";
+import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
+import { cache, populateCache } from "../utils/course-cache.ts";
 
-const cache: { merged: (Course | CourseGroup)[] } = { merged: [] };
+populateCache();
+
 export const handler: Handlers<{ merged: (Course | CourseGroup)[] }> = {
   async GET(_req, ctx) {
-    const courses = await getCourses();
+    const courses = await getCourses(cache);
     return ctx.render(courses);
   },
 };
-
-export async function getCourses(): Promise<
-  { merged: (Course | CourseGroup)[] }
-> {
-  if (cache.merged.length > 0) {
-    return cache;
-  }
-
-  console.log("Fetching courses...");
-  const files = Deno.readDir("./courses");
-  const groups: CourseGroup[] = [];
-  const nonGroups: Course[] = [];
-  for await (const file of files) {
-    if (file.isDirectory) {
-      const groupSlug = file.name;
-      const groupFiles = Deno.readDir(join("./courses", groupSlug));
-      const groupPromises = [];
-      for await (const groupFile of groupFiles) {
-        if (!groupFile.isDirectory && groupFile.name.endsWith(".md")) {
-          const slug = groupFile.name.replace(".md", "");
-          const course = await getCourse(join(groupSlug, slug));
-          if (course) {
-            groupPromises.push(course);
-          }
-        }
-      }
-      const groupOrder = await getGroupOrder(join("./courses", groupSlug));
-      groups.push({
-        courses: groupPromises,
-        order: groupOrder?.order,
-        label: groupOrder?.label,
-      });
-    } else if (file.name.endsWith(".md")) {
-      const slug = file.name.replace(".md", "");
-      const course = await getCourse(slug);
-      if (course) {
-        nonGroups.push(course);
-      }
-    }
-  }
-
-  const merged: (Course | CourseGroup)[] = [...nonGroups, ...groups];
-  merged.sort((a, b) => (a.order || 999) - (b.order || 999));
-  cache.merged = merged;
-  return cache;
-}
 
 export default function BlogIndexPage(
   props: PageProps<{ merged: (Course | CourseGroup)[] }>,
 ) {
   const { merged } = props.data;
-
   return (
     <>
       <Head>

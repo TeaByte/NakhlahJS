@@ -18,14 +18,12 @@ export const handler: Handlers<CourseGroup> = {
       ? decodeURIComponent(ctx.params.slug)
       : parseInt(ctx.params.slug);
 
-    console.log("toFind", toFind);
     if (typeof toFind === "number") {
       foundCourseGroup = cache.merged.find((c) => {
         return "courses" in c && c.courses.length > 0 &&
           c.order === toFind;
       });
     } else {
-      console.log("label", toFind);
       foundCourseGroup = cache.merged.find((c) => {
         return "courses" in c && c.courses.length > 0 &&
           c.label === toFind;

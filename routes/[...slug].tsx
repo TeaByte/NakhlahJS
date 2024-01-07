@@ -15,7 +15,6 @@ export const handler: Handlers<{ course: Course; lable: string | undefined }> =
         const course = await getCourse(ctx.params.slug);
         if (ctx.params.slug.includes("/")) {
           lable = await getJson(ctx.params.slug.split("/")[0]);
-          console.log(lable);
         }
         if (course === null) return ctx.renderNotFound();
         return ctx.render({ course, lable });
@@ -59,8 +58,16 @@ export default function CoursePage(
         <div>
           <div dir="ltr" class="split flex-grow h-full-minus-bar">
             <div id="split-0" class="flex flex-col">
-              <p class="py-2 bg-[#1E1E1E]"></p>
-              <div dir="ltr" class="h-[400px] mb-2" id="editor"></div>
+              <div class="mt-2">
+                <div class="mb-2 mx-2 rounded-lg overflow-hidden">
+                  <div
+                    class="h-[400px]"
+                    dir="ltr"
+                    id="editor"
+                  >
+                  </div>
+                </div>
+              </div>
               <Editor
                 preCode={'console.log("Hello World!")'}
                 testCode={"x == x"}

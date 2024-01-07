@@ -6,6 +6,10 @@ body, .markdown-body {
     font-family: 'Cairo', sans-serif !important;
 }
 
+.no-user-select {
+  padding-top: 10px;
+}
+
 body .markdown-body {
   background-color: inherit !important;
   color: oklch(var(--bc)) !important;
@@ -26,16 +30,35 @@ body .markdown-body {
 }
 
 .gutter {
+  position: relative;
   z-index: 2;
-  background-color: var(--fallback-bc,oklch(var(--bc)/.2));
+  background-color: oklch(var(--b3));
   background-repeat: no-repeat;
   background-position: 50%;
 }
 
-.gutter.gutter-horizontal {
+.gutter::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 0;
+  bottom: 0;
+  left: 5px;
   background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAeCAYAAADkftS9AAAAIklEQVQoU2M4c+bMfxAGAgYYmwGrIIiDjrELjpo5aiZeMwF+yNnOs5KSvgAAAABJRU5ErkJggg==');
-  cursor: col-resize;
+  filter: invert(100%);
+  background-repeat: no-repeat;
+  pointer-events: none; 
 }
+
+[data-theme="dracula"] .gutter::before {
+  filter: none;
+}
+
+
+.gutter.gutter-horizontal::before {
+  content: ''; 
+}
+
 
 pre {
   direction: ltr !important;

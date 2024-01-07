@@ -9,8 +9,10 @@ require(["vs/editor/editor.main"], () => {
     language: "javascript",
     theme: "vs-dark",
     minimap: { enabled: false },
+    roundedSelection: true,
+    overviewRulerBorder: false,
   });
   setInterval(() => {
     editor.layout();
-  }, 50);
+  }, 10);
 });

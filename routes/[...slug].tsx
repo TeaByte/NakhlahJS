@@ -25,19 +25,17 @@ export default function CoursePage(props: PageProps<Course>) {
   return (
     <>
       <Head>
-        <title>Nakhlahjs - {course.title}</title>
+        <title>نخلة - {course.title}</title>
         <meta name="description" content={course.snippet} />
         <meta name="keywords" content={`${course.title}, ${course.snippet}`} />
         <meta property="og:title" content={course.title} />
         <meta property="og:description" content={course.snippet} />
-
         <meta
           property="og:url"
           content={`https://nakhlahjs.com/${course.slug}`}
         />
 
         <style dangerouslySetInnerHTML={{ __html: CSS }} />
-
         <link
           rel="stylesheet"
           data-name="vs/editor/editor.main"
@@ -45,10 +43,8 @@ export default function CoursePage(props: PageProps<Course>) {
         />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js">
         </script>
-
         <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.1.1/split.min.js">
         </script>
-
         <script src="/moaco.js"></script>
         <script src="/resizer.js" />
       </Head>
@@ -82,33 +78,6 @@ export default function CoursePage(props: PageProps<Course>) {
             </div>
           </div>
         </div>
-
-        {
-          /* <div>
-          <section dir="rtl" class="p-3 py-5 mb-40">
-            <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
-              <h1 class="text-3xl">{course.title}</h1>
-              <EditButton slug={course.slug} />
-            </div>
-            <div
-              id="document"
-              class="markdown-body"
-              data-color-mode="dark"
-              data-dark-theme="dark"
-              style={{ backgroundColor: "inherit" }}
-              dangerouslySetInnerHTML={{ __html: render(course.content) }}
-            />
-          </section>
-        </div>
-        <div>
-          <p class="py-2 bg-[#1E1E1E]"></p>
-          <div dir="ltr" class="h-[400px] mb-2" id="editor"></div>
-          <Editor
-            preCode={'console.log("Hello World!")'}
-            testCode={"x == x"}
-          />
-        </div> */
-        }
       </main>
     </>
   );

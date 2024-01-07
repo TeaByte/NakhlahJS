@@ -6,6 +6,7 @@ import CourseCard from "../components/CourseCard.tsx";
 import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
 import { cache, populateCache } from "../utils/course-cache.ts";
+import Footer from "../components/Footer.tsx";
 
 populateCache();
 
@@ -31,7 +32,7 @@ export default function BlogIndexPage(
           name="keywords"
           content="Nakhlahjs, Nakhlah, تعلم جافاسكربت, جافاسكربت, تعليم جافاسكربت, كورس جافاسربت, كورس جافاسكربت مجاني, كورس جافاسكربت"
         />
-        <meta property="og:title" content="Nakhlahjs" />
+        <meta property="og:title" content="نخلة جي أس" />
         <meta
           property="og:description"
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
@@ -41,6 +42,7 @@ export default function BlogIndexPage(
         <h1 class="text-5xl font-bold z-10">المحتوى</h1>
         <section class="flex flex-col gap-2">
           {merged.map((course, index) => {
+            // Group of courses
             if ("courses" in course) {
               return (
                 <div class="" key={index}>
@@ -55,7 +57,7 @@ export default function BlogIndexPage(
                 </div>
               );
             } else {
-              // This is a Course
+              // Single course
               return (
                 <div class="" key={course.slug}>
                   <CourseCard course={course} />
@@ -65,6 +67,7 @@ export default function BlogIndexPage(
           })}
         </section>
       </main>
+      <Footer />
     </>
   );
 }

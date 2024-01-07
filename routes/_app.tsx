@@ -9,11 +9,6 @@ export default function App({ Component }: PageProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Nakhlahjs</title>
         <link rel="stylesheet" href="/styles.css" />
-        <link
-          href="https://cdn.jsdelivr.net/npm/daisyui@4.5.0/dist/full.min.css"
-          rel="stylesheet"
-          type="text/css"
-        />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"

@@ -10,7 +10,6 @@ require(["vs/editor/editor.main"], () => {
     theme: "vs-dark",
     minimap: { enabled: false },
   });
-
   setInterval(() => {
     editor.layout();
   }, 50);

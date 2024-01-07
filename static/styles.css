@@ -20,7 +20,8 @@ body .markdown-body {
 }
 
 .h-full-minus-bar {
-  height: calc(100vh - 88px);
+  /* screen - navbar */
+  height: calc(100vh - 64px);
 }
 
 .gutter {

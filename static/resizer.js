@@ -10,7 +10,6 @@ document.addEventListener("DOMContentLoaded", function () {
       minSize: 0,
       gutterSize: 13,
     });
-
     let isRight = true;
     const gutter = document.querySelector(".gutter");
     gutter.addEventListener("touchstart", function () {

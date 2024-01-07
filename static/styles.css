@@ -8,6 +8,7 @@ body, .markdown-body {
 
 body .markdown-body {
   background-color: inherit !important;
+  color: oklch(var(--bc)) !important;
 }
 
 .markdown-body h2 {

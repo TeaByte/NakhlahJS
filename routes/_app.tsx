@@ -3,7 +3,7 @@ import NavBar from "../components/Nav.tsx";
 
 export default function App({ Component }: PageProps) {
   return (
-    <html data-theme="sunset" dir="rtl" lang="ar">
+    <html dir="rtl" lang="ar">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

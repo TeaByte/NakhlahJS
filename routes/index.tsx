@@ -38,7 +38,7 @@ export default function BlogIndexPage(
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
         />
       </Head>
-      <main class="max-w-screen-md px-4 pt-12 mx-auto">
+      <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <h1 class="text-5xl font-bold z-10">المحتوى</h1>
         <section class="flex flex-col gap-2">
           {merged.map((course, index) => {

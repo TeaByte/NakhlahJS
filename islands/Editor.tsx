@@ -36,13 +36,19 @@ export default function Editor(props: CounterProps) {
       const capturedOutput: string[] = [];
       const originalConsoleLog = console.log;
       console.log = (...args: any[]) => {
-        capturedOutput.push(args.map((arg) => JSON.stringify(arg)).join(" "));
+        capturedOutput.push(args.map((arg) => {
+          if (typeof arg === 'object' && arg !== null) {
+            return JSON.stringify(arg);
+          }
+          return arg.toString();
+        }).join(" "));
         originalConsoleLog(...args);
       };
       if (code) {
         eval(code);
       }
-      setOutput(`${capturedOutput.join("\n")}`);
+      setOutput(capturedOutput.join('\n'));
+
       console.log = originalConsoleLog;
     } catch (error) {
       setOutput(`${error}`);

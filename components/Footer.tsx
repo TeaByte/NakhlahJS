@@ -23,12 +23,27 @@ export default function Footer() {
     <div class="bg-base-300 flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
       <div class="flex-1">
         <div class="flex items-center gap-1">
-          <div class="font-bold text-2xl">
-            نخلة جي أس
+          <div class="flex items-center gap-1">
+            <img
+              title="نخله جي اس"
+              alt="Website logo"
+              src="/logo.webp"
+              class="h-8 w-8"
+            />
+            <a
+              href="/"
+              title="نخله جي اس"
+              class="text-2xl ml-1 font-bold hover:animate-pulse"
+            >
+              <div class="flex items-center">
+                <span class="text-yellow-500">JS</span>
+                <span class="ml-2 font-bold text-2xl">نخلة</span>
+              </div>
+            </a>
           </div>
         </div>
         <div class="text-gray-500 mt-1">
-          اكتسب مهارات جافاسكربت بسهولة وفعالية
+          اكتسب مهارات جافاسكربت بسهولة وفعالية مع منصة نخلة
         </div>
       </div>
 

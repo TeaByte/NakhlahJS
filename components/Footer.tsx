@@ -20,7 +20,7 @@ export default function Footer() {
   ];
 
   return (
-    <div class="bg-base-300 flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
+    <footer class="bg-base-300 flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
       <div class="flex-1">
         <div class="flex items-center gap-1">
           <div class="flex items-center gap-1">
@@ -42,7 +42,7 @@ export default function Footer() {
             </a>
           </div>
         </div>
-        <div class="text-gray-500 mt-1">
+        <div class="text-gray-500 mt-1 w-[200px] md:w-fit">
           اكتسب مهارات جافاسكربت بسهولة وفعالية مع منصة نخلة
         </div>
       </div>
@@ -74,6 +74,6 @@ export default function Footer() {
           <BrandGithub aria-hidden="true" />
         </a>
       </div>
-    </div>
+    </footer>
   );
 }

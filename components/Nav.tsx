@@ -1,8 +1,6 @@
 import ThemeToggle from "../islands/ThemeToggle.tsx";
-import { cache, populateCache } from "../utils/course-cache.ts";
+import { cache } from "../utils/course-cache.ts";
 import Drawer from "./Drawer.tsx";
-
-populateCache();
 
 export default function NavBar() {
   return (

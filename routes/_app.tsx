@@ -1,5 +1,8 @@
 import { type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
+import { populateCache } from "../utils/course-cache.ts";
+
+populateCache();
 
 export default function App({ Component }: PageProps) {
   return (

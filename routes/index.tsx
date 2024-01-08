@@ -38,7 +38,7 @@ export default function BlogIndexPage(
         />
       </Head>
       <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
-        <h1 class="text-5xl font-bold z-10">المحتوى</h1>
+        <h1 class="text-5xl font-bold z-10 mb-2">الاساسيات</h1>
         <section class="flex flex-col">
           {courses.map((course, index) => {
             // Group of courses

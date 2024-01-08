@@ -65,6 +65,12 @@ export default function CoursePage(
                     dir="ltr"
                     id="editor"
                   >
+                    <p
+                      id="editor-loading"
+                      class="flex h-full items-center justify-center text-lg bg-[#1E1E1E] rounded-lg"
+                    >
+                      جاري تحميل المحرر
+                    </p>
                   </div>
                 </div>
               </div>

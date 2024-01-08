@@ -4,12 +4,10 @@ import { PageProps } from "$fresh/server.ts";
 import CourseCard from "../components/CourseCard.tsx";
 import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
-import { cache, populateCache } from "../utils/course-cache.ts";
+import { cache } from "../utils/course-cache.ts";
 import Footer from "../components/Footer.tsx";
 
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
-
-populateCache();
 
 export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
   async GET(_req, ctx) {
@@ -72,6 +70,14 @@ export default function BlogIndexPage(
               );
             }
           })}
+          <p class="mt-4 text-2xl">نعمل على الدروس القادما...</p>
+          <a
+            href="https://github.com/TeaByte/NakhlahJS"
+            class="text-gray-500 hover:underline"
+            target="_blank"
+          >
+            هل تود المساهمه في الموقع ؟
+          </a>
         </section>
       </main>
       <Footer />

@@ -5,6 +5,7 @@ require.config({
 });
 
 require(["vs/editor/editor.main"], () => {
+  document.getElementById("editor-loading").style.display = "none";
   window.editor = monaco.editor.create(document.getElementById("editor"), {
     language: "javascript",
     theme: "vs-dark",

@@ -9,6 +9,7 @@
 - [ ] Markdown and cache ( Better code )
 - [ ] Login || LocalStorage and save progress
 - [ ] Next and Prev buttons
+- [ ] Improve phone users experience
 - [x] Themes, theme settings
 
 ---

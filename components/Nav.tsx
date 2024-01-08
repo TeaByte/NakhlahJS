@@ -27,7 +27,7 @@ export default function NavBar() {
           </a>
         </div>
       </div>
-      <Drawer courses={cache.merged} />
+      <Drawer courses={cache.courses} />
       <ThemeToggle />
     </nav>
   );

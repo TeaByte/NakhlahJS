@@ -44,11 +44,11 @@ export async function getJson(
 }
 
 export async function getCourses(
-  cache: { merged: (Course | CourseGroup)[] } = { merged: [] },
+  cache: { courses: (Course | CourseGroup)[] } = { courses: [] },
 ): Promise<
-  { merged: (Course | CourseGroup)[] }
+  { courses: (Course | CourseGroup)[] }
 > {
-  if (cache.merged.length > 0) {
+  if (cache.courses.length > 0) {
     return cache;
   }
 
@@ -56,6 +56,7 @@ export async function getCourses(
   const files = Deno.readDir("./courses");
   const groups: CourseGroup[] = [];
   const nonGroups: Course[] = [];
+
   for await (const file of files) {
     if (file.isDirectory) {
       const groupSlug = file.name;
@@ -71,11 +72,13 @@ export async function getCourses(
         }
       }
       const groupOrder = await getGroupOrder(join("./courses", groupSlug));
-      groups.push({
-        courses: groupPromises,
-        order: groupOrder?.order,
-        label: groupOrder?.label,
-      });
+      if (groupOrder) {
+        groups.push({
+          courses: groupPromises,
+          order: groupOrder.order,
+          label: groupOrder.label,
+        });
+      }
     } else if (file.name.endsWith(".md")) {
       const slug = file.name.replace(".md", "");
       const course = await getCourse(slug);
@@ -87,6 +90,6 @@ export async function getCourses(
 
   const merged: (Course | CourseGroup)[] = [...nonGroups, ...groups];
   merged.sort((a, b) => (a.order || 999) - (b.order || 999));
-  cache.merged = merged;
+  cache.courses = merged;
   return cache;
 }

@@ -19,12 +19,12 @@ export const handler: Handlers<CourseGroup> = {
       : parseInt(ctx.params.slug);
 
     if (typeof toFind === "number") {
-      foundCourseGroup = cache.merged.find((c) => {
+      foundCourseGroup = cache.courses.find((c) => {
         return "courses" in c && c.courses.length > 0 &&
           c.order === toFind;
       });
     } else {
-      foundCourseGroup = cache.merged.find((c) => {
+      foundCourseGroup = cache.courses.find((c) => {
         return "courses" in c && c.courses.length > 0 &&
           c.label === toFind;
       });

@@ -8,12 +8,12 @@ export interface Course {
 
 export interface CourseGroup {
   courses: Course[];
-  order?: number;
-  label?: string;
+  order: number;
+  label: string;
 }
 
 export interface CourseAttributes {
-  title?: string;
-  snippet?: string;
-  order?: number;
+  title: string;
+  snippet: string;
+  order: number;
 }

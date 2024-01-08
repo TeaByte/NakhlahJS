@@ -11,7 +11,7 @@ import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chev
 
 populateCache();
 
-export const handler: Handlers<{ merged: (Course | CourseGroup)[] }> = {
+export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
   async GET(_req, ctx) {
     const courses = await getCourses(cache);
     return ctx.render(courses);
@@ -19,9 +19,9 @@ export const handler: Handlers<{ merged: (Course | CourseGroup)[] }> = {
 };
 
 export default function BlogIndexPage(
-  props: PageProps<{ merged: (Course | CourseGroup)[] }>,
+  props: PageProps<{ courses: (Course | CourseGroup)[] }>,
 ) {
-  const { merged } = props.data;
+  const { courses } = props.data;
   return (
     <>
       <Head>
@@ -42,7 +42,7 @@ export default function BlogIndexPage(
       <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <h1 class="text-5xl font-bold z-10">المحتوى</h1>
         <section class="flex flex-col">
-          {merged.map((course, index) => {
+          {courses.map((course, index) => {
             // Group of courses
             if ("courses" in course) {
               return (

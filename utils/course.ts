@@ -45,51 +45,59 @@ export async function getJson(
 
 export async function getCourses(
   cache: { courses: (Course | CourseGroup)[] } = { courses: [] },
-): Promise<
-  { courses: (Course | CourseGroup)[] }
-> {
+): Promise<{ courses: (Course | CourseGroup)[] }> {
   if (cache.courses.length > 0) {
     return cache;
   }
 
-  console.log("Fetching courses...");
+  const startTime = performance.now();
+
   const files = Deno.readDir("./courses");
-  const groups: CourseGroup[] = [];
-  const nonGroups: Course[] = [];
+  const groupPromises: Promise<CourseGroup>[] = [];
+  const nonGroupPromises: Promise<Course>[] = [];
+
+  const processGroup = async (groupSlug: string) => {
+    const groupFiles = Deno.readDir(join("./courses", groupSlug));
+    const groupPromises: Promise<Course>[] = [];
+
+    for await (const groupFile of groupFiles) {
+      if (!groupFile.isDirectory && groupFile.name.endsWith(".md")) {
+        const slug = groupFile.name.replace(".md", "");
+        const coursePromise = getCourse(join(groupSlug, slug));
+        groupPromises.push(coursePromise);
+      }
+    }
+
+    const groupOrder = await getGroupOrder(join("./courses", groupSlug));
+    const courses = await Promise.all(groupPromises);
+
+    return {
+      courses,
+      order: groupOrder?.order || 999,
+      label: groupOrder?.label || "بدون عنوان",
+    };
+  };
 
   for await (const file of files) {
     if (file.isDirectory) {
-      const groupSlug = file.name;
-      const groupFiles = Deno.readDir(join("./courses", groupSlug));
-      const groupPromises = [];
-      for await (const groupFile of groupFiles) {
-        if (!groupFile.isDirectory && groupFile.name.endsWith(".md")) {
-          const slug = groupFile.name.replace(".md", "");
-          const course = await getCourse(join(groupSlug, slug));
-          if (course) {
-            groupPromises.push(course);
-          }
-        }
-      }
-      const groupOrder = await getGroupOrder(join("./courses", groupSlug));
-      if (groupOrder) {
-        groups.push({
-          courses: groupPromises,
-          order: groupOrder.order,
-          label: groupOrder.label,
-        });
-      }
+      groupPromises.push(processGroup(file.name));
     } else if (file.name.endsWith(".md")) {
       const slug = file.name.replace(".md", "");
-      const course = await getCourse(slug);
-      if (course) {
-        nonGroups.push(course);
-      }
+      nonGroupPromises.push(getCourse(slug));
     }
   }
 
-  const merged: (Course | CourseGroup)[] = [...nonGroups, ...groups];
-  merged.sort((a, b) => (a.order || 999) - (b.order || 999));
+  const [groupOrders, nonGroupCourses] = await Promise.all([
+    Promise.all(groupPromises),
+    Promise.all(nonGroupPromises),
+  ]);
+
+  const merged: (Course | CourseGroup)[] = [...nonGroupCourses, ...groupOrders];
+  merged.sort((a, b) => a.order - b.order);
+
   cache.courses = merged;
+
+  const endTime = performance.now();
+  console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
   return cache;
 }

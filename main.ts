@@ -32,7 +32,7 @@ async function getAllPaths(directory: string): Promise<string[]> {
 
 const allPaths = await getAllPaths("courses");
 const coursesPath = allPaths.slice(1);
-console.log(coursesPath);
+// console.log(coursesPath);
 
 await start(manifest, {
   plugins: [

@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", function () {
       sizes: [0, 100],
       gutterAlign: "end",
       minSize: 0,
-      gutterSize: 16,
+      gutterSize: 19,
     });
     let isRight = true;
     const gutter = document.querySelector(".gutter");

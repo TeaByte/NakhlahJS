@@ -12,7 +12,7 @@ export default function ThemeToggle() {
     const storedTheme = localStorage.getItem("selectedTheme");
     if (storedTheme === "nord") {
       document.documentElement.setAttribute("data-theme", "dracula");
-      localStorage.setItem("selectedTheme", "dracula"); // Fix this line
+      localStorage.setItem("selectedTheme", "dracula");
     } else {
       document.documentElement.setAttribute("data-theme", "nord");
       localStorage.setItem("selectedTheme", "nord");

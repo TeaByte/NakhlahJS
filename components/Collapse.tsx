@@ -6,8 +6,8 @@ export default function Collapse(
 ) {
   return (
     <div
-      tabindex={1}
-      class="collapse collapse-plus border border-base-300 bg-base-100"
+      tabindex={0}
+      class="collapse collapse-arrow border border-base-300 bg-base-200"
     >
       <input type="checkbox" />
       <div class="collapse-title text-xl font-medium">

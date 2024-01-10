@@ -34,7 +34,7 @@ export default function Drawer(
             if ("courses" in course) {
               return (
                 <Collapse
-                  titile={course.label || "بدون عنوان"}
+                  title={course.label || "بدون عنوان"}
                   courses={course.courses}
                 />
               );

@@ -47,7 +47,7 @@ export default function BlogIndexPage(
               return (
                 <div key={index} class="mt-2">
                   <Collapse
-                    titile={course.label}
+                    title={course.label}
                     courses={course.courses}
                   />
                 </div>

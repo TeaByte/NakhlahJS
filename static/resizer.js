@@ -10,17 +10,19 @@ document.addEventListener("DOMContentLoaded", function () {
       minSize: 0,
       gutterSize: 19,
     });
-    let isRight = true;
-    const gutter = document.querySelector(".gutter");
-    gutter.addEventListener("touchstart", function () {
-      if (isRight) {
-        splitInstance.setSizes([100, 0]);
-        isRight = false;
-      } else {
-        splitInstance.setSizes([0, 100]);
-        isRight = true;
-      }
-    });
+    // TODO - Make a button to toggle editor on mobile
+    // What ? - cz adding event to a gutter is a bad idea!
+    // let isRight = true;
+    // const gutter = document.querySelector(".gutter");
+    // gutter.addEventListener("touchstart", function () {
+    //   if (isRight) {
+    //     splitInstance.setSizes([100, 0]);
+    //     isRight = false;
+    //   } else {
+    //     splitInstance.setSizes([0, 100]);
+    //     isRight = true;
+    //   }
+    // });
   } else {
     Split(["#split-0", "#split-1"], {
       sizes: [50, 50],

@@ -7,6 +7,8 @@ import { Head } from "$fresh/runtime.ts";
 import Editor from "../islands/Editor.tsx";
 import EditButton from "../components/EditButton.tsx";
 
+import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
+
 export const handler: Handlers<{ course: Course; lable: string | undefined }> =
   {
     async GET(_req, ctx) {
@@ -99,7 +101,16 @@ export default function CoursePage(
                   </div>
                   <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
                     <h1 class="text-3xl">{course.title}</h1>
-                    <EditButton slug={course.slug} />
+                    <div class="flex justify-between items-center">
+                      <EditButton slug={course.slug} />
+                      <div
+                        class="flex items-center gap-1 md:hidden"
+                        id="open-editor"
+                      >
+                        <IconAppWindow />
+                        <p>فتح المحرر</p>
+                      </div>
+                    </div>
                   </div>
                 </div>
 

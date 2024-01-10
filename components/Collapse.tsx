@@ -5,8 +5,8 @@ export default function Collapse(
   { titile, courses }: { titile: string; courses: Course[] },
 ) {
   return (
-    <div class="collapse collapse-arrow bg-base-200">
-      <input type="radio" name="my-accordion-2" checked={true} />
+    <div class="collapse collapse-arrow bg-base-300">
+      <input type="radio" name="my-accordion-2" checked={false} />
       <div class="collapse-title text-xl font-medium">
         {titile}
       </div>

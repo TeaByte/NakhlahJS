@@ -40,7 +40,7 @@ export default function Drawer(
               );
             } else {
               return (
-                <li class="" key={course.slug}>
+                <li key={course.slug}>
                   <CourseCard course={course} />
                 </li>
               );

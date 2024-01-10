@@ -1,4 +1,5 @@
 import { Course } from "../utils/types.ts";
+import CourseCard from "./CourseCard.tsx";
 
 export default function Collapse(
   { titile, courses }: { titile: string; courses: Course[] },
@@ -12,10 +13,10 @@ export default function Collapse(
       <div class="collapse-title text-xl font-medium">
         {titile}
       </div>
-      <div class="collapse-content">
+      <div class="collapse-content list-none">
         {courses.map((course) => (
           <li key={course.slug}>
-            <a title={course.title} href={`/${course.slug}`}>{course.title}</a>
+            <CourseCard course={course} />
           </li>
         ))}
       </div>

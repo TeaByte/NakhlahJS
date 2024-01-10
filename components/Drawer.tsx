@@ -2,6 +2,7 @@ import IconAdjustmentsDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/
 
 import { Course, CourseGroup } from "../utils/types.ts";
 import Collapse from "./Collapse.tsx";
+import CourseCard from "./CourseCard.tsx";
 
 export default function Drawer(
   { courses }: { courses: (Course | CourseGroup)[] },
@@ -40,9 +41,7 @@ export default function Drawer(
             } else {
               return (
                 <li class="" key={course.slug}>
-                  <a title={course.title} href={`/${course.slug}`}>
-                    {course.title}
-                  </a>
+                  <CourseCard course={course} />
                 </li>
               );
             }

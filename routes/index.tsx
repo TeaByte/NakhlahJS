@@ -8,6 +8,7 @@ import { cache } from "../utils/course-cache.ts";
 import Footer from "../components/Footer.tsx";
 
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
+import Collapse from "../components/Collapse.tsx";
 
 export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
   async GET(_req, ctx) {
@@ -44,21 +45,11 @@ export default function BlogIndexPage(
             // Group of courses
             if ("courses" in course) {
               return (
-                <div class="mt-4" key={index}>
-                  <a
-                    href={`/group/${course.order}`}
-                    class="flex gap-1 items-center"
-                  >
-                    <h2 class="text-3xl font-bold hover:opacity-75">
-                      {course.label}
-                    </h2>
-                    <IconChevronDown />
-                  </a>
-                  <div class="flex flex-col mt-2 pr-3">
-                    {course.courses.map((innerCourse) => (
-                      <CourseCard key={innerCourse.slug} course={innerCourse} />
-                    ))}
-                  </div>
+                <div key={index} class="mt-2">
+                  <Collapse
+                    titile={course.label}
+                    courses={course.courses}
+                  />
                 </div>
               );
             } else {

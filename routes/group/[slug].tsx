@@ -12,21 +12,12 @@ import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chev
 export const handler: Handlers<CourseGroup> = {
   GET(_req, ctx) {
     let foundCourseGroup: CourseGroup | Course | undefined = undefined;
-    const toFind = isNaN(parseInt(ctx.params.slug))
-      ? decodeURIComponent(ctx.params.slug)
-      : parseInt(ctx.params.slug);
+    const toFind = decodeURIComponent(ctx.params.slug);
 
-    if (typeof toFind === "number") {
-      foundCourseGroup = cache.courses.find((c) => {
-        return "courses" in c && c.courses.length > 0 &&
-          c.order === toFind;
-      });
-    } else {
-      foundCourseGroup = cache.courses.find((c) => {
-        return "courses" in c && c.courses.length > 0 &&
-          c.label === toFind;
-      });
-    }
+    foundCourseGroup = cache.courses.find((c) => {
+      return "courses" in c && c.courses.length > 0 &&
+        c.label === toFind;
+    });
 
     if (!foundCourseGroup) return ctx.renderNotFound();
     return ctx.render(foundCourseGroup as CourseGroup);

@@ -6,7 +6,7 @@ export default function Collapse(
 ) {
   return (
     <div class="collapse collapse-arrow bg-base-300">
-      <input type="radio" name="my-accordion-2" checked={false} />
+      <input type="checkbox" /> 
       <div class="collapse-title text-xl font-medium">
         {titile}
       </div>

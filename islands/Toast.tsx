@@ -9,7 +9,7 @@ export default function Toast() {
   return (
     <>
       {ToastSignal.value.show && (
-        <div class="toast toast-start mr-4 animation-toast">
+        <div class="toast text-2xl text-center toast-start mr-4 animation-toast">
           {
             ToastSignal.value.type === "success" ? (
               <div class="alert alert-success">

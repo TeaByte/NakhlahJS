@@ -22,6 +22,7 @@ export default function App({ Component }: PageProps) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
+        <script src="/theme-loader.js"></script>
       </head>
       <body>
         <div class="h-screen">

@@ -8,7 +8,7 @@ body, .markdown-body {
 
 .h-full-minus-bar {
   /* screen - navbar */
-  height: calc(100vh - 64px);
+  height: calc(100vh - 81px);
 }
 
 /* Monaco Editor */

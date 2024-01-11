@@ -1,5 +1,6 @@
-import ThemeToggle from "../islands/ThemeToggle.tsx";
 import { cache } from "../utils/course-cache.ts";
+
+import ThemeToggle from "../islands/ThemeToggle.tsx";
 import Drawer from "./Drawer.tsx";
 
 export default function NavBar() {
@@ -25,8 +26,10 @@ export default function NavBar() {
           </a>
         </div>
       </div>
-      <Drawer courses={cache.courses} />
-      <ThemeToggle />
+      <div class="flex gap-3 items-center">
+        <ThemeToggle />
+        <Drawer courses={cache.courses} />
+      </div>
     </nav>
   );
 }

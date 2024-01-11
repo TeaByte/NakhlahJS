@@ -1,8 +1,9 @@
-import IconAdjustmentsDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/adjustments-down.tsx";
-
 import { Course, CourseGroup } from "../utils/types.ts";
+
 import Collapse from "./Collapse.tsx";
 import CourseCard from "./CourseCard.tsx";
+
+import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
 
 export default function Drawer(
   { courses }: { courses: (Course | CourseGroup)[] },
@@ -17,9 +18,9 @@ export default function Drawer(
       <div class="drawer-content">
         <label
           for="my-drawer-4"
-          class="drawer-button btn btn-active btn-ghost top-[-24px] left-0 absolute"
+          class="drawer-button btn btn-active btn-ghost"
         >
-          <IconAdjustmentsDown aria-hidden="true" />
+          <IconLayoutSidebarLeftCollapse aria-hidden="true" />
         </label>
       </div>
       <div class="drawer-side z-50">

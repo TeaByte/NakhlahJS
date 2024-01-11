@@ -42,18 +42,19 @@ pre {
 }
 
 mark {
-  background-color: transparent;
+  background-color: oklch(var(--b3));
   color: inherit;
-  border: 1px solid #cccccc;
   padding: 10px;
   display: inline-block; 
   position: relative; 
+  width: 100%;
   border-radius: 10px;
   margin-bottom: 10px;
 }
 
 mark::before {
-  content: "ملاحظة";
+  content: "ملاحظة 📝";
+  font-size: 20px;
   display: block;
   font-weight: bold;
   margin-bottom: 5px;

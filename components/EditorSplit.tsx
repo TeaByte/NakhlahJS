@@ -6,7 +6,7 @@ export default function EditorSplit(props: { slug: string }) {
   return (
     <>
       <div class="mt-2">
-        <div class="mb-2 mx-2 rounded-lg overflow-hidden">
+        <div class="mb-2 mx-2">
           <div
             class="h-[400px]"
             dir="ltr"

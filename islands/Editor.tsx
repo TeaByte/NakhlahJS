@@ -80,8 +80,8 @@ export default function Editor(props: CounterProps) {
 
   return (
     <>
-      <div class="overflow-hidden grow">
-        <div dir="rtl" class="flex gap-2 px-2">
+      <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
+        <div dir="rtl" class="flex gap-2">
           <button
             class="btn btn-info grow"
             onClick={handleCodeRun}
@@ -101,13 +101,9 @@ export default function Editor(props: CounterProps) {
             اختبار
           </button>
         </div>
-        <div class="bg-base-300 h-full grow mt-2 mx-2 overflow-y-scroll rounded-lg pb-36">
-          <pre className=" bg-base-300 overflow-y-hidden p-4">
-
+        <pre className=" bg-base-300 overflow-y-scroll rounded-lg p-4 mb-2 grow">
 {output}
-
-          </pre>
-        </div>
+        </pre>
       </div>
     </>
   );

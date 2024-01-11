@@ -5,9 +5,9 @@ import Drawer from "./Drawer.tsx";
 
 export default function NavBar() {
   return (
-    <nav class="bg-base-300 w-full py-4 px-4 md:px-8 flex items-center gap-4 border-b base-content">
+    <nav class="bg-base-300 w-full py-4 px-4 flex items-center gap-4 border-b base-content">
       <div class="flex items-center flex-1">
-        <div class="flex items-center gap-1">
+        <div class="flex items-center gap-1 pr-2">
           <a href="/" title="نخله جي اس">
             <img
               title="نخله جي اس"

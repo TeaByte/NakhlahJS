@@ -1,7 +1,19 @@
 {
     "intro": [
         {
-            "regex": ".*"
+            "output": {
+                "regex": ".*",
+                "output": "Hi"
+            },
+            "code": {
+                "regex": ".*",
+                "code": [
+                    "console.log('Hi');",
+                    "console.log('Hi')",
+                    "console.log(\"Hi\");",
+                    "console.log(\"Hi\")"
+                ]
+            }
         }
     ]
 }

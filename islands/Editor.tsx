@@ -1,11 +1,10 @@
 import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
+import { doTests } from "./DoTest.ts";
 
 interface CounterProps {
   preCode: string;
-  testcases?:
-    | { regex?: string | undefined; output?: string | undefined }[]
-    | undefined;
+  testcases: any[];
 }
 
 declare var window: Window & typeof globalThis;
@@ -33,6 +32,18 @@ export default function Editor(props: CounterProps) {
     setOutput("");
   }
   function handleCodeTest() {
+    const code: string = window.editor.getValue() || "";
+    const runOutput = handleCodeRun();
+    const testcases = props.testcases;
+    // TODO: work on this later
+    // const pass = doTests(testcases, code, runOutput);
+    // if (pass) {
+    //   showToast({
+    //     msg: "تم تجاوز الاختبارات بنجاح",
+    //     type: "success",
+    //   });
+    //   return;
+    // }
     showToast({
       msg: "هذه الخاصية غير متوفرة حالياً",
       type: "warning",
@@ -59,10 +70,11 @@ export default function Editor(props: CounterProps) {
         eval(code);
       }
       setOutput(capturedOutput.join("\n"));
-
       console.log = originalConsoleLog;
+      return capturedOutput.join("\n");
     } catch (error) {
       setOutput(`${error}`);
+      return `${error}`;
     }
   }
 

@@ -10,26 +10,35 @@ import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
 import { getTestCase } from "../utils/testcase.ts";
 
-export const handler: Handlers<{ course: Course; lable: string | undefined, testcases: { regex?: string | undefined; output?: string | undefined; }[] | undefined }> =
+import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
+
+export const handler: Handlers<
   {
-    async GET(_req, ctx) {
-      try {
-        let lable: string | undefined;
-        const course = await getCourse(ctx.params.slug);
-        if (ctx.params.slug.includes("/")) {
-          lable = await getJson(ctx.params.slug.split("/")[0]);
-        }
-        if (course === null) return ctx.renderNotFound();
-        const testcases = await getTestCase(course.slug);
-        return ctx.render({ course, lable, testcases });
-      } catch {
-        return ctx.renderNotFound();
+    course: Course;
+    lable: string | undefined;
+    testcases:
+      | { regex?: string | undefined; output?: string | undefined }[]
+      | undefined;
+  }
+> = {
+  async GET(_req, ctx) {
+    try {
+      let lable: string | undefined;
+      const course = await getCourse(ctx.params.slug);
+      if (ctx.params.slug.includes("/")) {
+        lable = await getJson(ctx.params.slug.split("/")[0]);
       }
-    },
-  };
+      if (course === null) return ctx.renderNotFound();
+      const testcases = await getTestCase(course.slug);
+      return ctx.render({ course, lable, testcases });
+    } catch {
+      return ctx.renderNotFound();
+    }
+  },
+};
 
 export default function CoursePage(
-  props: PageProps<{ 
+  props: PageProps<{
     course: Course;
     lable: string | undefined;
   }>,
@@ -61,6 +70,16 @@ export default function CoursePage(
         <script src="/resizer.js" />
       </Head>
       <main>
+        <div
+          class="btn btn-info flex items-center gap-1 md:hidden mt-2 absolute z-[999] bottom-2 right-2"
+          id="open-editor"
+        >
+          <IconAppWindow />
+          <p>
+            فتح المحرر
+          </p>
+        </div>
+
         <div dir="ltr" class="split flex-grow h-full-minus-bar">
           <div id="split-0" class="flex flex-col">
             <EditorSplit slug={course.slug} />

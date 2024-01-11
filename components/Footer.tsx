@@ -21,14 +21,16 @@ export default function Footer() {
   return (
     <footer class="bg-base-300 flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
       <div class="flex-1">
-        <div class="flex items-center gap-1">
+        <div class="flex items-center flex-1">
           <div class="flex items-center gap-1">
-            <img
-              title="نخله جي اس"
-              alt="Website logo"
-              src="/logo.webp"
-              class="h-8 w-8"
-            />
+            <a href="/" title="نخله جي اس">
+              <img
+                title="نخله جي اس"
+                alt="Website logo"
+                src="/logo.webp"
+                class="h-8 w-8"
+              />
+            </a>
             <a
               href="/"
               title="نخله جي اس"

@@ -27,16 +27,6 @@ export default function MarkdownSplit(
         </div>
         <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
           <h1 class="text-3xl">{course.title}</h1>
-          <div>
-            <EditButton slug={course.slug} />
-            <div
-              class="flex items-center gap-1 md:hidden mt-2 hover:opacity-75"
-              id="open-editor"
-            >
-              <IconAppWindow />
-              <p>فتح المحرر</p>
-            </div>
-          </div>
         </div>
       </div>
       <div

@@ -4,7 +4,7 @@ export default function EditButton({ slug }: { slug: string }) {
       target="_blank"
       href={`https://github.com/TeaByte/NakhlahJS/blob/main/courses/${slug}.md`}
       class="pl-3 flex items-center gap-1 hover:opacity-75"
-      title="تعديل المقال"
+      title="تعديل"
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

@@ -8,12 +8,14 @@ export default function NavBar() {
     <nav class="bg-base-300 w-full py-4 px-4 md:px-8 flex items-center gap-4 border-b base-content">
       <div class="flex items-center flex-1">
         <div class="flex items-center gap-1">
-          <img
-            title="نخله جي اس"
-            alt="Website logo"
-            src="/logo.webp"
-            class="h-8 w-8"
-          />
+          <a href="/" title="نخله جي اس">
+            <img
+              title="نخله جي اس"
+              alt="Website logo"
+              src="/logo.webp"
+              class="h-8 w-8"
+            />
+          </a>
           <a
             href="/"
             title="نخله جي اس"

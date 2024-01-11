@@ -29,6 +29,10 @@ body .markdown-body {
   width: fit-content;
 }
 
+.markdown-body td, .markdown-body th, .markdown-body code {
+  color: white;
+}
+
 pre {
   direction: ltr !important;
 }

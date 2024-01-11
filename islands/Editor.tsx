@@ -95,7 +95,7 @@ export default function Editor(props: CounterProps) {
             مسح
           </button>
           <button
-            class="btn btn-error grow"
+            class="btn btn-active btn-ghost grow"
             onClick={handleCodeTest}
           >
             اختبار

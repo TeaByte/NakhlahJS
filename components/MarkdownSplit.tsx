@@ -34,8 +34,6 @@ export default function MarkdownSplit(
       <div
         id="document"
         class="markdown-body"
-        data-color-mode="dark"
-        data-dark-theme="dark"
         style={{ backgroundColor: "inherit" }}
         dangerouslySetInnerHTML={{ __html: render(course.content) }}
       />

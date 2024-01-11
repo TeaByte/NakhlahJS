@@ -27,6 +27,11 @@ body .markdown-body {
 
 .markdown-body h2 {
   width: fit-content;
+  border-color: oklch(var(--bc)) !important;
+}
+
+.markdown-body p code {
+  background-color: #44485496 !important;
 }
 
 .markdown-body td, .markdown-body th, .markdown-body code {

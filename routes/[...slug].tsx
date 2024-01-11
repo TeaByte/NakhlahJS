@@ -71,7 +71,7 @@ export default function CoursePage(
       </Head>
       <main>
         <div
-          class="btn btn-info flex items-center gap-1 md:hidden mt-2 absolute z-[999] bottom-2 right-2"
+          class="btn btn-info flex items-center gap-1 md:hidden mt-2 fixed z-[999] bottom-2 right-2"
           id="open-editor"
         >
           <IconAppWindow />

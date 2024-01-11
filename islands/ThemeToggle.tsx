@@ -5,18 +5,29 @@ export default function ThemeToggle() {
     const storedTheme = localStorage.getItem("selectedTheme");
     if (storedTheme) {
       document.documentElement.setAttribute("data-theme", storedTheme);
+      updateMarkdownTheme(storedTheme);
     }
   }, []);
 
-  const handleThemeChange = (event: any) => {
-    const storedTheme = localStorage.getItem("selectedTheme");
-    if (storedTheme === "nord") {
-      document.documentElement.setAttribute("data-theme", "dracula");
-      localStorage.setItem("selectedTheme", "dracula");
-    } else {
-      document.documentElement.setAttribute("data-theme", "nord");
-      localStorage.setItem("selectedTheme", "nord");
+  const updateMarkdownTheme = (theme: string) => {
+    const documentDiv = document.getElementById("document");
+    if (documentDiv) {
+      if (theme === "dracula") {
+        documentDiv.setAttribute("data-color-mode", "dark");
+        documentDiv.setAttribute("data-dark-theme", "dark");
+      } else {
+        documentDiv.setAttribute("data-color-mode", "light");
+        documentDiv.setAttribute("data-light-theme", "light");
+      }
     }
+  };
+
+  const handleThemeChange = () => {
+    const storedTheme = localStorage.getItem("selectedTheme");
+    const newTheme = storedTheme === "nord" ? "dracula" : "nord";
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("selectedTheme", newTheme);
+    updateMarkdownTheme(newTheme);
   };
 
   return (

@@ -27,8 +27,10 @@ export default function MarkdownSplit(
         </div>
         <div class="flex flex-col gap-2 md:flex-row justify-between mb-4">
           <h1 class="text-3xl">{course.title}</h1>
+          <EditButton slug={course.slug} />
         </div>
       </div>
+
       <div
         id="document"
         class="markdown-body"

@@ -5,8 +5,8 @@ export default function Footer() {
     {
       title: "الصفحات",
       children: [
-        { name: "الصفحة الرئيسية", href: "#" },
-        { name: "المدونة", href: "#" },
+        { name: "الصفحة الرئيسية", href: "/" },
+        { name: "من نحن", href: "/about" },
       ],
     },
     {

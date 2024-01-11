@@ -6,15 +6,13 @@ export default function Collapse(
 ) {
   return (
     <div class="collapse collapse-arrow bg-base-300">
-      <input type="checkbox" /> 
+      <input type="checkbox" />
       <div class="collapse-title text-xl font-medium">
         {titile}
       </div>
-      <div class="collapse-content list-none">
+      <div class="collapse-content flex flex-col">
         {courses.map((course) => (
-          <li key={course.slug}>
-            <CourseCard course={course} />
-          </li>
+          <CourseCard key={course.slug} course={course} />
         ))}
       </div>
     </div>

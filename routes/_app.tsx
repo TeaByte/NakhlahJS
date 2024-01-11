@@ -1,5 +1,6 @@
 import { type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
+import Toast from "../islands/Toast.tsx";
 import { populateCache } from "../utils/course-cache.ts";
 
 populateCache();
@@ -26,6 +27,7 @@ export default function App({ Component }: PageProps) {
         <div class="h-screen">
           <NavBar />
           <Component />
+          <Toast title="تم حفظ الكود" />
         </div>
       </body>
     </html>

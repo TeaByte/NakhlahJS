@@ -10,6 +10,7 @@ import * as $group_slug_ from "./routes/group/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Editor from "./islands/Editor.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
+import * as $Toast from "./islands/Toast.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -24,6 +25,7 @@ const manifest = {
   islands: {
     "./islands/Editor.tsx": $Editor,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
+    "./islands/Toast.tsx": $Toast,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

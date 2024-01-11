@@ -29,6 +29,14 @@ export default function Editor(props: CounterProps) {
     window.editor.setValue("");
     setOutput("");
   }
+  function handleCodeTest() {
+    handleCodeRun();
+    if (output === props.testCode) {
+      console.log("Test passed");
+    } else {
+      console.log("Test failed");
+    }
+  }
 
   function handleCodeRun() {
     const code: string | undefined = window.editor.getValue();
@@ -70,6 +78,12 @@ export default function Editor(props: CounterProps) {
             onClick={handleCodeClear}
           >
             مسح
+          </button>
+          <button
+            class="btn btn-error grow"
+            onClick={handleCodeTest}
+          >
+            اختبار
           </button>
         </div>
         <div class="bg-base-300 h-full grow mt-2 mx-2 overflow-y-scroll rounded-lg pb-36">

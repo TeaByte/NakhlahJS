@@ -1,8 +1,8 @@
 import { useEffect, useState } from "preact/hooks";
+import { useToast } from "./useToast.ts";
 
 interface CounterProps {
   preCode: string;
-  testCode: string;
 }
 
 declare var window: Window & typeof globalThis;
@@ -12,7 +12,7 @@ interface Window {
 
 export default function Editor(props: CounterProps) {
   const [output, setOutput] = useState<string>("");
-
+  const { showToast } = useToast();
   useEffect(() => {
     const initializeEditor = () => {
       if (window.editor) {
@@ -31,11 +31,7 @@ export default function Editor(props: CounterProps) {
   }
   function handleCodeTest() {
     handleCodeRun();
-    if (output === props.testCode) {
-      console.log("Test passed");
-    } else {
-      console.log("Test failed");
-    }
+    const code: string | undefined = window.editor.getValue();
   }
 
   function handleCodeRun() {
@@ -79,12 +75,12 @@ export default function Editor(props: CounterProps) {
           >
             مسح
           </button>
-          <button
+          {/* <button
             class="btn btn-error grow"
             onClick={handleCodeTest}
           >
             اختبار
-          </button>
+          </button> */}
         </div>
         <div class="bg-base-300 h-full grow mt-2 mx-2 overflow-y-scroll rounded-lg pb-36">
           <pre className=" bg-base-300 overflow-y-hidden p-4">

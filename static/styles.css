@@ -117,3 +117,29 @@ body::-moz-scrollbar-thumb {
   background-color: var(--fallback-bc,oklch(var(--bc)/.2));
   border-radius: 6px;
 }
+.animation-toast {
+  animation: toast 6s
+}
+@keyframes toast {
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+    scale: 0.5;
+  }
+  30% {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+  }
+  70% {
+    transform: translateY(0);
+    opacity: 1;
+    scale: 1;
+  }
+  100% {
+    transform: translateY(100px);
+    opacity: 0;
+    scale: 0.5;
+  }
+  
+}

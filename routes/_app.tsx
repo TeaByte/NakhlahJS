@@ -28,7 +28,7 @@ export default function App({ Component }: PageProps) {
         <div class="h-screen">
           <NavBar />
           <Component />
-          <Toast title="تم حفظ الكود" />
+          <Toast />
         </div>
       </body>
     </html>

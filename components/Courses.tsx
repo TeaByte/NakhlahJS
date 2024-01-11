@@ -16,7 +16,7 @@ export default function Courses(
             return (
               <div key={index} class="mt-1">
                 <Collapse
-                  titile={course.label}
+                  title={course.label}
                   courses={course.courses}
                 />
               </div>

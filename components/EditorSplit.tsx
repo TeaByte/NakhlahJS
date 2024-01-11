@@ -1,6 +1,7 @@
 import Editor from "../islands/Editor.tsx";
 
 export default function EditorSplit() {
+  // const 
   return (
     <>
       <div class="mt-2">
@@ -21,7 +22,6 @@ export default function EditorSplit() {
       </div>
       <Editor
         preCode={'console.log("Hello World!")'}
-        testCode={"x == x"}
       />
     </>
   );

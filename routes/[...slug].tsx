@@ -8,8 +8,9 @@ import { getCourse, getJson } from "../utils/course.ts";
 
 import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
+import { getTestCase } from "../utils/testcase.ts";
 
-export const handler: Handlers<{ course: Course; lable: string | undefined }> =
+export const handler: Handlers<{ course: Course; lable: string | undefined, testcases: { regex?: string | undefined; output?: string | undefined; }[] | undefined }> =
   {
     async GET(_req, ctx) {
       try {
@@ -19,7 +20,8 @@ export const handler: Handlers<{ course: Course; lable: string | undefined }> =
           lable = await getJson(ctx.params.slug.split("/")[0]);
         }
         if (course === null) return ctx.renderNotFound();
-        return ctx.render({ course, lable });
+        const testcases = await getTestCase(course.slug);
+        return ctx.render({ course, lable, testcases });
       } catch {
         return ctx.renderNotFound();
       }
@@ -27,7 +29,10 @@ export const handler: Handlers<{ course: Course; lable: string | undefined }> =
   };
 
 export default function CoursePage(
-  props: PageProps<{ course: Course; lable: string | undefined }>,
+  props: PageProps<{ 
+    course: Course;
+    lable: string | undefined;
+  }>,
 ) {
   const { course, lable } = props.data;
   return (

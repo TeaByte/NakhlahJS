@@ -9,6 +9,7 @@ import { cache } from "../utils/course-cache.ts";
 import Footer from "../components/Footer.tsx";
 import Courses from "../components/Courses.tsx";
 
+
 export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
   async GET(_req, ctx) {
     const courses = await getCourses(cache);
@@ -18,7 +19,7 @@ export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
 
 export default function BlogIndexPage(
   props: PageProps<{ courses: (Course | CourseGroup)[] }>,
-) {
+) { 
   const { courses } = props.data;
   return (
     <>

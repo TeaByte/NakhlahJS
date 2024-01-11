@@ -1,17 +1,28 @@
-import { useEffect,useState } from "preact/hooks";
-export default function Toast({title}: {title: string}) {
-  const [show, setShow] = useState<boolean>(false);
+import { useEffect } from "preact/hooks";
+import { ToastSignal } from "./signals/store.ts";
+export default function Toast() {
   useEffect(() => {
-    setShow(true);
-    setTimeout(() => {
-      setShow(false);
-    }, 3000);
+    // You can call showToast here or from any other component
+    // showToast('Hello, world!');
   }, []);
+  
   return (
-    <div class={"toast toast-end" + (show ? "" : "hide")}>
-      <div class="alert alert-success">
-        <span>{title}</span>
-      </div>
-    </div>
+    <>
+      {ToastSignal.value.show && (
+        <div class="toast toast-start mr-4 animation-toast">
+          {
+            ToastSignal.value.type === "success" ? (
+              <div class="alert alert-success">
+              <span>{ToastSignal.value.message}</span>
+            </div>
+            ) : (
+              <div class="alert alert-error">
+              <span>{ToastSignal.value.message}</span>\
+            </div>
+            )
+          }
+        </div>
+      )}
+    </>
   );
 }

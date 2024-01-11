@@ -3,6 +3,10 @@ export function getTestCase(slug: string): { regex?: string | undefined; output?
     return [
         {
             regex: '.*',
+
+        },
+        {
+            output: '200',
         }
     ]
 }

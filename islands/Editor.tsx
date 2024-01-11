@@ -3,6 +3,9 @@ import { useToast } from "./useToast.ts";
 
 interface CounterProps {
   preCode: string;
+  testcases?:
+    | { regex?: string | undefined; output?: string | undefined }[]
+    | undefined;
 }
 
 declare var window: Window & typeof globalThis;
@@ -30,8 +33,10 @@ export default function Editor(props: CounterProps) {
     setOutput("");
   }
   function handleCodeTest() {
-    handleCodeRun();
-    const code: string | undefined = window.editor.getValue();
+    showToast({
+      msg: "هذه الخاصية غير متوفرة حالياً",
+      type: "warning",
+    });
   }
 
   function handleCodeRun() {
@@ -40,18 +45,20 @@ export default function Editor(props: CounterProps) {
       const capturedOutput: string[] = [];
       const originalConsoleLog = console.log;
       console.log = (...args: any[]) => {
-        capturedOutput.push(args.map((arg) => {
-          if (typeof arg === 'object' && arg !== null) {
-            return JSON.stringify(arg);
-          }
-          return arg.toString();
-        }).join(" "));
+        capturedOutput.push(
+          args.map((arg) => {
+            if (typeof arg === "object" && arg !== null) {
+              return JSON.stringify(arg);
+            }
+            return arg.toString();
+          }).join(" "),
+        );
         originalConsoleLog(...args);
       };
       if (code) {
         eval(code);
       }
-      setOutput(capturedOutput.join('\n'));
+      setOutput(capturedOutput.join("\n"));
 
       console.log = originalConsoleLog;
     } catch (error) {
@@ -75,12 +82,12 @@ export default function Editor(props: CounterProps) {
           >
             مسح
           </button>
-          {/* <button
+          <button
             class="btn btn-error grow"
             onClick={handleCodeTest}
           >
             اختبار
-          </button> */}
+          </button>
         </div>
         <div class="bg-base-300 h-full grow mt-2 mx-2 overflow-y-scroll rounded-lg pb-36">
           <pre className=" bg-base-300 overflow-y-hidden p-4">

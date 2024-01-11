@@ -63,7 +63,7 @@ export default function CoursePage(
       <main>
         <div dir="ltr" class="split flex-grow h-full-minus-bar">
           <div id="split-0" class="flex flex-col">
-            <EditorSplit />
+            <EditorSplit slug={course.slug} />
           </div>
           <div id="split-1" class="overflow-y-scroll">
             <MarkdownSplit course={course} lable={lable} />

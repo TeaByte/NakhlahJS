@@ -16,9 +16,27 @@ export default function Toast() {
               <span>{ToastSignal.value.message}</span>
             </div>
             ) : (
-              <div class="alert alert-error">
-              <span>{ToastSignal.value.message}</span>\
-            </div>
+              ToastSignal.value.type === "error" ? (
+                <div class="alert alert-error">
+                <span>{ToastSignal.value.message}</span>
+              </div>
+              ) : (
+                ToastSignal.value.type === "warning" ? (
+                  <div class="alert alert-warning">
+                  <span>{ToastSignal.value.message}</span>
+                </div>
+                ) : (
+                  ToastSignal.value.type === "info" ? (
+                    <div class="alert alert-info">
+                    <span>{ToastSignal.value.message}</span>
+                  </div>
+                  ) : (
+                    <div class="alert">
+                    <span>{ToastSignal.value.message}</span>
+                  </div>
+                  )
+                )
+              )
             )
           }
         </div>

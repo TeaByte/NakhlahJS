@@ -1,7 +1,8 @@
 import Editor from "../islands/Editor.tsx";
+import { getTestCase } from "../utils/testcase.ts";
 
-export default function EditorSplit() {
-  // const 
+export default function EditorSplit(props: { slug: string }) {
+  const testcases = getTestCase(props.slug);
   return (
     <>
       <div class="mt-2">
@@ -22,6 +23,7 @@ export default function EditorSplit() {
       </div>
       <Editor
         preCode={'console.log("Hello World!")'}
+        testcases={testcases}
       />
     </>
   );

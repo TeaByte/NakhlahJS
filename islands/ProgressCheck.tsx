@@ -9,7 +9,7 @@ interface ProgressTrackProps {
 
 export default function ProgressCheck(props: ProgressTrackProps) {
   const [isDone, setIsDone] = useState(
-    localStorage.getItem(props.slug.replace(/\\/g, "/")) === "done",
+    window.localStorage.getItem(props.slug.replace(/\\/g, "/")) === "done",
   );
   return isDone
     ? <IconCircleCheckFilled aria-hidden="true" class="h-4 w-4" />

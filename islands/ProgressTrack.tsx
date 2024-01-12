@@ -7,7 +7,7 @@ interface ProgressTrackProps {
 export default function ProgressTrack(props: ProgressTrackProps) {
   useEffect(() => {
     const initializeEditor = () => {
-      localStorage.setItem(props.slug, "done");
+      window.localStorage.setItem(props.slug, "done");
     };
     window.onload = initializeEditor;
     return () => {

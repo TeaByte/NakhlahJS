@@ -20,38 +20,39 @@ function checkText(text1: string, text2: string): boolean {
 */
 function doTest(testCase: any, code: string, output: string): boolean {
     const { code: codeTest, output: outputTest } = testCase;
-    const codeRegex = codeTest.regex;
-    const outputRegex = outputTest.regex;
-    const codesCheck = codeTest.code;
-    const outputCheck = outputTest.output;
-    if (!testRegex(codeRegex, code)) {
-        console.log(codeRegex, code);
-        console.log("Code is not correct 1");
-        return false;
-    }
-    if (!testRegex(outputRegex, output)) {
-        console.log(outputRegex, output);
-        console.log("Output is not correct 1");
-        return false;
-    }
-
-    let isCodeCorrect = false;
-    for (const codeCheck of codesCheck) {
-        if (checkText(codeCheck, code)) {
-            isCodeCorrect = true;
-            break;
+    if (codeTest)
+    {
+        const codeRegex = codeTest.regex;
+        const codesCheck = codeTest.code;
+        if (!testRegex(codeRegex, code)) {
+            return false;
+        }
+    
+        let isCodeCorrect = false;
+        for (const codeCheck of codesCheck) {
+            if (checkText(codeCheck, code)) {
+                isCodeCorrect = true;
+                break;
+            }
+        }
+    
+        if (!isCodeCorrect) {
+            return false;
         }
     }
-
-    if (!isCodeCorrect) {
-        console.log(codesCheck, code);
-        console.log("Code is not correct 2");
-        return false;
+    if (outputTest) {
+        const outputRegex = outputTest.regex;
+        const outputCheck = outputTest.output;
+    
+        if (!testRegex(outputRegex, output)) {
+            return false;
+        }
+        if (!checkText(outputCheck, output)) {
+            return false;
+        }
     }
-    if (!checkText(outputCheck, output)) {
-        console.log(outputCheck, output);
-        console.log("Output is not correct 2");
-        return false;
+    if (!codeTest && !outputTest) {
+        return true;
     }
     return true;
 }

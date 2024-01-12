@@ -10,6 +10,7 @@ export interface CourseGroup {
   courses: Course[];
   order: number;
   label: string;
+  lableSlug: string;
 }
 
 export interface CourseAttributes {

@@ -5,7 +5,11 @@ import EditButton from "../components/EditButton.tsx";
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
 
 export default function MarkdownSplit(
-  { course, lable }: { course: Course; lable: string | undefined },
+  { course, lable, lableSlug }: {
+    course: Course;
+    lable: string | undefined;
+    lableSlug: string | undefined;
+  },
 ) {
   return (
     <section dir="rtl" class="p-3 py-5 mb-40">
@@ -17,7 +21,7 @@ export default function MarkdownSplit(
             </li>
             {lable && (
               <li>
-                <a href={`/group/${lable}`}>
+                <a href={`/group/${lableSlug}`}>
                   {lable}
                 </a>
               </li>

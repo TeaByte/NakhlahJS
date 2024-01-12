@@ -4,14 +4,15 @@ import { extract } from "https://deno.land/std@0.151.0/encoding/front_matter.ts"
 
 import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
 
-export async function getGroupOrder(
+export async function getGroupJsonData(
   groupPath: string,
-): Promise<{ order: number; label: string } | undefined> {
+): Promise<{ order: number; label: string; lableSlug: string } | undefined> {
   try {
     const dataJsonPath = join(groupPath, "_data.json");
     const jsonData = await readJson(dataJsonPath) as {
       order: number;
       label: string;
+      lableSlug: string;
     };
     return { ...jsonData };
   } catch {
@@ -37,10 +38,10 @@ export async function getCourse(
 
 export async function getJson(
   slug: string,
-): Promise<string> {
+): Promise<[string, string]> {
   const text = await Deno.readTextFile(join("./courses", `${slug}/_data.json`));
-  const json: { label: string } = JSON.parse(text);
-  return json.label;
+  const json: { label: string; lableSlug: string } = JSON.parse(text);
+  return [json.lableSlug, json.label];
 }
 
 export async function getCourses(
@@ -68,13 +69,14 @@ export async function getCourses(
       }
     }
 
-    const groupOrder = await getGroupOrder(join("./courses", groupSlug));
+    const groupData = await getGroupJsonData(join("./courses", groupSlug));
     const courses = await Promise.all(groupPromises);
 
     return {
       courses,
-      order: groupOrder?.order || 999,
-      label: groupOrder?.label || "بدون عنوان",
+      order: groupData?.order || 999,
+      label: groupData?.label || "بدون عنوان",
+      lableSlug: groupData?.lableSlug || "No Label",
     };
   };
 

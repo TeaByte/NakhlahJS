@@ -14,10 +14,9 @@ export const handler: Handlers<CourseGroup> = {
   GET(_req, ctx) {
     let foundCourseGroup: CourseGroup | Course | undefined = undefined;
     const toFind = decodeURIComponent(ctx.params.slug);
-
     foundCourseGroup = cache.courses.find((c) => {
       return "courses" in c && c.courses.length > 0 &&
-        c.label === toFind;
+        c.lableSlug === toFind;
     });
 
     if (!foundCourseGroup) return ctx.renderNotFound();
@@ -34,17 +33,19 @@ export default function CoursePage(props: PageProps<CourseGroup>) {
         <meta property="og:title" content="نخلة جي أس" />
       </Head>
       <main class="flex flex-col h-full-minus-bar">
-        <div class="max-w-screen-md px-4 pt-12 mx-auto mb-6 grow">
-          <div class="flex gap-1 items-center">
-            <h2 class="text-3xl font-bold">
-              {foundCourseGroup.label}
-            </h2>
-            <IconChevronDown />
-          </div>
-          <div class="flex flex-col mt-2 pr-3">
-            {foundCourseGroup.courses.map((innerCourse) => (
-              <CourseCard key={innerCourse.slug} course={innerCourse} />
-            ))}
+        <div class="w-full my-6 grow bg-base-300 rounded-btn flex flex-col justify-center items-center">
+          <div>
+            <div class="flex gap-1 items-center">
+              <h2 class="text-3xl font-bold">
+                {foundCourseGroup.label}
+              </h2>
+              <IconChevronDown />
+            </div>
+            <div class="flex flex-col mt-2 pr-3">
+              {foundCourseGroup.courses.map((innerCourse) => (
+                <CourseCard key={innerCourse.slug} course={innerCourse} />
+              ))}
+            </div>
           </div>
         </div>
         <Footer />

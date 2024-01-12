@@ -8,7 +8,6 @@ import { getCourse, getJson } from "../utils/course.ts";
 
 import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
-import { getTestCase } from "../utils/testcase.ts";
 
 import ProgressTrack from "../islands/ProgressTrack.tsx";
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
@@ -17,9 +16,7 @@ export const handler: Handlers<
   {
     course: Course;
     lable: string | undefined;
-    testcases:
-      | { regex?: string | undefined; output?: string | undefined }[]
-      | undefined;
+    lableSlug: string | undefined;
   }
 > = {
   async GET(_req, ctx) {
@@ -27,11 +24,11 @@ export const handler: Handlers<
       let lable: string | undefined;
       const course = await getCourse(ctx.params.slug);
       if (ctx.params.slug.includes("/")) {
-        lable = await getJson(ctx.params.slug.split("/")[0]);
+        const [lableSlug, lable] = await getJson(ctx.params.slug.split("/")[0]);
+        return ctx.render({ course, lable, lableSlug });
       }
       if (course === null) return ctx.renderNotFound();
-      const testcases = await getTestCase(course.slug);
-      return ctx.render({ course, lable, testcases });
+      return ctx.render({ course, lable: undefined, lableSlug: undefined });
     } catch {
       return ctx.renderNotFound();
     }
@@ -42,9 +39,10 @@ export default function CoursePage(
   props: PageProps<{
     course: Course;
     lable: string | undefined;
+    lableSlug: string | undefined;
   }>,
 ) {
-  const { course, lable } = props.data;
+  const { course, lable, lableSlug } = props.data;
   return (
     <>
       <Head>
@@ -86,7 +84,11 @@ export default function CoursePage(
             <EditorSplit slug={course.slug} />
           </div>
           <div id="split-1" class="overflow-y-scroll">
-            <MarkdownSplit course={course} lable={lable} />
+            <MarkdownSplit
+              course={course}
+              lable={lable}
+              lableSlug={lableSlug}
+            />
           </div>
         </div>
       </main>

@@ -23,32 +23,41 @@ function doTest(testCase: any, code: string, output: string): boolean {
     if (codeTest)
     {
         const codeRegex = codeTest.regex;
-        const codesCheck = codeTest.code;
-        if (!testRegex(codeRegex, code)) {
-            return false;
-        }
-    
-        let isCodeCorrect = false;
-        for (const codeCheck of codesCheck) {
-            if (checkText(codeCheck, code)) {
-                isCodeCorrect = true;
-                break;
+        if (codeRegex)
+        {
+            if (!testRegex(codeRegex, code)) {
+                return false;
             }
         }
-    
-        if (!isCodeCorrect) {
-            return false;
+        const codesCheck = codeTest.code;
+        if (codesCheck && codesCheck.length > 0) {
+            let isCodeCorrect = false;
+            for (const codeCheck of codesCheck) {
+                if (checkText(codeCheck, code)) {
+                    isCodeCorrect = true;
+                    break;
+                }
+            }
+        
+            if (!isCodeCorrect) {
+                return false;
+            }
         }
     }
     if (outputTest) {
         const outputRegex = outputTest.regex;
-        const outputCheck = outputTest.output;
-    
-        if (!testRegex(outputRegex, output)) {
-            return false;
+        if (outputRegex)
+        {
+            if (!testRegex(outputRegex, output)) {
+                return false;
+            }
         }
-        if (!checkText(outputCheck, output)) {
-            return false;
+        const outputCheck = outputTest.output;
+        if (outputCheck)
+        {
+            if (!checkText(outputCheck, output)) {
+                return false;
+            }
         }
     }
     if (!codeTest && !outputTest) {

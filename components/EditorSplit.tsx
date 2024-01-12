@@ -1,7 +1,7 @@
 import Editor from "../islands/Editor.tsx";
 import { getTestCase } from "../utils/testcase.ts";
 
-export default function EditorSplit(props: { slug: string, labelSlug: string }) {
+export default function EditorSplit(props: { slug: string }) {
   const testcases = getTestCase(props.slug);
   return (
     <>

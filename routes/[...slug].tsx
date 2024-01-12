@@ -10,6 +10,7 @@ import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
 import { getTestCase } from "../utils/testcase.ts";
 
+import ProgressTrack from "../islands/ProgressTrack.tsx";
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
 
 export const handler: Handlers<
@@ -89,6 +90,7 @@ export default function CoursePage(
           </div>
         </div>
       </main>
+      <ProgressTrack slug={course.slug} />
     </>
   );
 }

@@ -11,6 +11,8 @@ import * as $group_slug_ from "./routes/group/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $DoTest from "./islands/DoTest.ts";
 import * as $Editor from "./islands/Editor.tsx";
+import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
+import * as $ProgressTrack from "./islands/ProgressTrack.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
 import * as $Toast from "./islands/Toast.tsx";
 import * as $signals_store from "./islands/signals/store.ts";
@@ -30,6 +32,8 @@ const manifest = {
   islands: {
     "./islands/DoTest.ts": $DoTest,
     "./islands/Editor.tsx": $Editor,
+    "./islands/ProgressCheck.tsx": $ProgressCheck,
+    "./islands/ProgressTrack.tsx": $ProgressTrack,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
     "./islands/Toast.tsx": $Toast,
     "./islands/signals/store.ts": $signals_store,

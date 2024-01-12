@@ -18,7 +18,7 @@ body, .markdown-body {
 
 /* Monaco Editor */
 .monaco-editor, .overflow-guard {
-  border-radius: 0.2rem;
+  border-radius: 0.3rem;
 }
 
 .iPadShowKeyboard{

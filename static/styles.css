@@ -34,10 +34,6 @@ body .markdown-body {
   background-color: #44485496 !important;
 }
 
-.markdown-body td, .markdown-body th, .markdown-body code {
-  color: white;
-}
-
 pre {
   direction: ltr !important;
 }
@@ -50,6 +46,7 @@ mark {
   background-color: oklch(var(--b3));
   color: inherit;
   padding: 10px;
+  padding-right: 20px;
   display: inline-block; 
   position: relative; 
   width: 100%;
@@ -62,7 +59,6 @@ mark::before {
   font-size: 20px;
   display: block;
   font-weight: bold;
-  margin-bottom: 5px;
 }
 
 /* Split Panel */

@@ -2,7 +2,7 @@ import { useEffect } from "preact/hooks";
 
 export default function ThemeToggle() {
   useEffect(() => {
-    const storedTheme = window.localStorage.getItem("selectedTheme");
+    const storedTheme = localStorage.getItem("selectedTheme");
     if (storedTheme) {
       document.documentElement.setAttribute("data-theme", storedTheme);
       updateMarkdownTheme(storedTheme);
@@ -23,7 +23,7 @@ export default function ThemeToggle() {
   };
 
   const handleThemeChange = () => {
-    const storedTheme = window.localStorage.getItem("selectedTheme");
+    const storedTheme = localStorage.getItem("selectedTheme");
     const newTheme = storedTheme === "nord" ? "dracula" : "nord";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("selectedTheme", newTheme);

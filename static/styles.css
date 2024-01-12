@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+[data-theme="dracula"] {
+  --rounded-box: 0.3rem;
+  --rounded-btn: 0.2rem;
+}
+
 body, .markdown-body {
     font-family: 'Cairo', sans-serif !important;
 }
@@ -12,6 +17,10 @@ body, .markdown-body {
 }
 
 /* Monaco Editor */
+.monaco-editor, .overflow-guard {
+  border-radius: 0.2rem;
+}
+
 .iPadShowKeyboard{
   display: none;
 }
@@ -46,7 +55,7 @@ mark {
   display: inline-block; 
   position: relative; 
   width: 100%;
-  border-radius: 10px;
+  border-radius: 0.3rem;
   margin-bottom: 10px;
 }
 

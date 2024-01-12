@@ -5,7 +5,7 @@ export default function EditorSplit(props: { slug: string }) {
   const testcases = getTestCase(props.slug);
   return (
     <>
-      <div class="mt-2">
+      <div class="mt-4">
         <div class="mb-2 mx-2">
           <div
             class="h-[400px]"
@@ -14,7 +14,7 @@ export default function EditorSplit(props: { slug: string }) {
           >
             <p
               id="editor-loading"
-              class="flex h-full items-center justify-center text-lg bg-[#1E1E1E] rounded-lg"
+              class="flex h-full items-center justify-center text-lg bg-[#1E1E1E] rounded-box"
             >
               جاري تحميل المحرر
             </p>

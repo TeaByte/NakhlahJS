@@ -101,7 +101,7 @@ export default function Editor(props: CounterProps) {
             اختبار
           </button>
         </div>
-        <pre className=" bg-base-300 overflow-y-scroll rounded-lg p-4 mb-2 grow">
+        <pre className=" bg-base-300 overflow-y-scroll rounded-box p-4 mb-4 grow">
 {output}
         </pre>
       </div>

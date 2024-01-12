@@ -2,17 +2,21 @@
     "intro": [
         {
             "output": {
-                "regex": ".*",
-                "output": "Hi"
-            },
+                "regex": ".*"
+            }
+        }
+    ],
+    "comments": [
+        {
             "code": {
-                "regex": ".*",
-                "code": [
-                    "console.log('Hi');",
-                    "console.log('Hi')",
-                    "console.log(\"Hi\");",
-                    "console.log(\"Hi\")"
-                ]
+                "regex": "(?<!\\\\)/\\*[^*]*\\*+(?:[^\\/*][^*]*\\*+)*\\/|(?<!\\\\)//[^\\n]*(?:\\n|$)"
+            }
+        }
+    ],
+    "compound-operators": [
+        {
+            "code": {
+                "regex": ".*"
             }
         }
     ]

@@ -36,14 +36,20 @@ export default function Editor(props: CounterProps) {
     const runOutput = handleCodeRun();
     const testcases = props.testcases;
     // TODO: work on this later
-    // const pass = doTests(testcases, code, runOutput);
-    // if (pass) {
-    //   showToast({
-    //     msg: "تم تجاوز الاختبارات بنجاح",
-    //     type: "success",
-    //   });
-    //   return;
-    // }
+    const pass = doTests(testcases, code, runOutput);
+    if (pass) {
+      showToast({
+        msg: "تم تجاوز الاختبارات بنجاح",
+        type: "success",
+      });
+      return;
+    } else {
+      showToast({
+        msg: "لم يتم تجاوز الاختبارات",
+        type: "error",
+      });
+      return;
+    }
     showToast({
       msg: "هذه الخاصية غير متوفرة حالياً",
       type: "warning",

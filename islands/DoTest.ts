@@ -52,10 +52,18 @@ function doTest(testCase: any, code: string, output: string): boolean {
                 return false;
             }
         }
-        const outputCheck = outputTest.output;
-        if (outputCheck != undefined)
+        const outputsCheck = outputTest.output;
+        if (outputsCheck != undefined && outputsCheck.length > 0)
         {
-            if (!checkText(outputCheck, output)) {
+            let isCodeCorrect = false;
+            for (const outputCheck of outputsCheck) {
+                if (checkText(outputCheck, output)) {
+                    isCodeCorrect = true;
+                    break;
+                }
+            }
+        
+            if (!isCodeCorrect) {
                 return false;
             }
         }

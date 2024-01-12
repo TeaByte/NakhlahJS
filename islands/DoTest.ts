@@ -20,17 +20,17 @@ function checkText(text1: string, text2: string): boolean {
 */
 function doTest(testCase: any, code: string, output: string): boolean {
     const { code: codeTest, output: outputTest } = testCase;
-    if (codeTest)
+    if (codeTest !== undefined)
     {
         const codeRegex = codeTest.regex;
-        if (codeRegex)
+        if (codeRegex != undefined)
         {
             if (!testRegex(codeRegex, code)) {
                 return false;
             }
         }
         const codesCheck = codeTest.code;
-        if (codesCheck && codesCheck.length > 0) {
+        if (codesCheck != undefined && codesCheck.length > 0) {
             let isCodeCorrect = false;
             for (const codeCheck of codesCheck) {
                 if (checkText(codeCheck, code)) {
@@ -44,16 +44,16 @@ function doTest(testCase: any, code: string, output: string): boolean {
             }
         }
     }
-    if (outputTest) {
+    if (outputTest !== undefined) {
         const outputRegex = outputTest.regex;
-        if (outputRegex)
+        if (outputRegex != undefined)
         {
             if (!testRegex(outputRegex, output)) {
                 return false;
             }
         }
         const outputCheck = outputTest.output;
-        if (outputCheck)
+        if (outputCheck != undefined)
         {
             if (!checkText(outputCheck, output)) {
                 return false;

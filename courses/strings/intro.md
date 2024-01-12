@@ -77,7 +77,7 @@ console.log(sampleStr);
 يشير هذا إلى JavaScript أن المراد سطر جديد `n\` .لذا، إذا كنت تريد طباعة هذا على
 وحدة التحكم، فستحصل على:
 
-```
-Hello
-World
+```js
+Hello;
+World;
 ```

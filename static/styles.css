@@ -30,10 +30,6 @@ body .markdown-body {
   border-color: oklch(var(--bc)) !important;
 }
 
-.markdown-body p code {
-  background-color: #44485496 !important;
-}
-
 pre {
   direction: ltr !important;
 }

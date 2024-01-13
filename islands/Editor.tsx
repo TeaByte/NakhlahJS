@@ -14,15 +14,17 @@ interface Window {
 }
 
 export default function Editor(props: CounterProps) {
-  // FIX ( useEffect, useLayoutEffect ) both don't load the preCode for some reason IDK why..
+  // set the precode in the editor when it's fully loaded
   useEffect(() => {
-    const initializeEditor = () => {
-      if (window.editor) {
+    const interval = setInterval(() => {
+      if (
+        document.getElementById("editor-loading")?.style.display === "none"
+      ) {
         window.editor.setValue(props.preCode);
+        clearInterval(interval);
       }
-    };
-    initializeEditor();
-  }, [window.editor]);
+    }, 100);
+  }, []);
 
   const [output, setOutput] = useState<string>("");
   const { showToast } = useToast();

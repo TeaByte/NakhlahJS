@@ -27,6 +27,7 @@ export default function Editor(props: CounterProps) {
   }, []);
 
   const [output, setOutput] = useState<string>("");
+  const [testing , setTesting] = useState<boolean>(false);
   const { showToast } = useToast();
 
   function handleCodeClear() {
@@ -34,9 +35,10 @@ export default function Editor(props: CounterProps) {
     setOutput("");
   }
   function handleCodeTest() {
-    const code: string = window.editor.getValue() || "";
-    const runOutput = handleCodeRun();
-    const testcases = props.testcases;
+    // setTesting(true);
+    // const code: string = window.editor.getValue() || "";
+    // const runOutput = handleCodeRun();
+    // const testcases = props.testcases;
     // if (testcases.length === 0) {
     //   showToast({
     //     msg: "لا يوجد اختبارات لهذا الدرس",
@@ -44,7 +46,6 @@ export default function Editor(props: CounterProps) {
     //   });
     //   return;
     // }
-    // // TODO: work on this later
     // const pass = doTests(testcases, code, runOutput);
     // if (pass) {
     //   showToast({
@@ -52,12 +53,14 @@ export default function Editor(props: CounterProps) {
     //     type: "success",
     //   });
     //   localStorage.setItem(props.slug, "done");
+    //   setTesting(false);
     //   return;
     // } else {
     //   showToast({
     //     msg: "لم يتم تجاوز الاختبارات",
     //     type: "error",
     //   });
+    //   setTesting(false);
     //   return;
     // }
     showToast({
@@ -113,7 +116,9 @@ export default function Editor(props: CounterProps) {
           <button
             class="btn btn-active btn-ghost grow"
             onClick={handleCodeTest}
+            disabled={testing}
           >
+            {testing ? <span class="loading loading-spinner loading-xs"></span> : null}
             اختبار
           </button>
         </div>

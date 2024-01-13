@@ -92,7 +92,7 @@ export default function CoursePage(
           </div>
         </div>
       </main>
-      <ProgressTrack slug={course.slug} />
+      {/* <ProgressTrack slug={course.slug} /> */}
     </>
   );
 }

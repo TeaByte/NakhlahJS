@@ -24,6 +24,7 @@ export default function EditorSplit(props: { slug: string }) {
       <Editor
         preCode={'console.log("Hello World!")'}
         testcases={testcases}
+        slug={props.slug}
       />
     </>
   );

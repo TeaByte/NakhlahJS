@@ -5,6 +5,7 @@ import { doTests } from "./DoTest.ts";
 interface CounterProps {
   preCode: string;
   testcases: any[];
+  slug: string;
 }
 
 declare var window: Window & typeof globalThis;
@@ -34,13 +35,21 @@ export default function Editor(props: CounterProps) {
     const code: string = window.editor.getValue() || "";
     const runOutput = handleCodeRun();
     const testcases = props.testcases;
-    // TODO: work on this later
+    // if (testcases.length === 0) {
+    //   showToast({
+    //     msg: "لا يوجد اختبارات لهذا الدرس",
+    //     type: "info",
+    //   });
+    //   return;
+    // }
+    // // TODO: work on this later
     // const pass = doTests(testcases, code, runOutput);
     // if (pass) {
     //   showToast({
     //     msg: "تم تجاوز الاختبارات بنجاح",
     //     type: "success",
     //   });
+    //   localStorage.setItem(props.slug, "done");
     //   return;
     // } else {
     //   showToast({
@@ -50,7 +59,7 @@ export default function Editor(props: CounterProps) {
     //   return;
     // }
     showToast({
-      msg: "هذه الخاصية غير متوفرة حالياً",
+      msg: "هذه الميزة غير متوفرة حالياً",
       type: "warning",
     });
   }

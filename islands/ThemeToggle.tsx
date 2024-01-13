@@ -39,7 +39,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <label class="swap swap-rotate btn btn-active btn-ghost opacity-50">
+    <label class="swap swap-rotate btn btn-active btn-ghost">
       <input
         type="checkbox"
         onChange={handleThemeChange}

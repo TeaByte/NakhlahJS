@@ -28,7 +28,7 @@ export default function NavBar() {
           </a>
         </div>
       </div>
-      <div class="flex gap-3 items-center">
+      <div class="flex gap-2 items-center">
         <ThemeToggle />
         <Drawer courses={cache.courses} />
       </div>

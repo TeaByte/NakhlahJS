@@ -30,14 +30,16 @@ export default function Courses(
             );
           }
         })}
-        <p class="mt-4 text-2xl">نعمل على الدروس القادما...</p>
-        <a
-          href="https://github.com/TeaByte/NakhlahJS"
-          class="text-gray-500 hover:underline"
-          target="_blank"
-        >
-          هل تود المساهمه في الموقع ؟
-        </a>
+        <div>
+          <p class="mt-3 text-2xl">نعمل على الدروس القادما...</p>
+          <a
+            href="https://github.com/TeaByte/NakhlahJS"
+            class="text-gray-500 hover:underline"
+            target="_blank"
+          >
+            هل تود المساهمه في الموقع ؟
+          </a>
+        </div>
       </section>
     </>
   );

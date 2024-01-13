@@ -1,4 +1,4 @@
-import { useEffect, useState } from "preact/hooks";
+import { useLayoutEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
 import { doTests } from "./DoTest.ts";
 
@@ -13,9 +13,8 @@ interface Window {
 }
 
 export default function Editor(props: CounterProps) {
-  const [output, setOutput] = useState<string>("");
-  const { showToast } = useToast();
-  useEffect(() => {
+  // FIX ( useEffect, useLayoutEffect ) both don't load the preCode for some reason IDK why..
+  useLayoutEffect(() => {
     const initializeEditor = () => {
       if (window.editor) {
         window.editor.setValue(props.preCode);
@@ -26,6 +25,9 @@ export default function Editor(props: CounterProps) {
       window.onload = null;
     };
   }, []);
+
+  const [output, setOutput] = useState<string>("");
+  const { showToast } = useToast();
 
   function handleCodeClear() {
     window.editor.setValue("");
@@ -107,7 +109,7 @@ export default function Editor(props: CounterProps) {
             اختبار
           </button>
         </div>
-        <pre className=" bg-base-300 overflow-y-scroll rounded-box p-4 mb-4 grow">
+        <pre className=" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow">
 {output}
         </pre>
       </div>

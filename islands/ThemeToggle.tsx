@@ -1,11 +1,27 @@
 import { useEffect } from "preact/hooks";
 
 declare var window: Window & typeof globalThis;
+
 interface Window {
   monaco: any;
 }
 
 export default function ThemeToggle() {
+  const updateMarkdownTheme = (theme: string) => {
+    const documentDiv = document.getElementById("document");
+    if (documentDiv) {
+      if (theme === "dracula") {
+        documentDiv.setAttribute("data-color-mode", "dark");
+        documentDiv.setAttribute("data-dark-theme", "dark");
+        window.monaco && window.monaco.editor.setTheme("vs-dark");
+      } else {
+        documentDiv.setAttribute("data-color-mode", "light");
+        documentDiv.setAttribute("data-light-theme", "light");
+        window.monaco && window.monaco.editor.setTheme("vs-light");
+      }
+    }
+  };
+
   useEffect(() => {
     const storedTheme = localStorage.getItem("selectedTheme");
     if (storedTheme) {
@@ -13,21 +29,6 @@ export default function ThemeToggle() {
       updateMarkdownTheme(storedTheme);
     }
   }, []);
-
-  const updateMarkdownTheme = (theme: string) => {
-    const documentDiv = document.getElementById("document");
-    if (documentDiv) {
-      if (theme === "dracula") {
-        documentDiv.setAttribute("data-color-mode", "dark");
-        documentDiv.setAttribute("data-dark-theme", "dark");
-        window.monaco.editor.setTheme("vs-dark");
-      } else {
-        documentDiv.setAttribute("data-color-mode", "light");
-        documentDiv.setAttribute("data-light-theme", "light");
-        window.monaco.editor.setTheme("vs-light");
-      }
-    }
-  };
 
   const handleThemeChange = () => {
     const storedTheme = localStorage.getItem("selectedTheme");

@@ -7,6 +7,10 @@
   --rounded-btn: 0.2rem;
 }
 
+.nav {
+  border-color: oklch(var(--bc)/0.2) !important;
+}
+
 body, .markdown-body {
     font-family: 'Cairo', sans-serif !important;
 }
@@ -17,15 +21,16 @@ body, .markdown-body {
 }
 
 /* Monaco Editor */
-.monaco-editor, .overflow-guard {
-  border-radius: 0.3rem;
-}
+/* .monaco-editor, .overflow-guard {
+  border-radius: 0.2rem;
+} */
 
 .iPadShowKeyboard{
   display: none;
 }
+
 .no-user-select, .showUnused {
-  padding-top: 10px !important;
+  padding-top: 8px !important;
 }
 
 /* Markdown */

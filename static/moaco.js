@@ -6,10 +6,11 @@ require.config({
 
 require(["vs/editor/editor.main"], () => {
   document.getElementById("editor-loading").style.display = "none";
-  const editorDiv = document.getElementById("editor");
-  window.editor = monaco.editor.create(editorDiv, {
+  const isNord = localStorage.getItem("selectedTheme") === "nord";
+  const vsTheme = isNord ? "vs-light" : "vs-dark";
+  window.editor = monaco.editor.create(document.getElementById("editor"), {
     language: "javascript",
-    theme: "vs-dark",
+    theme: vsTheme,
     minimap: { enabled: false },
   });
   setInterval(() => {

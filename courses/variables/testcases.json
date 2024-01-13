@@ -2,13 +2,25 @@
     "intro": [
         {
             "code": {
-                    "regex": "var\\s+myName\\s+=\\s+\"(.*)\""
-                }
+                "regex": "var\\s+myName\\s+=\\s+\"(.*)\""
+            }
         },
         {
             "code": {
-                    "regex": "var\\s+myAge\\s+=\\s+(\\d+)"
-                }
+                "regex": "var\\s+myAge\\s+=\\s+(\\d+)"
+            }
+        }
+    ],
+    "console": [
+        {
+            "code": {
+                "regex": "console\\.log\\((\"|').*(\"|')\\)"
+            }
+        },
+        {
+            "output": {
+                "regex": ".*"
+            }
         }
     ]
 }

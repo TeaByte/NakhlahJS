@@ -91,7 +91,7 @@ export default function Editor(props: CounterProps) {
       <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
         <div dir="rtl" class="flex gap-2">
           <button
-            class="btn btn-info grow"
+            class="btn btn-info bg-[#68e4ff] hover:bg-[#68e4ff] hover:opacity-75 grow"
             onClick={handleCodeRun}
           >
             تشغيل

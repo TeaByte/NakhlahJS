@@ -7,6 +7,10 @@
   --rounded-btn: 0.2rem;
 }
 
+.nav {
+  border-color: oklch(var(--bc)/0.2) !important;
+}
+
 body, .markdown-body {
     font-family: 'Cairo', sans-serif !important;
 }

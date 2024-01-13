@@ -1,5 +1,10 @@
 import { useEffect } from "preact/hooks";
 
+declare var window: Window & typeof globalThis;
+interface Window {
+  monaco: any;
+}
+
 export default function ThemeToggle() {
   useEffect(() => {
     const storedTheme = localStorage.getItem("selectedTheme");
@@ -15,9 +20,11 @@ export default function ThemeToggle() {
       if (theme === "dracula") {
         documentDiv.setAttribute("data-color-mode", "dark");
         documentDiv.setAttribute("data-dark-theme", "dark");
+        window.monaco.editor.setTheme("vs-dark");
       } else {
         documentDiv.setAttribute("data-color-mode", "light");
         documentDiv.setAttribute("data-light-theme", "light");
+        window.monaco.editor.setTheme("vs-light");
       }
     }
   };

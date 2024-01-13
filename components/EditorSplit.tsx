@@ -6,15 +6,15 @@ export default function EditorSplit(props: { slug: string }) {
   return (
     <>
       <div class="mt-4">
-        <div class="mb-2 mx-2">
+        <div class="mx-2 border-[6px] border-base-300 rounded-btn pb-2">
           <div
-            class="h-[400px]"
+            class="h-[400px] rounded-box"
             dir="ltr"
             id="editor"
           >
             <p
               id="editor-loading"
-              class="flex h-full items-center justify-center text-lg bg-[#1E1E1E] rounded-box"
+              class="flex h-full items-center justify-center text-lg rounded-btn text-base-content"
             >
               جاري تحميل المحرر
             </p>

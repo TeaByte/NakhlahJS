@@ -1,4 +1,4 @@
-import { useLayoutEffect, useState } from "preact/hooks";
+import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
 import { doTests } from "./DoTest.ts";
 
@@ -14,7 +14,7 @@ interface Window {
 
 export default function Editor(props: CounterProps) {
   // FIX ( useEffect, useLayoutEffect ) both don't load the preCode for some reason IDK why..
-  useLayoutEffect(() => {
+  useEffect(() => {
     const initializeEditor = () => {
       if (window.editor) {
         window.editor.setValue(props.preCode);

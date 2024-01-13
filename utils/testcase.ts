@@ -12,8 +12,8 @@ export function getTestCase(slug: string): any[] {
         if (!existsSync(`./courses/${categorySlug}/testcases.json`)) {
             return [];
         }
-        const testCases = JSON.parse(Deno.readTextFileSync(`./courses/${categorySlug}/testcases.json`));
         try {
+            const testCases = JSON.parse(Deno.readTextFileSync(`./courses/${categorySlug}/testcases.json`));
             return testCases[courseSlug];
         }
         catch {
@@ -21,8 +21,8 @@ export function getTestCase(slug: string): any[] {
         }
     }
     else {
-        const testCases = JSON.parse(Deno.readTextFileSync(`./courses/testcases.json`));
         try {
+            const testCases = JSON.parse(Deno.readTextFileSync(`./courses/testcases.json`));
             return testCases[slug];
         }
         catch {

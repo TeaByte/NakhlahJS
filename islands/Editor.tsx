@@ -21,11 +21,8 @@ export default function Editor(props: CounterProps) {
         window.editor.setValue(props.preCode);
       }
     };
-    window.onload = initializeEditor;
-    return () => {
-      window.onload = null;
-    };
-  }, []);
+    initializeEditor();
+  }, [props.preCode]);
 
   function handleCodeClear() {
     window.editor.setValue("");

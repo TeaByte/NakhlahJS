@@ -22,7 +22,7 @@ export default function Editor(props: CounterProps) {
       }
     };
     initializeEditor();
-  }, [props.preCode]);
+  }, [window.editor]);
 
   const [output, setOutput] = useState<string>("");
   const { showToast } = useToast();

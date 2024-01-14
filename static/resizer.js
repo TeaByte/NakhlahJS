@@ -3,29 +3,16 @@ function isMobile() {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
+  let splitInstance;
   if (isMobile()) {
-    const splitInstance = Split(["#split-0", "#split-1"], {
+    splitInstance = Split(["#split-0", "#split-1"], {
       sizes: [0, 100],
       gutterAlign: "end",
       minSize: 0,
       gutterSize: 19,
     });
-    let isRight = true;
-    const openEditorButton = document.querySelector("#open-editor");
-    const pElement = openEditorButton.querySelector("p");
-    openEditorButton.addEventListener("touchend", function () {
-      if (isRight) {
-        splitInstance.setSizes([100, 0]);
-        isRight = false;
-        pElement.textContent = "فتح الدرس";
-      } else {
-        splitInstance.setSizes([0, 100]);
-        isRight = true;
-        pElement.textContent = "فتح المحرر";
-      }
-    });
   } else {
-    Split(["#split-0", "#split-1"], {
+    splitInstance = Split(["#split-0", "#split-1"], {
       sizes: [50, 50],
       gutterAlign: "end",
       minSize: 0,
@@ -33,13 +20,18 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  const split0 = document.getElementById("split-0");
-  const vsEditor = document.getElementById("editor");
-  setInterval(() => {
-    if (split0.offsetWidth < 20) {
-      vsEditor.style.display = "none";
+  let isRight = true;
+  const openEditorButton = document.querySelector("#open-editor");
+  const pElement = openEditorButton.querySelector("p");
+  openEditorButton.addEventListener("touchend", function () {
+    if (isRight) {
+      splitInstance.setSizes([100, 0]);
+      isRight = false;
+      pElement.textContent = "فتح الدرس";
     } else {
-      vsEditor.style.display = "block";
+      splitInstance.setSizes([0, 100]);
+      isRight = true;
+      pElement.textContent = "فتح المحرر";
     }
-  }, 50);
+  });
 });

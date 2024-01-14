@@ -2,7 +2,7 @@ import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
 import { doTests } from "./DoTest.ts";
 
-interface CounterProps {
+interface EditorProps {
   preCode: string;
   testcases: any[];
   slug: string;
@@ -13,7 +13,7 @@ interface Window {
   editor: any;
 }
 
-export default function Editor(props: CounterProps) {
+export default function Editor(props: EditorProps) {
   // set the precode in the editor when it's fully loaded
   useEffect(() => {
     const interval = setInterval(() => {
@@ -27,7 +27,8 @@ export default function Editor(props: CounterProps) {
   }, []);
 
   const [output, setOutput] = useState<string>("");
-  const [testing , setTesting] = useState<boolean>(false);
+  const [isError, setIsError] = useState<boolean>(false);
+  const [testing, setTesting] = useState<boolean>(false);
   const { showToast } = useToast();
 
   function handleCodeClear() {
@@ -88,10 +89,12 @@ export default function Editor(props: CounterProps) {
       if (code) {
         eval(code);
       }
+      setIsError(false);
       setOutput(capturedOutput.join("\n"));
       console.log = originalConsoleLog;
       return capturedOutput.join("\n");
     } catch (error) {
+      setIsError(true);
       setOutput(`${error}`);
       return `${error}`;
     }
@@ -102,7 +105,10 @@ export default function Editor(props: CounterProps) {
       <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
         <div dir="rtl" class="flex gap-2">
           <button
-            class="btn btn-info bg-[#68e4ff] hover:bg-[#68e4ff] hover:opacity-75 grow"
+            class={"btn btn-info hover:opacity-75 grow " +
+              (isError
+                ? "bg-error hover:bg-[#ff6868]"
+                : "bg-[#68e4ff] hover:bg-[#68e4ff]")}
             onClick={handleCodeRun}
           >
             تشغيل
@@ -118,11 +124,16 @@ export default function Editor(props: CounterProps) {
             onClick={handleCodeTest}
             disabled={testing}
           >
-            {testing ? <span class="loading loading-spinner loading-xs"></span> : null}
+            {testing
+              ? <span class="loading loading-spinner loading-xs"></span>
+              : null}
             اختبار
           </button>
         </div>
-        <pre className=" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow">
+        <pre
+          className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow " +
+            (isError ? "text-error" : "")}
+        >
 {output}
         </pre>
       </div>

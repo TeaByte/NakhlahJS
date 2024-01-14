@@ -8,6 +8,7 @@ import { cache } from "../utils/course-cache.ts";
 
 import Footer from "../components/Footer.tsx";
 import Courses from "../components/Courses.tsx";
+import ProgressPageSplit from "../components/ProgressPageSplit.tsx";
 
 
 export const handler: Handlers<{ courses: (Course | CourseGroup)[] }> = {
@@ -46,7 +47,7 @@ export default function BlogIndexPage(
           <Courses courses={courses} />
         </div>
         <div className="max-sm:w-full w-1/2 p-4 flex flex-col gap-2">
-          <ProgressPageSplit courses={courses} />
+          <ProgressPageSplit />
         </div>
       </main> */}
       <Footer />

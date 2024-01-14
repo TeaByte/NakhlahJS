@@ -1,4 +1,4 @@
-export default function ProgressBar(props: { progress: number, text: string }) {
+export default function ProgressBar(props: { progress: number }) {
   const widthStyle = { width: `${props.progress}%` };
   return (
     <div className="bg-white rounded-xl shadow-sm overflow-hidden p-1">

@@ -13,7 +13,12 @@ export default function ProgressCheck(props: ProgressTrackProps) {
   );
 
   useEffect(() => {
-    setIsDone(localStorage.getItem(props.slug.replace(/\\/g, "/")) === "done");
+    const done = localStorage.getItem(props.slug.replace(/\\/g, "/")) === "done";
+    setIsDone(done);
+    if (!done) {
+      localStorage.setItem(props.slug.replace(/\\/g, "/"), "notdone");
+    }
+
   }, []);
 
   return isDone

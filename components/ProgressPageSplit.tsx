@@ -1,9 +1,7 @@
-import { Course, CourseGroup } from "../utils/types.ts";
+import Progress from "../islands/Progress.tsx";
 import Icon from "./Icon.tsx";
 
-export default function ProgressPageSplit(
-    props: { courses: (Course | CourseGroup)[] },
-) {
+export default function ProgressPageSplit() {
     return (
         <>
             <div className="flex gap-2">
@@ -16,6 +14,7 @@ export default function ProgressPageSplit(
             </p>
             <h2 className="text-xl font-bold">تقدمك في إنجاز الدروس:</h2>
             {/* TODO: Make this a component */}
+            <Progress /> 
         </>
     );
 }

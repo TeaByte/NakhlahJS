@@ -41,6 +41,14 @@ export default function BlogIndexPage(
       <main class="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <Courses courses={courses} />
       </main>
+      {/* <main className="flex min-w-screen-md px-4 pt-12 mx-auto mb-6 max-sm:flex-col-reverse">
+        <div className="max-sm:w-full w-1/2 p-4">
+          <Courses courses={courses} />
+        </div>
+        <div className="max-sm:w-full w-1/2 p-4 flex flex-col gap-2">
+          <ProgressPageSplit courses={courses} />
+        </div>
+      </main> */}
       <Footer />
     </>
   );

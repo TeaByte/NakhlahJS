@@ -6,6 +6,8 @@ comprehensive lessons are structured based on the principles of freeCodeCamp and
 the extensive documentation available on
 [MDN Web Docs](https://developer.mozilla.org/en-US/).
 
+🚧 It is still in a preliminary version and under continuous development
+
 ## Overview
 
 Learning JavaScript has never been more accessible. NakhlahJS is designed to
@@ -33,11 +35,8 @@ help you achieve your learning goals.
 
 - [ ] Blogs page
 - [ ] Quizes system
-- [ ] Fixing janky ts-types
-- [ ] Main-Page ( Better design )
-- [ ] Login and save progress
 - [ ] Improve phone users experience
-- [ ] Next and prev lesson buttons
+- [ ] Next and prev lesson buttons (maybe?)
 
 ---
 

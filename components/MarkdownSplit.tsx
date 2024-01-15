@@ -1,8 +1,7 @@
-import { render } from "$gfm";
+import { render } from "https://deno.land/x/gfm/mod.ts";
 import { Course } from "../utils/types.ts";
 
 import EditButton from "../components/EditButton.tsx";
-import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
 
 export default function MarkdownSplit(
   { course, lable, lableSlug }: {
@@ -39,7 +38,9 @@ export default function MarkdownSplit(
         id="document"
         class="markdown-body"
         style={{ backgroundColor: "inherit" }}
-        dangerouslySetInnerHTML={{ __html: render(course.content) }}
+        dangerouslySetInnerHTML={{ __html: render(course.content, {
+          disableHtmlSanitization: true
+        }) }}
       />
     </section>
   );

@@ -1,6 +1,5 @@
 import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
-import { doTests } from "./DoTest.ts";
 
 interface EditorProps {
   preCode: string;
@@ -8,6 +7,7 @@ interface EditorProps {
   slug: string;
 }
 
+// deno-lint-ignore no-var
 declare var window: Window & typeof globalThis;
 interface Window {
   editor: any;
@@ -38,13 +38,11 @@ export default function Editor(props: EditorProps) {
   function handleCodeTest() {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
-    const runOutput = handleCodeRun();
     // TODO: test this why if it works
-    let testingcode = props.testingCode;
-    testingcode = testingcode + "\n" + "test(" + "'" + code + "'" + "," + "'" +
-      runOutput + "'" + ");";
+    let isPass = false;
+    let msg = "هناك خطأ في الاختبارات";
     try {
-      const { isPass, msg } = eval(testingcode);
+      eval(props.testingCode);
       if (isPass) {
         showToast({
           msg: "تم تجاوز الاختبارات بنجاح",
@@ -62,6 +60,7 @@ export default function Editor(props: EditorProps) {
         return;
       }
     } catch (error) {
+      console.log(error);
       showToast({
         msg: "لم يتم تجاوز الاختبارات",
         type: "error",

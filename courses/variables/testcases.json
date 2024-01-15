@@ -22,5 +22,6 @@
                 "regex": ".*"
             }
         }
-    ]
+    ],
+    "case-sensitivity-in-variables": []
 }

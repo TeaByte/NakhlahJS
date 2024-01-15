@@ -4,7 +4,7 @@ import { doTests } from "./DoTest.ts";
 
 interface EditorProps {
   preCode: string;
-  testcases: any[];
+  testingCode: string;
   slug: string;
 }
 
@@ -36,38 +36,39 @@ export default function Editor(props: EditorProps) {
     setOutput("");
   }
   function handleCodeTest() {
-    // setTesting(true);
-    // const code: string = window.editor.getValue() || "";
-    // const runOutput = handleCodeRun();
-    // const testcases = props.testcases;
-    // if (testcases.length === 0) {
-    //   showToast({
-    //     msg: "لا يوجد اختبارات لهذا الدرس",
-    //     type: "info",
-    //   });
-    //   return;
-    // }
-    // const pass = doTests(testcases, code, runOutput);
-    // if (pass) {
-    //   showToast({
-    //     msg: "تم تجاوز الاختبارات بنجاح",
-    //     type: "success",
-    //   });
-    //   localStorage.setItem(props.slug, "done");
-    //   setTesting(false);
-    //   return;
-    // } else {
-    //   showToast({
-    //     msg: "لم يتم تجاوز الاختبارات",
-    //     type: "error",
-    //   });
-    //   setTesting(false);
-    //   return;
-    // }
-    showToast({
-      msg: "هذه الميزة غير متوفرة حالياً",
-      type: "warning",
-    });
+    setTesting(true);
+    const code: string = window.editor.getValue() || "";
+    const runOutput = handleCodeRun();
+    // TODO: test this why if it works
+    let testingcode = props.testingCode;
+    testingcode = testingcode + "\n" + "test(" + "'" + code + "'" + "," + "'" +
+      runOutput + "'" + ");";
+    try {
+      const { isPass, msg } = eval(testingcode);
+      if (isPass) {
+        showToast({
+          msg: "تم تجاوز الاختبارات بنجاح",
+          type: "success",
+        });
+        localStorage.setItem(props.slug, "done");
+        setTesting(false);
+        return;
+      } else {
+        showToast({
+          msg: msg,
+          type: "error",
+        });
+        setTesting(false);
+        return;
+      }
+    } catch (error) {
+      showToast({
+        msg: "لم يتم تجاوز الاختبارات",
+        type: "error",
+      });
+      setTesting(false);
+      return;
+    }
   }
 
   function handleCodeRun() {

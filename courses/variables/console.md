@@ -20,7 +20,9 @@ JavaScript. يمكنك عبر المثال التالي:
 var myName = "Yazan";
 console.log(myName);
 ```
-
+<div class="quiz">
+قم بطباعة أي شيء على الشاشة
+</div>
 سيكون مخرج التعليمات البرمجية السابقه `Yazan` على الشاشة. **يمكن تنفي التعليمات
 السابقه في الموقع عبر الضغط على الرابط التالي **
 [هنا](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string).

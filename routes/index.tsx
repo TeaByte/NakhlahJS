@@ -21,15 +21,15 @@ export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     const courses = await getCourses(cache);
     const session = getCookies(_req.headers)["sessionId"];
+    const total = getNumberOfCourses(courses.courses);
     if (!session) {
       return ctx.render({
         completed: [],
-        total: getNumberOfCourses(courses.courses),
+        total: total,
         courses: courses.courses,
       });
     }
     const completed = (await getStudent(session)).completedCourses;
-    const total = getNumberOfCourses(courses.courses);
     return ctx.render({
       completed,
       total,

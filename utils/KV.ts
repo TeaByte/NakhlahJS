@@ -10,7 +10,7 @@ export const createStudent = async (): Promise<student> => {
     if (res.ok) {
         return student
     } else {
-        throw new Error("Failed to create student")
+        return { sessionId: "", completedCourses: [] } as student
     }
 }
 export const getStudent = async (sessionId: string): Promise<student> => {
@@ -18,7 +18,7 @@ export const getStudent = async (sessionId: string): Promise<student> => {
     if (student) {
         return student.value as student
     } else {
-        throw new Error("Failed to get student")
+        return { sessionId: "", completedCourses: [] } as student
     }
 }
 export const updateStudent = async (sessionId: string, student: student): Promise<Result> => {
@@ -26,7 +26,7 @@ export const updateStudent = async (sessionId: string, student: student): Promis
     if (res.ok) {
         return res
     } else {
-        throw new Error("Failed to update student")
+        return {ok: false} as Result
     }
 }
 export const addCompletedCourse = async (sessionId: string, course: string) : Promise<Result> => {
@@ -41,6 +41,6 @@ export const addCompletedCourse = async (sessionId: string, course: string) : Pr
         const res = await updateStudent(sessionId, student)
         return res
     } catch {
-        return { ok: false }
+        return { ok: false } as Result
     }
 }

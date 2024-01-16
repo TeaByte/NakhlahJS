@@ -9,23 +9,38 @@ import CourseCard from "../../components/CourseCard.tsx";
 import Footer from "../../components/Footer.tsx";
 
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
-
-export const handler: Handlers<CourseGroup> = {
-  GET(_req, ctx) {
+import { getCookies } from "$std/http/mod.ts";
+import { getStudent } from "../../utils/KV.ts";
+interface Props {
+  courses: CourseGroup;
+  completed: string[];
+}
+export const handler: Handlers<Props> = {
+  async GET(_req, ctx) {
     let foundCourseGroup: CourseGroup | Course | undefined = undefined;
     const toFind = decodeURIComponent(ctx.params.slug);
     foundCourseGroup = cache.courses.find((c) => {
       return "courses" in c && c.courses.length > 0 &&
         c.lableSlug === toFind;
     });
-
+    const session = getCookies(_req.headers)["sessionId"];
+    if (!session) {
+      return ctx.render({
+        completed: [],
+        courses: foundCourseGroup as CourseGroup,
+      });
+    }
+    let completed = (await getStudent(session)).completedCourses;
     if (!foundCourseGroup) return ctx.renderNotFound();
-    return ctx.render(foundCourseGroup as CourseGroup);
+    return ctx.render({
+      completed,
+      courses: foundCourseGroup as CourseGroup,
+    });
   },
 };
 
-export default function CoursePage(props: PageProps<CourseGroup>) {
-  const foundCourseGroup = props.data;
+export default function CoursePage(props: PageProps<Props>) {
+  const {courses:foundCourseGroup, completed} = props.data;
   return (
     <>
       <Head>
@@ -43,7 +58,7 @@ export default function CoursePage(props: PageProps<CourseGroup>) {
             </div>
             <div class="flex flex-col mt-2 pr-3">
               {foundCourseGroup.courses.map((innerCourse) => (
-                <CourseCard key={innerCourse.slug} course={innerCourse} />
+                <CourseCard isDone={completed ? completed.includes(innerCourse.slug) : false} key={innerCourse.slug} course={innerCourse} />
               ))}
             </div>
           </div>

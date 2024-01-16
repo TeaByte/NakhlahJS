@@ -1,10 +1,9 @@
-import { type PageProps } from "$fresh/server.ts";
+import { Handlers, type PageProps, FreshContext } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
 import Toast from "../islands/Toast.tsx";
 import { populateCache } from "../utils/course-cache.ts";
 
 populateCache();
-
 export default function App({ Component }: PageProps) {
   return (
     <html dir="rtl" lang="ar">

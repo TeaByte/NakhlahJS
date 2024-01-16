@@ -8,7 +8,7 @@ export async function handler(
     const resp = await ctx.next();
     const cookies = getCookies(req.headers);
     const sessionId = cookies["sessionId"] || "";
-    if (!sessionId) {
+    if (sessionId == "") {
         try {
             const student = await createStudent();
             const cookie: Cookie = {

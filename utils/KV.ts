@@ -32,7 +32,7 @@ export const updateStudent = async (sessionId: string, student: student): Promis
 export const addCompletedCourse = async (sessionId: string, course: string) : Promise<Result> => {
     const student = await getStudent(sessionId)
     if (student.completedCourses.includes(course)) {
-        throw new Error("Course already completed")
+        return { ok: true }
     }
     const completedCourses = student.completedCourses
     completedCourses.push(course)
@@ -41,6 +41,6 @@ export const addCompletedCourse = async (sessionId: string, course: string) : Pr
         const res = await updateStudent(sessionId, student)
         return res
     } catch {
-        throw new Error("Failed to add completed course")
+        return { ok: false }
     }
 }

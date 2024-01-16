@@ -9,7 +9,6 @@ import * as $about from "./routes/about.tsx";
 import * as $api_test from "./routes/api/test.ts";
 import * as $group_slug_ from "./routes/group/[slug].tsx";
 import * as $index from "./routes/index.tsx";
-import * as $DoTest from "./islands/DoTest.ts";
 import * as $Editor from "./islands/Editor.tsx";
 import * as $Progress from "./islands/Progress.tsx";
 import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
@@ -31,7 +30,6 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
-    "./islands/DoTest.ts": $DoTest,
     "./islands/Editor.tsx": $Editor,
     "./islands/Progress.tsx": $Progress,
     "./islands/ProgressCheck.tsx": $ProgressCheck,

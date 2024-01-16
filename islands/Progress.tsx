@@ -6,7 +6,6 @@ function Progress() {
   const [done, setDone] = useState(0);
   const [total, setTotal] = useState(0);
   useEffect(() => {
-    console.log(localStorage);
     const done = Object.keys(localStorage).filter((key) => {
       return localStorage.getItem(key) === "done";
     });

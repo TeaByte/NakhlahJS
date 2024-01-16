@@ -1,15 +1,16 @@
 import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
-import { doTests } from "./DoTest.ts";
 
 interface EditorProps {
   preCode: string;
-  testcases: any[];
+  testingCode: string;
   slug: string;
 }
 
+// deno-lint-ignore no-var
 declare var window: Window & typeof globalThis;
 interface Window {
+  // deno-lint-ignore no-explicit-any
   editor: any;
 }
 
@@ -36,38 +37,50 @@ export default function Editor(props: EditorProps) {
     setOutput("");
   }
   function handleCodeTest() {
-    // setTesting(true);
-    // const code: string = window.editor.getValue() || "";
-    // const runOutput = handleCodeRun();
-    // const testcases = props.testcases;
-    // if (testcases.length === 0) {
-    //   showToast({
-    //     msg: "لا يوجد اختبارات لهذا الدرس",
-    //     type: "info",
-    //   });
-    //   return;
-    // }
-    // const pass = doTests(testcases, code, runOutput);
-    // if (pass) {
-    //   showToast({
-    //     msg: "تم تجاوز الاختبارات بنجاح",
-    //     type: "success",
-    //   });
-    //   localStorage.setItem(props.slug, "done");
-    //   setTesting(false);
-    //   return;
-    // } else {
-    //   showToast({
-    //     msg: "لم يتم تجاوز الاختبارات",
-    //     type: "error",
-    //   });
-    //   setTesting(false);
-    //   return;
-    // }
-    showToast({
-      msg: "هذه الميزة غير متوفرة حالياً",
-      type: "warning",
-    });
+    setTesting(true);
+    const code: string = window.editor.getValue() || "";
+    if (props.testingCode === "") {
+      showToast(
+        {
+          msg: "لا يوجد اختبارات لهذا السؤال",
+          type: "info",
+        }
+      )
+      setTesting(false);
+      return;
+    }
+    
+    // deno-lint-ignore prefer-const
+    let isPass = false;
+    // deno-lint-ignore prefer-const
+    let msg = "هناك خطأ في الاختبارات";
+    try {
+      eval(props.testingCode);
+      if (isPass) {
+        showToast({
+          msg: "تم تجاوز الاختبارات بنجاح",
+          type: "success",
+        });
+        localStorage.setItem(props.slug, "done");
+        setTesting(false);
+        return;
+      } else {
+        showToast({
+          msg: msg,
+          type: "error",
+        });
+        setTesting(false);
+        return;
+      }
+    } catch (error) {
+      console.log(error);
+      showToast({
+        msg: "لم يتم تجاوز الاختبارات",
+        type: "error",
+      });
+      setTesting(false);
+      return;
+    }
   }
 
   function handleCodeRun() {
@@ -75,6 +88,7 @@ export default function Editor(props: EditorProps) {
     try {
       const capturedOutput: string[] = [];
       const originalConsoleLog = console.log;
+      // deno-lint-ignore no-explicit-any
       console.log = (...args: any[]) => {
         capturedOutput.push(
           args.map((arg) => {

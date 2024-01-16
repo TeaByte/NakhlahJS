@@ -24,3 +24,6 @@ var someVariable;
 var anotherVariableName;
 var thisVariableNameIsSoLong;
 ```
+<div class="quiz">
+قم بجمع متغيرين واجعلهما يساويان `5`. من ثم قم بطباعة الناتج في ال`console`.
+</div>

@@ -103,3 +103,15 @@ export async function getCourses(
   console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
   return cache;
 }
+
+export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
+  let count = 0;
+  for (const course of courses) {
+    if ("courses" in course) {
+      count += course.courses.length;
+    } else {
+      count++;
+    }
+  }
+  return count;
+} 

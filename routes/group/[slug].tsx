@@ -33,7 +33,7 @@ export default function CoursePage(props: PageProps<CourseGroup>) {
         <meta property="og:title" content="نخلة جي أس" />
       </Head>
       <main class="flex flex-col h-full-minus-bar">
-        <div class="w-full my-6 grow bg-base-300 rounded-btn flex flex-col justify-center items-center">
+        <div class="w-full my-6 grow bg-base-300 rounded-btn flex flex-col justify-center items-center py-8 md:py-0">
           <div>
             <div class="flex gap-1 items-center">
               <h2 class="text-3xl font-bold">

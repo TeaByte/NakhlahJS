@@ -11,9 +11,6 @@ import * as $api_test_finsh from "./routes/api/test/finsh.ts";
 import * as $group_slug_ from "./routes/group/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Editor from "./islands/Editor.tsx";
-import * as $Progress from "./islands/Progress.tsx";
-import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
-import * as $ProgressTrack from "./islands/ProgressTrack.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
 import * as $Toast from "./islands/Toast.tsx";
 import * as $signals_store from "./islands/signals/store.ts";
@@ -33,9 +30,6 @@ const manifest = {
   },
   islands: {
     "./islands/Editor.tsx": $Editor,
-    "./islands/Progress.tsx": $Progress,
-    "./islands/ProgressCheck.tsx": $ProgressCheck,
-    "./islands/ProgressTrack.tsx": $ProgressTrack,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
     "./islands/Toast.tsx": $Toast,
     "./islands/signals/store.ts": $signals_store,

@@ -1,4 +1,3 @@
-import Progress from "../islands/Progress.tsx";
 import Icon from "./Icon.tsx";
 import ProgressBar from "./ProgressBar.tsx";
 

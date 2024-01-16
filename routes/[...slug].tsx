@@ -9,7 +9,6 @@ import { getCourse, getJson } from "../utils/course.ts";
 import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
 
-import ProgressTrack from "../islands/ProgressTrack.tsx";
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
 
 export const handler: Handlers<

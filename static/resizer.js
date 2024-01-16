@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let isRight = true;
   const openEditorButton = document.querySelector("#open-editor");
   const pElement = openEditorButton.querySelector("p");
-  openEditorButton.addEventListener("touchend", function () {
+  openEditorButton.addEventListener("click", function () {
     if (isRight) {
       splitInstance.setSizes([100, 0]);
       isRight = false;

@@ -59,13 +59,9 @@ export default function BlogIndexPage(
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
         />
       </Head>
-      <main className="flex min-w-screen-md w-[75%] pt-12 mx-auto mb-6 max-sm:flex-col-reverse">
-        <div className="max-sm:w-full w-1/2 p-4">
-          <Courses completed={completed} courses={courses} />
-        </div>
-        <div className="max-sm:w-full w-1/2 p-4 flex flex-col gap-2">
-          <ProgressPageSplit completed={completed.length} total={total} />
-        </div>
+      <main className="max-w-screen-md px-4 pt-12 mx-auto mb-6">
+        <Courses completed={completed} courses={courses} />
+        <ProgressPageSplit completed={completed.length} total={total} />
       </main>
       <Footer />
     </>

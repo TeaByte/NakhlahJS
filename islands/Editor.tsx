@@ -36,7 +36,7 @@ export default function Editor(props: EditorProps) {
     window.editor.setValue("");
     setOutput("");
   }
-  function handleCodeTest() {
+  async function handleCodeTest() {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
     if (props.testingCode === "") {
@@ -61,7 +61,7 @@ export default function Editor(props: EditorProps) {
           msg: "تم تجاوز الاختبارات بنجاح",
           type: "success",
         });
-        fetch("/api/test/finsh", {
+        const res = await fetch("/api/test/finsh", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -70,6 +70,14 @@ export default function Editor(props: EditorProps) {
             courseslug: props.slug,
           }),
         });
+        if (!res.ok) {
+          showToast({
+            msg: "لم يتم تسجيل الاختبارات",
+            type: "error",
+          });
+          setTesting(false);
+          return;
+        }
         setTesting(false);
         return;
       } else {

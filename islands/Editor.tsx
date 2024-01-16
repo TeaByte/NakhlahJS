@@ -44,12 +44,12 @@ export default function Editor(props: EditorProps) {
         {
           msg: "لا يوجد اختبارات لهذا السؤال",
           type: "info",
-        }
-      )
+        },
+      );
       setTesting(false);
       return;
     }
-    
+
     // deno-lint-ignore prefer-const
     let isPass = false;
     // deno-lint-ignore prefer-const
@@ -61,7 +61,15 @@ export default function Editor(props: EditorProps) {
           msg: "تم تجاوز الاختبارات بنجاح",
           type: "success",
         });
-        localStorage.setItem(props.slug, "done");
+        fetch("/api/test/finsh", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            courseslug: props.slug,
+          }),
+        });
         setTesting(false);
         return;
       } else {

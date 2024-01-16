@@ -10,6 +10,7 @@ export default {
   ],
   plugins: [daisyui],
   daisyui: {
+    log: false,
     themes: ["dracula", "nord"],
   },
 } satisfies Config;

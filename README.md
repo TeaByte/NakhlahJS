@@ -34,7 +34,7 @@ help you achieve your learning goals.
 ## TODO LIST
 
 - [ ] Blogs page
-- [ ] Quizes system
+- [x] Quizes system
 - [ ] Improve phone users experience
 - [ ] Next and prev lesson buttons (maybe?)
 

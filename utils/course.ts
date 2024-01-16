@@ -4,6 +4,8 @@ import { extract } from "https://deno.land/std@0.151.0/encoding/front_matter.ts"
 
 import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
 
+export let CoursesCount = 0;
+
 export async function getGroupJsonData(
   groupPath: string,
 ): Promise<{ order: number; label: string; lableSlug: string } | undefined> {
@@ -66,6 +68,7 @@ export async function getCourses(
         const slug = groupFile.name.replace(".md", "");
         const coursePromise = getCourse(join(groupSlug, slug));
         groupPromises.push(coursePromise);
+        CoursesCount++;
       }
     }
 
@@ -86,6 +89,7 @@ export async function getCourses(
     } else if (file.name.endsWith(".md")) {
       const slug = file.name.replace(".md", "");
       nonGroupPromises.push(getCourse(slug));
+      CoursesCount++;
     }
   }
 
@@ -105,13 +109,5 @@ export async function getCourses(
 }
 
 export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
-  let count = 0;
-  for (const course of courses) {
-    if ("courses" in course) {
-      count += course.courses.length;
-    } else {
-      count++;
-    }
-  }
-  return count;
-} 
+  return CoursesCount;
+}

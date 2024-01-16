@@ -5,7 +5,6 @@ require.config({
 });
 
 require(["vs/editor/editor.main"], () => {
-  document.getElementById("editor-loading").style.display = "none";
   const isNord = localStorage.getItem("selectedTheme") === "nord";
   const vsTheme = isNord ? "vs-light" : "vs-dark";
   window.editor = monaco.editor.create(document.getElementById("editor"), {
@@ -16,4 +15,5 @@ require(["vs/editor/editor.main"], () => {
   setInterval(() => {
     editor.layout();
   }, 10);
+  document.getElementById("editor-loading").style.display = "none";
 });

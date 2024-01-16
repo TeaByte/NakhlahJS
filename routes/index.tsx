@@ -23,7 +23,6 @@ export const handler: Handlers<Props> = {
     const session = getCookies(_req.headers)["sessionId"];
     const completed = (await getStudent(session)).completedCourses;
     const total = getNumberOfCourses(courses.courses);
-    console.log(completed, total);
     return ctx.render({
       completed,
       total,

@@ -10,6 +10,7 @@ interface EditorProps {
 // deno-lint-ignore no-var
 declare var window: Window & typeof globalThis;
 interface Window {
+  // deno-lint-ignore no-explicit-any
   editor: any;
 }
 
@@ -38,8 +39,20 @@ export default function Editor(props: EditorProps) {
   function handleCodeTest() {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
-    // TODO: test this why if it works
+    if (props.testingCode === "") {
+      showToast(
+        {
+          msg: "لا يوجد اختبارات لهذا السؤال",
+          type: "info",
+        }
+      )
+      setTesting(false);
+      return;
+    }
+    
+    // deno-lint-ignore prefer-const
     let isPass = false;
+    // deno-lint-ignore prefer-const
     let msg = "هناك خطأ في الاختبارات";
     try {
       eval(props.testingCode);
@@ -75,6 +88,7 @@ export default function Editor(props: EditorProps) {
     try {
       const capturedOutput: string[] = [];
       const originalConsoleLog = console.log;
+      // deno-lint-ignore no-explicit-any
       console.log = (...args: any[]) => {
         capturedOutput.push(
           args.map((arg) => {

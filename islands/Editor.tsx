@@ -135,10 +135,10 @@ export default function Editor(props: EditorProps) {
       <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
         <div dir="rtl" class="flex gap-2">
           <button
-            class={"btn btn-info hover:opacity-75 grow " +
+            class={"btn btn-info grow border-0 " +
               (isError
                 ? "bg-error hover:bg-[#ff6868]"
-                : "bg-[#68e4ff] hover:bg-[#68e4ff]")}
+                : "bg-[#5bbcd1] hover:opacity-80")}
             onClick={handleCodeRun}
           >
             تشغيل

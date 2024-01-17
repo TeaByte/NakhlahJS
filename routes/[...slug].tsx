@@ -10,27 +10,24 @@ import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
 
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
-import { findNextCourse } from "../utils/course.ts";
 
 export const handler: Handlers<
   {
     course: Course;
     lable: string | undefined;
     lableSlug: string | undefined;
-    NextCourse: string | undefined;
   }
 > = {
   async GET(_req, ctx) {
     try {
       let lable: string | undefined;
       const course = await getCourse(ctx.params.slug);
-      const NextCourse = await findNextCourse(ctx.params.slug);
       if (ctx.params.slug.includes("/")) {
         const [lableSlug, lable] = await getJson(ctx.params.slug.split("/")[0]);
-        return ctx.render({ course, lable, lableSlug, NextCourse });
+        return ctx.render({ course, lable, lableSlug });
       }
       if (course === null) return ctx.renderNotFound();
-      return ctx.render({ course, lable: undefined, lableSlug: undefined, NextCourse });
+      return ctx.render({ course, lable: undefined, lableSlug: undefined });
     } catch {
       return ctx.renderNotFound();
     }
@@ -42,10 +39,9 @@ export default function CoursePage(
     course: Course;
     lable: string | undefined;
     lableSlug: string | undefined;
-    NextCourse: string | undefined;
   }>,
 ) {
-  const { course, lable, lableSlug, NextCourse } = props.data;
+  const { course, lable, lableSlug } = props.data;
   return (
     <>
       <Head>

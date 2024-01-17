@@ -57,7 +57,6 @@ export default function Editor(props: EditorProps) {
     try {
       eval(props.testingCode);
       if (isPass) {
-
         let courseSlug: string;
         // THIS FOR DEV MODE ONLY IT WILL BE REMOVED IN PRODUCTION
         // if (props.slug.includes("/")) {

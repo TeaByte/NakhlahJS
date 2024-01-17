@@ -29,7 +29,8 @@ export const handler: Handlers<Props> = {
         courses: courses.courses,
       });
     }
-    const completed = (await getStudent(session)).completedCourses;
+    const completed = (await getStudent(session))
+      ?.completedCourses ?? [];
     return ctx.render({
       completed,
       total,

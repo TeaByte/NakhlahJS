@@ -10,12 +10,15 @@ export const handler: Handlers<FinshTest> = {
       const FinshTest = (await req.json() as FinshTest)
       const courseslug = FinshTest.courseslug
       const sessionId = getCookies(req.headers)?.sessionId;
+      if (!sessionId) {
+        return new Response("no sessionId", { status: 400 })
+      }
       const res = await addCompletedCourse(sessionId, courseslug)
       if (!res.ok) {
         return new Response("error", { status: 400 })
       }
     } catch (error) {
-      return new Response("error", { status: 400 })
+      return new Response(`${error}`, { status: 400 })
     }
   return new Response("ok");
   },

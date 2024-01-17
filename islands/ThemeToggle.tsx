@@ -32,7 +32,7 @@ export default function ThemeToggle() {
 
   const handleThemeChange = () => {
     const storedTheme = localStorage.getItem("selectedTheme");
-    const newTheme = storedTheme === "nord" ? "dracula" : "nord";
+    const newTheme = storedTheme === "cmyk" ? "dracula" : "cmyk";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("selectedTheme", newTheme);
     updateMarkdownTheme(newTheme);

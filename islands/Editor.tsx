@@ -57,10 +57,6 @@ export default function Editor(props: EditorProps) {
     try {
       eval(props.testingCode);
       if (isPass) {
-        showToast({
-          msg: "تم تجاوز الاختبارات بنجاح",
-          type: "success",
-        });
         const res = await fetch("/api/test/finsh", {
           method: "POST",
           headers: {
@@ -77,6 +73,11 @@ export default function Editor(props: EditorProps) {
           });
           setTesting(false);
           return;
+        } else {
+          showToast({
+            msg: "تم تجاوز الاختبارات بنجاح",
+            type: "success",
+          });
         }
         setTesting(false);
         return;
@@ -89,7 +90,6 @@ export default function Editor(props: EditorProps) {
         return;
       }
     } catch (error) {
-      console.log(error);
       showToast({
         msg: "لم يتم تجاوز الاختبارات",
         type: "error",
@@ -164,7 +164,7 @@ export default function Editor(props: EditorProps) {
           className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow " +
             (isError ? "text-error" : "")}
         >
-{output}
+        {output}
         </pre>
       </div>
     </>

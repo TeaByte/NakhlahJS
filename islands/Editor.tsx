@@ -57,13 +57,20 @@ export default function Editor(props: EditorProps) {
     try {
       eval(props.testingCode);
       if (isPass) {
+
+        let courseSlug: string;
+        if (props.slug.includes("/")) {
+          courseSlug = props.slug.split("/")[0] + "\\" + props.slug.split("/")[1]
+        } else {
+          courseSlug = props.slug;
+        }
         const res = await fetch("/api/test/finsh", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify({
-            courseslug: props.slug,
+            courseslug: courseSlug,
           }),
         });
         if (!res.ok) {

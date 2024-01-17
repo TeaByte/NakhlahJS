@@ -19,6 +19,7 @@ export default function EditorSplit(props: { slug: string }) {
               class="flex h-full items-center justify-center text-lg rounded-btn text-base-content"
             >
               جاري تحميل المحرر
+              <span class="loading loading-lg ml-2"></span>
             </p>
           </div>
         </div>

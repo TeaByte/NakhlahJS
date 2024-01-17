@@ -12,7 +12,7 @@ export default function Collapse(
       </div>
       <div class="collapse-content flex flex-col">
         {courses.map((course) => (
-          <CourseCard isDone={completed ? completed.includes(course.slug) : false} key={course.slug} course={course} />
+          <CourseCard isDone={completed ? completed.includes(course.slug.replace("\\", "/")) : false} key={course.slug} course={course} />
         ))}
       </div>
     </div>

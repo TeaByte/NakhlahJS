@@ -17,7 +17,10 @@ export default function Courses(
     <>
       <div className="py-2 flex max-md:flex-col">
         <h1 class="w-1/2 max-md:w-full text-5xl font-bold z-10 mb-2 my-auto">الاساسيات</h1>
-        <ProgressPageSplit className="max-md:w-full " completed={completed.length} total={total} />
+        <p class="w-1/2 max-md:w-full text-2xl z-10 mb-2 my-auto">
+          لقد أتمت {completed.length} من {total} دورة تدريبية
+        </p>
+        <ProgressPageSplit className="w-1/2 " completed={completed.length} total={total} />
       </div>
       <section class="flex flex-col gap-2 mb-4">
         {courses.map((course, index) => {
@@ -38,7 +41,7 @@ export default function Courses(
               <div key={course.slug}>
                 <CourseCard
                   course={course}
-                  isDone={completed ? completed.includes(course.slug) : false}
+                  isDone={completed ? completed.includes(course.slug.replace("\\", "/")) : false}
                 />
               </div>
             );

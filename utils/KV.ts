@@ -31,6 +31,7 @@ export const updateStudent = async (sessionId: string, student: student): Promis
 }
 export const addCompletedCourse = async (sessionId: string, course: string) : Promise<Result> => {
     const student = await getStudent(sessionId)
+    course = course.replace("\\", "/");
     if (student.completedCourses.includes(course)) {
         return { ok: true }
     }

@@ -5,16 +5,11 @@ export default function ProgressPageSplit(
   props: { completed: number; total: number },
 ) {
   return (
-    <>
-      <h2 className="text-xl font-bold">تقدمك في إنجاز الدروس:</h2>
-      <div className="flex flex-col gap-2">
-        <h1 className="text-sm">
-          لقد أنجزت {props.completed} من أصل {props.total} درس
-        </h1>
+    <div class="flex-col w-1/2">
+      <h2 className="text-xl font-bold py-2">تقدمك في إنجاز الدروس:</h2>
         <ProgressBar
           progress={Math.floor((props.completed / props.total) * 100)}
         />
-      </div>
-    </>
+    </div>
   );
 }

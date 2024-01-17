@@ -8,33 +8,28 @@ import { cache } from "../utils/course-cache.ts";
 
 import Footer from "../components/Footer.tsx";
 import Courses from "../components/Courses.tsx";
-import ProgressPageSplit from "../components/ProgressPageSplit.tsx";
 import { getCookies } from "$std/http/mod.ts";
 import { getStudent } from "../utils/KV.ts";
 
 interface Props {
   courses: (Course | CourseGroup)[];
   completed: string[];
-  total: number;
 }
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     const courses = await getCourses(cache);
     const session = getCookies(_req.headers)["sessionId"];
-    const total = getNumberOfCourses(courses.courses);
     if (!session) {
       return ctx.render({
         completed: [],
-        total: total,
-        courses: courses.courses,
+        courses: courses.courses
       });
     }
     const completed = (await getStudent(session))
       ?.completedCourses ?? [];
     return ctx.render({
       completed,
-      total,
-      courses: courses.courses,
+      courses: courses.courses
     });
   },
 };
@@ -42,7 +37,7 @@ export const handler: Handlers<Props> = {
 export default function BlogIndexPage(
   props: PageProps<Props>,
 ) {
-  const { courses, completed, total } = props.data;
+  const { courses, completed } = props.data;
   return (
     <>
       <Head>
@@ -62,7 +57,6 @@ export default function BlogIndexPage(
       </Head>
       <main className="max-w-screen-md px-4 pt-12 mx-auto mb-6">
         <Courses completed={completed} courses={courses} />
-        <ProgressPageSplit completed={completed.length} total={total} />
       </main>
       <Footer />
     </>

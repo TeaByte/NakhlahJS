@@ -11,6 +11,6 @@ export default {
   plugins: [daisyui],
   daisyui: {
     log: false,
-    themes: ["night", "cmyk"],
+    themes: ["dracula", "nord"],
   },
 } satisfies Config;

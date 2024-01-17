@@ -13,7 +13,7 @@ export const handler: Handlers<FinshTest> = {
       if (!sessionId) {
         return new Response("no sessionId", { status: 400 })
       }
-      const res = await addCompletedCourse(sessionId, courseslug.replace("/", "\\"))
+      const res = await addCompletedCourse(sessionId, courseslug)
       if (!res.ok) {
         return new Response("error", { status: 400 })
       }

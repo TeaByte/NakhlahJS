@@ -59,7 +59,9 @@ export default function Editor(props: EditorProps) {
       if (isPass) {
 
         let courseSlug: string;
-        if (props.slug.includes("/")) {
+        if (props.slug.includes("\\")) {
+          courseSlug = props.slug
+        } else if (props.slug.includes("/")) {
           courseSlug = props.slug.split("/")[0] + "\\" + props.slug.split("/")[1]
         } else {
           courseSlug = props.slug;

@@ -64,7 +64,7 @@ export default function Editor(props: EditorProps) {
         // } else {
         //   courseSlug = props.slug;
         // }
-        courseSlug = props.slug
+        courseSlug = props.slug;
         const res = await fetch("/api/test/finsh", {
           method: "POST",
           headers: {
@@ -143,10 +143,8 @@ export default function Editor(props: EditorProps) {
       <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
         <div dir="rtl" class="flex gap-2">
           <button
-            class={"btn btn-info grow border-0 " +
-              (isError
-                ? "bg-error hover:bg-[#ff6868]"
-                : "bg-[#5bbcd1] hover:opacity-80")}
+            class={"btn btn-info hover:bg-[#5bbcd1] grow border-0 " +
+              (isError ? "bg-error hover:bg-[#ff6868]" : "hover:opacity-80")}
             onClick={handleCodeRun}
           >
             تشغيل

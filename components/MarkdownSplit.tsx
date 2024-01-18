@@ -20,19 +20,8 @@ export default function MarkdownSplit({
   return (
     <>
       <div class="flex px-2 pt-2 gap-2">
-        <div class="grow overflow-hidden">
-          {prevCourse && (
-            <a
-              href={`/${prevCourse}`}
-              class="flex items-center gap-2 btn btn-outline flex-nowrap"
-            >
-              <IconPlayerTrackNext size={18} />
-              <span>الدرس السابق</span>
-            </a>
-          )}
-        </div>
-        <div class="grow overflow-hidden">
-          {nextCourse && (
+        {nextCourse && (
+          <div class="grow overflow-hidden">
             <a
               href={`/${nextCourse}`}
               class="flex items-center gap-2 btn btn-outline flex-nowrap"
@@ -40,8 +29,20 @@ export default function MarkdownSplit({
               <span>الدرس التالي</span>
               <IconPlayerTrackPrev size={18} />
             </a>
-          )}
-        </div>
+          </div>
+        )}
+
+        {prevCourse && (
+          <div class="grow overflow-hidden">
+            <a
+              href={`/${prevCourse}`}
+              class="flex items-center gap-2 btn btn-outline flex-nowrap"
+            >
+              <IconPlayerTrackNext size={18} />
+              <span>الدرس السابق</span>
+            </a>
+          </div>
+        )}
       </div>
       <section dir="rtl" class="p-3 py-5 mb-24 md:mb-0">
         <div>

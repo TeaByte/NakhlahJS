@@ -9,20 +9,21 @@ export default function Courses(
   { courses, completed }: {
     courses: (Course | CourseGroup)[];
     completed: string[];
-    
   },
 ) {
   const total = getNumberOfCourses(courses);
   return (
     <>
-    <div className="py-2 bg-base-300 p-4 rounded-md">
-      <ProgressPageSplit
+      <div className="py-2 bg-base-300 p-4 rounded-md">
+        <ProgressPageSplit
           completed={completed.length}
           total={total}
         />
       </div>
-      <div className="py-2">
-        <h1 class="w-1/2 max-md:w-full text-5xl font-bold z-10 mb-2 my-auto">الاساسيات</h1>
+      <div className="mt-5">
+        <h1 class="w-1/2 max-md:w-full text-5xl font-bold z-10 mb-2 my-auto">
+          الاساسيات
+        </h1>
       </div>
       <section class="flex flex-col gap-2 mb-4">
         {courses.map((course, index) => {
@@ -43,7 +44,9 @@ export default function Courses(
               <div key={course.slug}>
                 <CourseCard
                   course={course}
-                  isDone={completed ? completed.includes(course.slug.replace("\\", "/")) : false}
+                  isDone={completed
+                    ? completed.includes(course.slug.replace("\\", "/"))
+                    : false}
                 />
               </div>
             );

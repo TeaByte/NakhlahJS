@@ -22,14 +22,14 @@ export const handler: Handlers<Props> = {
     if (!session) {
       return ctx.render({
         completed: [],
-        courses: courses.courses
+        courses: courses.courses,
       });
     }
     const completed = (await getStudent(session))
       ?.completedCourses ?? [];
     return ctx.render({
       completed,
-      courses: courses.courses
+      courses: courses.courses,
     });
   },
 };
@@ -55,7 +55,7 @@ export default function BlogIndexPage(
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
         />
       </Head>
-      <main className="max-w-screen-md px-4 pt-12 mx-auto mb-6">
+      <main className="max-w-screen-md px-4 pt-8 mx-auto mb-6">
         <Courses completed={completed} courses={courses} />
       </main>
       <Footer />

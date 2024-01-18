@@ -118,7 +118,6 @@ export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
   });
   const FlatSlugs = slugs.flat();
   return FlatSlugs.length;
-
 }
 
 export async function findNextCourse(slug: string) {

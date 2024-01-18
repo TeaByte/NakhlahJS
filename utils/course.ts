@@ -109,16 +109,7 @@ export async function getCourses(
 }
 
 export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
-  const slugs = courses.map((c) => {
-    if ("courses" in c) {
-      c.courses.sort((a, b) => a.order - b.order);
-      return c.courses.map((c) => c.slug.replace("\\", "/"));
-    }
-    return c.slug.replace("\\", "/");
-  });
-  const FlatSlugs = slugs.flat();
-  return FlatSlugs.length;
-
+  return CoursesCount;
 }
 
 export async function findNextCourse(slug: string) {

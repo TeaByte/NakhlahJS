@@ -15,12 +15,14 @@ export default function Courses(
   const total = getNumberOfCourses(courses);
   return (
     <>
-      <div className="py-2 flex max-md:flex-col">
+    <div className="py-2 bg-base-300 p-4 rounded-md">
+      <ProgressPageSplit
+          completed={completed.length}
+          total={total}
+        />
+      </div>
+      <div className="py-2">
         <h1 class="w-1/2 max-md:w-full text-5xl font-bold z-10 mb-2 my-auto">الاساسيات</h1>
-        <p class="w-1/2 max-md:w-full text-2xl z-10 mb-2 my-auto">
-          لقد أتمت {completed.length} من {total} دورة تدريبية
-        </p>
-        <ProgressPageSplit className="w-1/2 " completed={completed.length} total={total} />
       </div>
       <section class="flex flex-col gap-2 mb-4">
         {courses.map((course, index) => {

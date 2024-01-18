@@ -10,24 +10,30 @@ import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
 
 import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
+import { findNextCourse } from "../utils/course.ts";
+import { findPrevCourse } from "../utils/course.ts";
 
-export const handler: Handlers<
-  {
-    course: Course;
-    lable: string | undefined;
-    lableSlug: string | undefined;
-  }
-> = {
+interface Props   {
+  course: Course;
+  lable: string | undefined;
+  lableSlug: string | undefined;
+  nextCourse: string | undefined;
+  prevCourse: string | undefined;
+}
+
+export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     try {
       let lable: string | undefined;
       const course = await getCourse(ctx.params.slug);
+      if (course === null) return ctx.renderNotFound();
+      const nextCourse = await findNextCourse(ctx.params.slug);
+      const prevCourse = await findPrevCourse(ctx.params.slug);
       if (ctx.params.slug.includes("/")) {
         const [lableSlug, lable] = await getJson(ctx.params.slug.split("/")[0]);
-        return ctx.render({ course, lable, lableSlug });
+        return ctx.render({ course, lable, lableSlug, nextCourse, prevCourse });
       }
-      if (course === null) return ctx.renderNotFound();
-      return ctx.render({ course, lable: undefined, lableSlug: undefined });
+      return ctx.render({ course, lable: undefined, lableSlug: undefined, nextCourse, prevCourse });
     } catch {
       return ctx.renderNotFound();
     }
@@ -35,13 +41,9 @@ export const handler: Handlers<
 };
 
 export default function CoursePage(
-  props: PageProps<{
-    course: Course;
-    lable: string | undefined;
-    lableSlug: string | undefined;
-  }>,
+  props: PageProps<Props>,
 ) {
-  const { course, lable, lableSlug } = props.data;
+  const { course, lable, lableSlug, nextCourse, prevCourse } = props.data;
   return (
     <>
       <Head>
@@ -84,6 +86,8 @@ export default function CoursePage(
           </div>
           <div id="split-1" class="overflow-y-scroll">
             <MarkdownSplit
+              nextCourse={nextCourse}
+              prevCourse={prevCourse}
               course={course}
               lable={lable}
               lableSlug={lableSlug}

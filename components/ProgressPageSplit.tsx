@@ -1,4 +1,3 @@
-import Icon from "./Icon.tsx";
 import ProgressBar from "./ProgressBar.tsx";
 
 export default function ProgressPageSplit(

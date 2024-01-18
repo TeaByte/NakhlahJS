@@ -121,7 +121,7 @@ export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
 
 }
 
-export async function findNextCourse(slug: string): Promise<string | undefined> {
+export async function findNextCourse(slug: string) {
   const { courses } = await getCourses();
   const slugs = courses.map((c) => {
     if ("courses" in c) {
@@ -133,11 +133,11 @@ export async function findNextCourse(slug: string): Promise<string | undefined> 
   const FlatSlugs = slugs.flat();
   const index = FlatSlugs.indexOf(slug);
   if (index === -1) {
-    return undefined;
+    return slug;
   }
   return FlatSlugs[index + 1];
 }
-export async function findPrevCourse(slug: string): Promise<string | undefined> {
+export async function findPrevCourse(slug: string) {
   const { courses } = await getCourses();
   const slugs = courses.map((c) => {
     if ("courses" in c) {
@@ -149,7 +149,7 @@ export async function findPrevCourse(slug: string): Promise<string | undefined> 
   const FlatSlugs = slugs.flat();
   const index = FlatSlugs.indexOf(slug);
   if (index === 1) {
-    return undefined;
+    return slug;
   }
   return FlatSlugs[index - 1];
 }

@@ -13,7 +13,7 @@ export default function Footer() {
       title: "المجتمع",
       children: [
         { name: "قناه التلغرام", href: "https://t.me/NakhlahJS" },
-        { name: "المجتمع", href: "https://t.me/Unassisted" },
+        { name: "المجتمع", href: "https://t.me/NakhlahChat" },
       ],
     },
   ];

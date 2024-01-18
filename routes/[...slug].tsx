@@ -13,7 +13,7 @@ import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-wi
 import { findNextCourse } from "../utils/course.ts";
 import { findPrevCourse } from "../utils/course.ts";
 
-interface Props   {
+interface Props {
   course: Course;
   lable: string | undefined;
   lableSlug: string | undefined;
@@ -33,7 +33,13 @@ export const handler: Handlers<Props> = {
         const [lableSlug, lable] = await getJson(ctx.params.slug.split("/")[0]);
         return ctx.render({ course, lable, lableSlug, nextCourse, prevCourse });
       }
-      return ctx.render({ course, lable: undefined, lableSlug: undefined, nextCourse, prevCourse });
+      return ctx.render({
+        course,
+        lable: undefined,
+        lableSlug: undefined,
+        nextCourse,
+        prevCourse,
+      });
     } catch {
       return ctx.renderNotFound();
     }

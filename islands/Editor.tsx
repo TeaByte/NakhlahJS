@@ -127,8 +127,14 @@ export default function Editor(props: EditorProps) {
       if (code) {
         eval(code);
       }
+
       setIsError(false);
-      setOutput(capturedOutput.join("\n"));
+      if (capturedOutput.length > 0) {
+        setOutput(capturedOutput.join("\n"));
+      } else {
+        setOutput("لا يوجد اي شيء يتم طباعته");
+      }
+
       console.log = originalConsoleLog;
       return capturedOutput.join("\n");
     } catch (error) {
@@ -144,7 +150,9 @@ export default function Editor(props: EditorProps) {
         <div dir="rtl" class="flex gap-2">
           <button
             class={"btn btn-info hover:bg-[#5bbcd1] grow border-0 " +
-              (isError ? "bg-error hover:bg-[#ff6868]" : "hover:opacity-80")}
+              (isError
+                ? "bg-error hover:bg-[#ff6868]"
+                : "bg-[#5bbcd1] hover:opacity-80")}
             onClick={handleCodeRun}
           >
             تشغيل

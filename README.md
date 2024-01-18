@@ -36,7 +36,7 @@ help you achieve your learning goals.
 - [ ] Blogs page
 - [x] Quizes system
 - [ ] Improve phone users experience
-- [ ] Next and prev lesson buttons (maybe?)
+- [x] Next and prev lesson buttons
 
 ---
 

@@ -26,8 +26,8 @@ export default function MarkdownSplit({
               href={`/${nextCourse}`}
               class="flex items-center gap-2 btn btn-outline flex-nowrap"
             >
-              <span>الدرس التالي</span>
               <IconPlayerTrackPrev size={18} />
+              <span>الدرس التالي</span>
             </a>
           </div>
         )}
@@ -38,8 +38,8 @@ export default function MarkdownSplit({
               href={`/${prevCourse}`}
               class="flex items-center gap-2 btn btn-outline flex-nowrap"
             >
-              <IconPlayerTrackNext size={18} />
               <span>الدرس السابق</span>
+              <IconPlayerTrackNext size={18} />
             </a>
           </div>
         )}

@@ -6,7 +6,7 @@ import CourseCard from "./CourseCard.tsx";
 import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
 
 export default function Drawer(
-  { courses }: { courses: (Course | CourseGroup)[] },
+  { courses, completed }: { courses: (Course | CourseGroup)[], completed: string[] },
 ) {
   return (
     <div class="drawer">
@@ -35,6 +35,7 @@ export default function Drawer(
             if ("courses" in course) {
               return (
                 <Collapse
+                  completed={completed}
                   title={course.label || "بدون عنوان"}
                   courses={course.courses}
                 />
@@ -42,7 +43,9 @@ export default function Drawer(
             } else {
               return (
                 <li key={course.slug}>
-                  <CourseCard course={course} />
+                  <CourseCard course={course} isDone={completed
+                    ? completed.includes(course.slug.replace("\\", "/"))
+                    : false} />
                 </li>
               );
             }

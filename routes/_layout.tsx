@@ -1,10 +1,14 @@
 import { FreshContext, Handlers, type PageProps } from "$fresh/server.ts";
+import { getCookies } from "$std/http/mod.ts";
 import NavBar from "../components/Nav.tsx";
 import Toast from "../islands/Toast.tsx";
+import { getStudent } from "../utils/KV.ts";
 import { populateCache } from "../utils/course-cache.ts";
 
 populateCache();
-export default function App({ Component }: PageProps) {
+export default async function Layout(req: Request, ctx: FreshContext) {
+  const session = getCookies(req.headers)["sessionId"] ?? "";
+  const completed = (await getStudent(session))?.completedCourses ?? [];
   return (
     // Don't delete data-theme="dracula", used for defult theme and styles
     <html dir="rtl" lang="ar" data-theme="dracula">
@@ -26,8 +30,8 @@ export default function App({ Component }: PageProps) {
       </head>
       <body>
         <div class="h-screen">
-          <NavBar />
-          <Component />
+          <NavBar completed={completed} />
+          <ctx.Component />
           <Toast />
         </div>
       </body>

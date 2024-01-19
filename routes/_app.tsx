@@ -1,4 +1,4 @@
-import { Handlers, type PageProps, FreshContext } from "$fresh/server.ts";
+import { FreshContext, Handlers, type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
 import Toast from "../islands/Toast.tsx";
 import { populateCache } from "../utils/course-cache.ts";
@@ -6,7 +6,8 @@ import { populateCache } from "../utils/course-cache.ts";
 populateCache();
 export default function App({ Component }: PageProps) {
   return (
-    <html dir="rtl" lang="ar">
+    // Don't delete data-theme="dracula", used for defult theme and styles
+    <html dir="rtl" lang="ar" data-theme="dracula">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

@@ -44,7 +44,7 @@ export default function MarkdownSplit({
           </div>
         )}
       </div>
-      <section dir="rtl" class="p-3 py-5 mb-24 md:mb-0">
+      <section dir="rtl" class="p-3 mb-40 md:mb-0">
         <div>
           <div className="flex flex-col-reverse">
             <div class="flex flex-col-reverse text-sm breadcrumbs" dir="rtl">

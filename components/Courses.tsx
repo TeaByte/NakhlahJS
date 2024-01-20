@@ -1,22 +1,20 @@
-import { getNumberOfCourses } from "../utils/course.ts";
-import { Course, CourseGroup } from "../utils/types.ts";
+import { getNumberOfCourses } from "@/utils/course.ts";
+import { Course, CourseGroup } from "@/utils/types.ts";
 
 import Collapse from "./Collapse.tsx";
 import CourseCard from "./CourseCard.tsx";
-import ProgressPageSplit from "./ProgressPageSplit.tsx";
+import ProgressSection from "@/islands/ProgressSection.tsx";
 
 export default function Courses(
-  { courses, completed }: {
+  { courses }: {
     courses: (Course | CourseGroup)[];
-    completed: string[];
   },
 ) {
   const total = getNumberOfCourses(courses);
   return (
     <>
       <div className="py-2 bg-base-300 p-4 rounded-md">
-        <ProgressPageSplit
-          completed={completed.length}
+        <ProgressSection
           total={total}
         />
       </div>
@@ -32,7 +30,6 @@ export default function Courses(
             return (
               <div key={index} class="mt-1">
                 <Collapse
-                  completed={completed}
                   title={course.label}
                   courses={course.courses}
                 />
@@ -44,9 +41,6 @@ export default function Courses(
               <div key={course.slug}>
                 <CourseCard
                   course={course}
-                  isDone={completed
-                    ? completed.includes(course.slug.replace("\\", "/"))
-                    : false}
                 />
               </div>
             );

@@ -4,7 +4,6 @@ import ThemeToggle from "../islands/ThemeToggle.tsx";
 import Drawer from "./Drawer.tsx";
 
 export default function NavBar(
-  { completed }: { completed: string[] },
 ) {
   return (
     <nav class="bg-base-300 w-full py-4 px-4 flex items-center gap-4 border-b-2 nav">
@@ -32,7 +31,7 @@ export default function NavBar(
       </div>
       <div class="flex gap-2 items-center">
         <ThemeToggle />
-        <Drawer courses={cache.courses} completed={completed} />
+        <Drawer courses={cache.courses} />
       </div>
     </nav>
   );

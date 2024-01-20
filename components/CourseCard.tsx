@@ -1,8 +1,8 @@
-import { Course } from "../utils/types.ts";
+import { Course } from "@/utils/types.ts";
 
-import ProgressCheck from "./ProgressCheck.tsx";
+import ProgressCheck from "@/islands/ProgressCheck.tsx"
 
-export default function CourseCard(props: { course: Course; isDone: boolean }) {
+export default function CourseCard(props: { course: Course}) {
   const { course } = props;
   return (
     <a
@@ -12,7 +12,7 @@ export default function CourseCard(props: { course: Course; isDone: boolean }) {
       style={{ order: course.order }}
     >
       <h3 class="text-gray-500 font-bold flex gap-1 items-center">
-        <ProgressCheck isDone={props.isDone} />
+        <ProgressCheck slug={props.course.slug} />
         {course.title}
       </h3>
     </a>

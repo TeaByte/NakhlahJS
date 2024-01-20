@@ -3,7 +3,7 @@ import { Course, CourseGroup } from "@/utils/types.ts";
 
 import Collapse from "./Collapse.tsx";
 import CourseCard from "./CourseCard.tsx";
-import ProgressPageSplit from "../islands/ProgressSection.tsx";
+import ProgressSection from "@/islands/ProgressSection.tsx";
 
 export default function Courses(
   { courses, completed }: {
@@ -15,7 +15,7 @@ export default function Courses(
   return (
     <>
       <div className="py-2 bg-base-300 p-4 rounded-md">
-        <ProgressPageSplit
+        <ProgressSection
           total={total}
         />
       </div>

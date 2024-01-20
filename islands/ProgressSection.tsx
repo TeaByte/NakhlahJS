@@ -1,7 +1,7 @@
 import { useEffect, useState } from "preact/hooks";
 import ProgressBar from "./ProgressBar.tsx";
 
-export default function ProgressPageSplit(
+export default function ProgressSection(
   props: { total: number; className?: string },
 ) {
   const [completed, setCompleted] = useState(0);

@@ -36,7 +36,7 @@ export default function Editor(props: EditorProps) {
     window.editor.setValue("");
     setOutput("");
   }
-  async function handleCodeTest() {
+  function handleCodeTest() {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
     if (props.testingCode === "") {
@@ -49,7 +49,6 @@ export default function Editor(props: EditorProps) {
       setTesting(false);
       return;
     }
-
     // deno-lint-ignore prefer-const
     let isPass = false;
     // deno-lint-ignore prefer-const
@@ -58,40 +57,31 @@ export default function Editor(props: EditorProps) {
       eval(props.testingCode);
       if (isPass) {
         let courseSlug: string;
-        // THIS FOR DEV MODE ONLY IT WILL BE REMOVED IN PRODUCTION
-        // if (props.slug.includes("/")) {
-        //   courseSlug = props.slug.split("/")[0] + "\\" + props.slug.split("/")[1]
-        // } else {
-        //   courseSlug = props.slug;
-        // }
         courseSlug = props.slug;
-        const res = await fetch("/api/test/finsh", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            courseslug: courseSlug,
-          }),
-        });
-        if (!res.ok) {
-          showToast({
-            msg: "لم يتم تسجيل الاختبارات",
-            type: "error",
-          });
-          setTesting(false);
-          return;
+        const passedCourses = localStorage.getItem("passedCourses");
+        // check if there are a value in the local storage
+        if (passedCourses) {
+          const passedCoursesArray = JSON.parse(passedCourses);
+          // check if the course is already passed if not add it to the array and if yes do nothing
+          if (!passedCoursesArray.includes(courseSlug)) {
+            passedCoursesArray.push(courseSlug);
+            localStorage.setItem(
+              "passedCourses",
+              JSON.stringify(passedCoursesArray),
+            );
+          }
         } else {
-          showToast({
-            msg: "تم تجاوز الاختبارات بنجاح",
-            type: "success",
-          });
+          localStorage.setItem("passedCourses", JSON.stringify([courseSlug]));
         }
+        showToast({
+          msg: "تم تجاوز الاختبارات بنجاح",
+          type: "success",
+        });
         setTesting(false);
         return;
       } else {
         showToast({
-          msg: msg,
+          msg,
           type: "error",
         });
         setTesting(false);
@@ -178,7 +168,7 @@ export default function Editor(props: EditorProps) {
           className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow " +
             (isError ? "text-error" : "")}
         >
-        {output}
+          {output}
         </pre>
       </div>
     </>

@@ -2,7 +2,7 @@ import { Course } from "../utils/types.ts";
 import CourseCard from "./CourseCard.tsx";
 
 export default function Collapse(
-  { title, courses, completed }: { title: string; courses: Course[]; completed: string[] },
+  { title, courses }: { title: string; courses: Course[]; },
 ) {
   return (
     <div class="collapse collapse-arrow bg-base-300">

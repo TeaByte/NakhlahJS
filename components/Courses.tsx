@@ -6,9 +6,8 @@ import CourseCard from "./CourseCard.tsx";
 import ProgressSection from "@/islands/ProgressSection.tsx";
 
 export default function Courses(
-  { courses, completed }: {
+  { courses }: {
     courses: (Course | CourseGroup)[];
-    completed: string[];
   },
 ) {
   const total = getNumberOfCourses(courses);
@@ -31,7 +30,6 @@ export default function Courses(
             return (
               <div key={index} class="mt-1">
                 <Collapse
-                  completed={completed}
                   title={course.label}
                   courses={course.courses}
                 />

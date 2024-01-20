@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
-import { newPassSignal } from "./signals/store.ts"
+import { newPassSignal } from "./signals/store.ts";
 interface EditorProps {
   preCode: string;
   testingCode: string;
@@ -29,7 +29,11 @@ export default function Editor(props: EditorProps) {
 
   const [output, setOutput] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
+
   const [testing, setTesting] = useState<boolean>(false);
+  const [isTestPassed, setIsTestPassed] = useState<boolean | undefined>(
+    undefined,
+  );
   const { showToast } = useToast();
 
   function handleCodeClear() {
@@ -42,7 +46,7 @@ export default function Editor(props: EditorProps) {
     if (props.testingCode === "") {
       showToast(
         {
-          msg: "لا يوجد اختبارات لهذا السؤال",
+          msg: "لا يوجد اختبارات لهذا الدرس",
           type: "info",
         },
       );
@@ -78,6 +82,8 @@ export default function Editor(props: EditorProps) {
           type: "success",
         });
         newPassSignal.value = newPassSignal.value + 1;
+        setOutput("تم تجاوز الاختبارات بنجاح");
+        setIsTestPassed(true);
         setTesting(false);
         return;
       } else {
@@ -85,6 +91,8 @@ export default function Editor(props: EditorProps) {
           msg,
           type: "error",
         });
+        setOutput(`${msg}`);
+        setIsTestPassed(false);
         setTesting(false);
         return;
       }
@@ -93,6 +101,8 @@ export default function Editor(props: EditorProps) {
         msg: "لم يتم تجاوز الاختبارات",
         type: "error",
       });
+      setOutput(`${error}`);
+      setIsTestPassed(false);
       setTesting(false);
       return;
     }
@@ -101,6 +111,7 @@ export default function Editor(props: EditorProps) {
   function handleCodeRun() {
     const code: string | undefined = window.editor.getValue();
     try {
+      setIsTestPassed(undefined);
       const capturedOutput: string[] = [];
       const originalConsoleLog = console.log;
       // deno-lint-ignore no-explicit-any
@@ -155,7 +166,13 @@ export default function Editor(props: EditorProps) {
             مسح
           </button>
           <button
-            class="btn btn-active btn-ghost grow"
+            class={`btn grow border-0 ${
+              isTestPassed === undefined
+                ? "btn-active btn-ghost"
+                : isTestPassed
+                ? "btn-info bg-success hover:bg-[#9bc27a]"
+                : "btn-info bg-error hover:bg-[#ff6868]"
+            }`}
             onClick={handleCodeTest}
             disabled={testing}
           >

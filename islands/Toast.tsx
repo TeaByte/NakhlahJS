@@ -12,33 +12,33 @@ export default function Toast() {
         <div class="toast text-2xl text-center toast-start mr-4 animation-toast z-[1000]">
           {ToastSignal.value.type === "success"
             ? (
-              <div class="alert alert-success">
+              <div class="alert alert-success flex">
                 <span>{ToastSignal.value.message}</span>
               </div>
             )
             : (
               ToastSignal.value.type === "error"
                 ? (
-                  <div class="alert alert-error">
+                  <div class="alert alert-error flex">
                     <span>{ToastSignal.value.message}</span>
                   </div>
                 )
                 : (
                   ToastSignal.value.type === "warning"
                     ? (
-                      <div class="alert alert-warning">
+                      <div class="alert alert-warning flex">
                         <span>{ToastSignal.value.message}</span>
                       </div>
                     )
                     : (
                       ToastSignal.value.type === "info"
                         ? (
-                          <div class="alert alert-info">
+                          <div class="alert alert-info flex">
                             <span>{ToastSignal.value.message}</span>
                           </div>
                         )
                         : (
-                          <div class="alert">
+                          <div class="alert flex">
                             <span>{ToastSignal.value.message}</span>
                           </div>
                         )

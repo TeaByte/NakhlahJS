@@ -1,6 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { useToast } from "./useToast.ts";
-
+import { newPassSignal } from "./signals/store.ts"
 interface EditorProps {
   preCode: string;
   testingCode: string;
@@ -77,6 +77,7 @@ export default function Editor(props: EditorProps) {
           msg: "تم تجاوز الاختبارات بنجاح",
           type: "success",
         });
+        newPassSignal.value = newPassSignal.value + 1;
         setTesting(false);
         return;
       } else {

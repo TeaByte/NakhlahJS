@@ -30,10 +30,12 @@ export default function Editor(props: EditorProps) {
   const [output, setOutput] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
 
+  const [numberOfTest, setNumberOfTest] = useState<number>(1);
   const [testing, setTesting] = useState<boolean>(false);
   const [isTestPassed, setIsTestPassed] = useState<boolean | undefined>(
     undefined,
   );
+
   const { showToast } = useToast();
 
   function handleCodeClear() {
@@ -58,6 +60,22 @@ export default function Editor(props: EditorProps) {
     // deno-lint-ignore prefer-const
     let msg = "هناك خطأ في الاختبارات";
     try {
+      try {
+        eval(code);
+      } catch (e) {
+        setTesting(false);
+        setIsTestPassed(false);
+        setNumberOfTest(numberOfTest + 1);
+        setIsError(true);
+        showToast({
+          msg: "هناك خطأ في الكود",
+          type: "error",
+        });
+        setOutput(`[Test Failed, ${numberOfTest}]\n${e}`);
+        return;
+      }
+
+      setIsError(false);
       eval(props.testingCode);
       if (isPass) {
         let courseSlug: string;
@@ -82,7 +100,7 @@ export default function Editor(props: EditorProps) {
           type: "success",
         });
         newPassSignal.value = newPassSignal.value + 1;
-        setOutput("تم تجاوز الاختبارات بنجاح");
+        setOutput("[Test Passed] -> تم تجاوز الاختبارات بنجاح");
         setIsTestPassed(true);
         setTesting(false);
         return;
@@ -91,9 +109,10 @@ export default function Editor(props: EditorProps) {
           msg,
           type: "error",
         });
-        setOutput(`${msg}`);
+        setOutput(`[Test Failed, ${numberOfTest}] -> ${msg}`);
         setIsTestPassed(false);
         setTesting(false);
+        setNumberOfTest(numberOfTest + 1);
         return;
       }
     } catch (error) {

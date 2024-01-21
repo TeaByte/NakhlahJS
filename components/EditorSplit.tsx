@@ -14,13 +14,15 @@ export default function EditorSplit(props: { slug: string }) {
             dir="ltr"
             id="editor"
           >
-            <p
+            <div
               id="editor-loading"
-              class="flex h-full items-center justify-center text-lg rounded-btn text-base-content"
+              class="overflow-hidden flex justify-center items-center h-full"
             >
-              جاري تحميل المحرر
-              <span class="loading loading-lg ml-2"></span>
-            </p>
+              <p class="flex h-full items-center justify-center text-lg rounded-btn text-base-content">
+                جاري تحميل المحرر
+                <span class="loading loading-lg ml-2"></span>
+              </p>
+            </div>
           </div>
         </div>
       </div>

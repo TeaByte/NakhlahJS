@@ -18,17 +18,19 @@ export default function Courses(
           total={total}
         />
       </div>
-      <div className="mt-5">
+      {
+        /* <div className="mt-5">
         <h1 class="w-1/2 max-md:w-full text-5xl font-bold z-10 mb-2 my-auto">
           الاساسيات
         </h1>
-      </div>
-      <section class="flex flex-col gap-2 mb-4">
+      </div> */
+      }
+      <section class="flex flex-col gap-2 mb-4 mt-6">
         {courses.map((course, index) => {
           // Group of courses
           if ("courses" in course) {
             return (
-              <div key={index} class="mt-1">
+              <div key={index}>
                 <Collapse
                   title={course.label}
                   courses={course.courses}

@@ -1,3 +1,4 @@
+import ProgressCheck from "@/islands/ProgressCheck.tsx";
 import { Course, CourseGroup } from "../utils/types.ts";
 
 import Collapse from "./Collapse.tsx";
@@ -42,7 +43,17 @@ export default function Drawer(
             } else {
               return (
                 <li key={course.slug}>
-                  <CourseCard course={course} />
+                  <a
+                    title={course.title}
+                    href={`/${course.slug}`}
+                    class="py-2 gray-200 hover:opacity-75 list-none"
+                    style={{ order: course.order }}
+                  >
+                    <h3 class="text-gray-500 font-bold flex gap-1 items-center">
+                      <ProgressCheck slug={course.slug} />
+                      {course.title}
+                    </h3>
+                  </a>
                 </li>
               );
             }

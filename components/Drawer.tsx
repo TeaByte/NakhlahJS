@@ -2,7 +2,6 @@ import ProgressCheck from "@/islands/ProgressCheck.tsx";
 import { Course, CourseGroup } from "../utils/types.ts";
 
 import Collapse from "./Collapse.tsx";
-import CourseCard from "./CourseCard.tsx";
 
 import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
 

@@ -11,7 +11,7 @@ function SW() {
             await caches.delete(key)
         }
         const cache = await caches.open("cache-v1")
-        await cache.addAll(data)
+        await cache.addAll([...data, "/"])
         showToast({
             msg: "تم تحميل الدروس بنجاح",
             type: "info",

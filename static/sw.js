@@ -9,9 +9,9 @@ self.addEventListener('install', async function (event) {
     })
   );
   const resp = await fetch('/sw-cache.json');
-  const FILES_TO_CACHE = await resp.json();
+  const data = await resp.json();
   caches.open(CACHE_NAME).then(function (cache) {
-    return cache.addAll(FILES_TO_CACHE);
+    return cache.addAll([...data, "/"]);
   })
 
 });
@@ -30,8 +30,8 @@ self.addEventListener('activate', function (event) {
   event.waitUntil(
     caches.open(CACHE_NAME).then(async function (cache) {
       const resp = await fetch('/sw-cache.json');
-      const FILES_TO_CACHE = await resp.json();
-      return cache.addAll(FILES_TO_CACHE);
+      const data = await resp.json();
+      return cache.addAll([...data, "/"]);
     })
   );
 });

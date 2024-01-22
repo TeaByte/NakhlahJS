@@ -1,5 +1,4 @@
 import { useEffect, useState } from "preact/hooks";
-import { useToast } from "./useToast.ts";
 import { newPassSignal } from "./signals/store.ts";
 interface EditorProps {
   preCode: string;
@@ -12,6 +11,8 @@ declare var window: Window & typeof globalThis;
 interface Window {
   // deno-lint-ignore no-explicit-any
   editor: any;
+  // deno-lint-ignore no-explicit-any
+  testPassedEffect: any;
 }
 
 export default function Editor(props: EditorProps) {
@@ -36,8 +37,6 @@ export default function Editor(props: EditorProps) {
     undefined,
   );
 
-  const { showToast } = useToast();
-
   function handleCodeClear() {
     window.editor.setValue("");
     setOutput("");
@@ -46,12 +45,7 @@ export default function Editor(props: EditorProps) {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
     if (props.testingCode === "") {
-      showToast(
-        {
-          msg: "لا يوجد اختبارات لهذا الدرس",
-          type: "info",
-        },
-      );
+      setOutput("لا يوجد اختبارات لهذا الدرس");
       setTesting(false);
       return;
     }
@@ -67,10 +61,6 @@ export default function Editor(props: EditorProps) {
         setIsTestPassed(false);
         setNumberOfTest(numberOfTest + 1);
         setIsError(true);
-        showToast({
-          msg: "هناك خطأ في الكود",
-          type: "error",
-        });
         setOutput(`[Test Failed, ${numberOfTest}]\n${e}`);
         return;
       }
@@ -95,20 +85,13 @@ export default function Editor(props: EditorProps) {
         } else {
           localStorage.setItem("passedCourses", JSON.stringify([courseSlug]));
         }
-        showToast({
-          msg: "تم تجاوز الاختبارات بنجاح",
-          type: "success",
-        });
         newPassSignal.value = newPassSignal.value + 1;
         setOutput("[Test Passed] -> تم تجاوز الاختبارات بنجاح");
         setIsTestPassed(true);
         setTesting(false);
+        window.testPassedEffect();
         return;
       } else {
-        showToast({
-          msg,
-          type: "error",
-        });
         setOutput(`[Test Failed, ${numberOfTest}] -> ${msg}`);
         setIsTestPassed(false);
         setTesting(false);
@@ -116,10 +99,6 @@ export default function Editor(props: EditorProps) {
         return;
       }
     } catch (error) {
-      showToast({
-        msg: "لم يتم تجاوز الاختبارات",
-        type: "error",
-      });
       setOutput(`${error}`);
       setIsTestPassed(false);
       setTesting(false);
@@ -203,7 +182,7 @@ export default function Editor(props: EditorProps) {
         </div>
         <pre
           className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow " +
-            (isError ? "text-error" : "")}
+            (isError ? "text-error" : isTestPassed ? "text-success" : "")}
         >
           {output}
         </pre>

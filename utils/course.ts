@@ -5,6 +5,7 @@ import { extract } from "https://deno.land/std@0.151.0/encoding/front_matter.ts"
 import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
 
 export let CoursesCount = 0;
+export let FlatSlugsCache: string[] = [];
 
 export async function getGroupJsonData(
   groupPath: string,
@@ -104,23 +105,15 @@ export async function getCourses(
   cache.courses = merged;
 
   const endTime = performance.now();
-  console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
+  // console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
   return cache;
 }
 
-export function getNumberOfCourses(courses: (Course | CourseGroup)[]) {
-  const slugs = courses.map((c) => {
-    if ("courses" in c) {
-      c.courses.sort((a, b) => a.order - b.order);
-      return c.courses.map((c) => c.slug.replace("\\", "/"));
-    }
-    return c.slug.replace("\\", "/");
-  });
-  const FlatSlugs = slugs.flat();
-  return FlatSlugs.length;
-}
-
-export async function findNextCourse(slug: string) {
+export async function getFlatSlugs() {
+  if (FlatSlugsCache.length > 0) {
+    // console.log("Using cache");
+    return FlatSlugsCache;
+  }
   const { courses } = await getCourses();
   const slugs = courses.map((c) => {
     if ("courses" in c) {
@@ -130,22 +123,25 @@ export async function findNextCourse(slug: string) {
     return c.slug.replace("\\", "/");
   });
   const FlatSlugs = slugs.flat();
+  FlatSlugsCache = FlatSlugs;
+  return FlatSlugs;
+}
+export async function getNumberOfCourses() {
+  const FlatSlugs = await getFlatSlugs();
+  return FlatSlugs.length;
+}
+
+export async function findNextCourse(slug: string) {
+  const FlatSlugs = await getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
   if (index === -1) {
     return slug;
   }
   return FlatSlugs[index + 1];
 }
+
 export async function findPrevCourse(slug: string) {
-  const { courses } = await getCourses();
-  const slugs = courses.map((c) => {
-    if ("courses" in c) {
-      c.courses.sort((a, b) => a.order - b.order);
-      return c.courses.map((c) => c.slug.replace("\\", "/"));
-    }
-    return c.slug.replace("\\", "/");
-  });
-  const FlatSlugs = slugs.flat();
+  const FlatSlugs = await getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
   if (index === 1) {
     return slug;

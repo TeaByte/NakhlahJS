@@ -2,20 +2,24 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 
-import { getCourses, getNumberOfCourses } from "../utils/course.ts";
+import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
 import { cache } from "../utils/course-cache.ts";
 
 import Footer from "../components/Footer.tsx";
 import Courses from "../components/Courses.tsx";
+import { getNumberOfCourses } from "@/utils/course.ts";
 
 interface Props {
   courses: (Course | CourseGroup)[];
+  total: number;
 }
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     const courses = await getCourses(cache);
+    const total = await getNumberOfCourses();
     return ctx.render({
+      total,
       courses: courses.courses,
     });
   },
@@ -24,7 +28,7 @@ export const handler: Handlers<Props> = {
 export default function BlogIndexPage(
   props: PageProps<Props>,
 ) {
-  const { courses } = props.data;
+  const { courses,total } = props.data;
   return (
     <>
       <Head>
@@ -43,7 +47,7 @@ export default function BlogIndexPage(
         />
       </Head>
       <main className="max-w-screen-md px-4 pt-8 mx-auto mb-6">
-        <Courses courses={courses} />
+        <Courses total={total} courses={courses} />
       </main>
       <Footer />
     </>

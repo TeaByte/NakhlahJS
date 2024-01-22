@@ -23,7 +23,7 @@ export default async function Layout(req: Request, ctx: FreshContext) {
           rel="stylesheet"
         />
         <script src="/theme-loader.js"></script>
-        <script src="/sw-rg.js"></script>
+        <script type="module" src="/sw-rg.js"></script>
       </head>
       <body>
         <div class="h-screen">

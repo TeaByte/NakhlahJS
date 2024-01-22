@@ -6,11 +6,11 @@ import CourseCard from "./CourseCard.tsx";
 import ProgressSection from "@/islands/ProgressSection.tsx";
 
 export default function Courses(
-  { courses }: {
+  { courses, total }: {
     courses: (Course | CourseGroup)[];
+    total: number;
   },
 ) {
-  const total = getNumberOfCourses(courses);
   return (
     <>
       <div className="py-2 bg-base-300 p-4 rounded-md">

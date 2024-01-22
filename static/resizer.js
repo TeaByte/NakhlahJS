@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.testPassedEffect = function () {
     const duration = 15 * 200,
       animationEnd = Date.now() + duration,
-      defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 0 };
+      defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };
 
     function randomInRange(min, max) {
       return Math.random() * (max - min) + min;

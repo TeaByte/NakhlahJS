@@ -21,6 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let isRight = true;
+  const markdownSplit = document.getElementById("split-1");
+  const editorSplit = document.getElementById("split-0");
   const openEditorButton = document.querySelector("#open-editor");
   const pElement = openEditorButton.querySelector("p");
   openEditorButton.addEventListener("click", function () {
@@ -34,4 +36,14 @@ document.addEventListener("DOMContentLoaded", function () {
       pElement.textContent = "فتح المحرر";
     }
   });
+
+  setInterval(() => {
+    if (markdownSplit.offsetWidth === 0) {
+      isRight = false;
+      pElement.textContent = "فتح الدرس";
+    } else if (editorSplit.offsetWidth === 0) {
+      isRight = true;
+      pElement.textContent = "فتح المحرر";
+    }
+  }, 100);
 });

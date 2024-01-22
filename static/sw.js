@@ -1,5 +1,13 @@
-const CACHE_NAME = 'static-cache-v1';
+const CACHE_NAME = 'cache-' + Math.floor(Math.random() * 1000000);
 self.addEventListener('install', async function(event) {
+    const cacheNames = await caches.keys();
+    await Promise.all(
+        cacheNames.map(function(cacheName) {
+            if (cacheName !== CACHE_NAME) {
+                return caches.delete(cacheName);
+            }
+        })
+    );
     const resp = await fetch('/sw-cache.json');
     const FILES_TO_CACHE = await resp.json();
     console.log('Installing Service Worker...');

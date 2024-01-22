@@ -22,6 +22,7 @@ export default async function Layout(req: Request, ctx: FreshContext) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
+        <link rel="manifest" href="/manifest.json" />
         <script src="/theme-loader.js"></script>
         <script type="module" src="/sw-rg.js"></script>
       </head>

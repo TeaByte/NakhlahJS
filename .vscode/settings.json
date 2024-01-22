@@ -12,7 +12,7 @@
     "editor.defaultFormatter": "denoland.vscode-deno"
   },
   "[javascript]": {
-    "editor.defaultFormatter": "denoland.vscode-deno"
+    "editor.defaultFormatter": "vscode.typescript-language-features"
   },
   "css.customData": [
     ".vscode/tailwind.json"

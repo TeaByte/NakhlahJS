@@ -73,7 +73,7 @@ export default function Footer() {
               href="https://t.me/NakhlahChat"
               target="_blank"
             >
-              المجتمع
+              جروب التلغرام
             </a>
           </li>
         </ul>

@@ -1,7 +1,7 @@
 import { join } from "$std/path/mod.ts";
 import { readJson } from "https://deno.land/std@0.66.0/fs/read_json.ts";
 import { extract } from "https://deno.land/std@0.151.0/encoding/front_matter.ts";
-
+import { cache as CourceCache } from "@/utils/course-cache.ts";
 import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
 
 export let CoursesCount = 0;
@@ -105,7 +105,7 @@ export async function getCourses(
   cache.courses = merged;
 
   const endTime = performance.now();
-  // console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
+  console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
   return cache;
 }
 
@@ -114,7 +114,7 @@ export async function getFlatSlugs() {
     // console.log("Using cache");
     return FlatSlugsCache;
   }
-  const { courses } = await getCourses();
+  const courses = CourceCache.courses;
   const slugs = courses.map((c) => {
     if ("courses" in c) {
       c.courses.sort((a, b) => a.order - b.order);

@@ -2,7 +2,6 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 
-import { getCourses } from "../utils/course.ts";
 import { Course, CourseGroup } from "../utils/types.ts";
 import { cache } from "../utils/course-cache.ts";
 
@@ -16,11 +15,11 @@ interface Props {
 }
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
-    const courses = await getCourses(cache);
+    const courses = cache.courses;
     const total = await getNumberOfCourses();
     return ctx.render({
       total,
-      courses: courses.courses,
+      courses: courses,
     });
   },
 };
@@ -28,7 +27,7 @@ export const handler: Handlers<Props> = {
 export default function BlogIndexPage(
   props: PageProps<Props>,
 ) {
-  const { courses,total } = props.data;
+  const { courses, total } = props.data;
   return (
     <>
       <Head>

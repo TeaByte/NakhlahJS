@@ -19,7 +19,7 @@ export default function Courses(
           total={total}
         />
       </div>
-      <SW />
+      {/* <SW /> Self-DOS :) */}
       <section class="flex flex-col gap-2 mb-4 mt-6">
         {courses.map((course, index) => {
           // Group of courses

@@ -1,9 +1,10 @@
 import { FreshContext, Handlers, type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
 import Toast from "../islands/Toast.tsx";
-import { populateCache } from "../utils/course-cache.ts";
 
+import { populateCache } from "../utils/course-cache.ts";
 populateCache();
+
 export default async function Layout(req: Request, ctx: FreshContext) {
   return (
     // Don't delete data-theme="dracula", used for defult theme and styles

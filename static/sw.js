@@ -25,6 +25,7 @@ self.addEventListener('activate', function (event) {
   );
 });
 self.addEventListener('fetch', function (event) {
+  // TODO: make external resources cache first and the rest network first and if offline use cache if available and if not use fallback
   event.respondWith(
     caches.match(event.request).then(function (response) {
       if (!response) {

@@ -25,16 +25,14 @@ self.addEventListener('activate', function (event) {
   );
 });
 self.addEventListener('fetch', function (event) {
-  event.respondWith(() => {
-    if (!navigator.onLine) {
-      return caches.match(event.request).then(function (response) {
-        if (response) {
-          return response;
-        }
-        return caches.match('/offline');
-      });
-    }
-    return fetch(event.request);
-  }
+  event.respondWith(
+    caches.match(event.request).then(function (response) {
+      if (!response) {
+        caches.open(CACHE_NAME).then(function (cache) {
+          cache.add(event.request.url);
+        });
+      }
+      return response || fetch(event.request);
+    })
   );
 });

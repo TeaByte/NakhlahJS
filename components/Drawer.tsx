@@ -45,7 +45,7 @@ export default function Drawer(
                   <a
                     title={course.title}
                     href={`/${course.slug}`}
-                    class="py-2 gray-200 hover:opacity-75 list-none"
+                    class="gray-200 hover:opacity-75 list-none bg-base-100 rounded-btn py-4"
                     style={{ order: course.order }}
                   >
                     <h3 class="text-gray-500 font-bold flex gap-1 items-center">

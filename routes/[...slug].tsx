@@ -53,7 +53,7 @@ export default function CoursePage(
   return (
     <>
       <Head>
-        <title>نخلة - {course.title}</title>
+        <title>{course.title}</title>
         <meta name="description" content={course.snippet} />
         <meta name="keywords" content={`${course.title}, ${course.snippet}`} />
         <meta property="og:title" content={course.title} />

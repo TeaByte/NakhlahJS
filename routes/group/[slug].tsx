@@ -5,15 +5,16 @@ import { PageProps } from "$fresh/server.ts";
 import { Course, CourseGroup } from "../../utils/types.ts";
 import { cache } from "../../utils/course-cache.ts";
 
-import CourseCard from "../../components/CourseCard.tsx";
 import Footer from "../../components/Footer.tsx";
 
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
+import ProgressCheck from "@/islands/ProgressCheck.tsx";
+
 interface Props {
   courses: CourseGroup;
 }
 export const handler: Handlers<Props> = {
-  async GET(_req, ctx) {
+  GET(_req, ctx) {
     let foundCourseGroup: CourseGroup | Course | undefined = undefined;
     const toFind = decodeURIComponent(ctx.params.slug);
     foundCourseGroup = cache.courses.find((c) => {
@@ -28,7 +29,7 @@ export const handler: Handlers<Props> = {
 };
 
 export default function CoursePage(props: PageProps<Props>) {
-  const {courses:foundCourseGroup} = props.data;
+  const { courses: foundCourseGroup } = props.data;
   return (
     <>
       <Head>
@@ -44,9 +45,19 @@ export default function CoursePage(props: PageProps<Props>) {
               </h2>
               <IconChevronDown />
             </div>
-            <div class="flex flex-col mt-2 pr-3">
-              {foundCourseGroup.courses.map((innerCourse) => (
-                <CourseCard key={innerCourse.slug} course={innerCourse} />
+            <div class="flex flex-col mt-2 pr-3 gap-3">
+              {foundCourseGroup.courses.map((course) => (
+                <a
+                  title={course.title}
+                  href={`/${course.slug}`}
+                  class="gray-200 hover:opacity-75 list-none"
+                  style={{ order: course.order }}
+                >
+                  <h3 class="text-gray-500 font-bold flex gap-1 items-center rounded-btn">
+                    <ProgressCheck slug={course.slug} />
+                    {course.title}
+                  </h3>
+                </a>
               ))}
             </div>
           </div>

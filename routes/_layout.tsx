@@ -1,9 +1,10 @@
 import { FreshContext, Handlers, type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
 import Toast from "../islands/Toast.tsx";
-import { populateCache } from "../utils/course-cache.ts";
 
+import { populateCache } from "../utils/course-cache.ts";
 populateCache();
+
 export default async function Layout(req: Request, ctx: FreshContext) {
   return (
     // Don't delete data-theme="dracula", used for defult theme and styles
@@ -22,6 +23,13 @@ export default async function Layout(req: Request, ctx: FreshContext) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
+
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=G-TDHJL7ZT23"
+        >
+        </script>
+
         <link rel="manifest" href="/manifest.json" />
         <script src="/theme-loader.js"></script>
         <script type="module" src="/sw-rg.js"></script>

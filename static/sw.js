@@ -26,7 +26,6 @@ self.addEventListener('activate', function (event) {
 });
 self.addEventListener('fetch', function (event) {
   event.respondWith(() => {
-    // check if the user is offline first and return the page from the cache
     if (!navigator.onLine) {
       return caches.match(event.request).then(function (response) {
         if (response) {
@@ -35,6 +34,7 @@ self.addEventListener('fetch', function (event) {
         return caches.match('/offline');
       });
     }
+    return fetch(event.request);
   }
   );
 });

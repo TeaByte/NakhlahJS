@@ -1,26 +1,31 @@
 {
-    "theme_color": "#8936FF",
-    "background_color": "#2EC6FE",
-    "icons": [
-        {
-            "purpose": "maskable",
-            "sizes": "512x512",
-            "src": "icon512_maskable.png",
-            "type": "image/png"
-        },
-        {
-            "purpose": "any",
-            "sizes": "512x512",
-            "src": "icon512_rounded.png",
-            "type": "image/png"
-        }
-    ],
-    "orientation": "any",
-    "display": "standalone",
-    "dir": "auto",
-    "lang": "ar",
-    "short_name": "nakhlahjs",
-    "name": "",
-    "start_url": "/",
-    "form_factor": "narrow"
+  "theme_color": "#1f202a",
+  "background_color": "#282a36",
+  "icons": [
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "icon512_maskable.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "any",
+      "sizes": "512x512",
+      "src": "icon512_rounded.png",
+      "type": "image/png"
+    }
+  ],
+  "orientation": "any",
+  "display": "standalone",
+  "dir": "auto",
+  "lang": "ar",
+  "short_name": "تطبيق نخلة ",
+  "name": "تطبيق نخلة ",
+  "start_url": "/",
+  "form_factor": "narrow",
+  "id": "nakhlahjs1.0",
+  "description": "اكتساب مهارات جافاسكربت بسهولة وفعالية",
+  "categories": [
+    "education"
+  ]
 }

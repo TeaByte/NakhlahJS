@@ -17,17 +17,6 @@ self.addEventListener('install', async function (event) {
 });
 self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.keys().then(function (cacheNames) {
-      return Promise.all(
-        cacheNames.map(function (cacheName) {
-          if (cacheName !== CACHE_NAME) {
-            return caches.delete(cacheName);
-          }
-        })
-      );
-    })
-  );
-  event.waitUntil(
     caches.open(CACHE_NAME).then(async function (cache) {
       const resp = await fetch('/sw-cache.json');
       const data = await resp.json();
@@ -36,14 +25,16 @@ self.addEventListener('activate', function (event) {
   );
 });
 self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (!response) {
-        caches.open(CACHE_NAME).then(function (cache) {
-          cache.add(event.request.url);
-        });
-      }
-      return response || fetch(event.request);
-    })
+  event.respondWith(() => {
+    // check if the user is offline first and return the page from the cache
+    if (!navigator.onLine) {
+      return caches.match(event.request).then(function (response) {
+        if (response) {
+          return response;
+        }
+        return caches.match('/offline');
+      });
+    }
+  }
   );
 });

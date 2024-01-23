@@ -37,3 +37,6 @@ const lastLetter = firstName[firstName.length - 1];
 const firstName = "Augusta";
 const thirdToLastLetter = firstName[firstName.length - 3];
  -->
+<div class="quiz">
+قم بطباعة الحرب الثالث من الأخير في السلسلة `Augusta`.
+<div>

@@ -21,7 +21,7 @@ export default function MarkdownSplit({
     <>
       <div class="flex px-2 pt-2 gap-2">
         {nextCourse && (
-          <div class="grow overflow-hidden">
+          <div class="grow">
             <a
               href={`/${nextCourse}`}
               class="flex items-center gap-2 btn btn-outline flex-nowrap"
@@ -33,7 +33,7 @@ export default function MarkdownSplit({
         )}
 
         {prevCourse && (
-          <div class="grow overflow-hidden">
+          <div class="grow">
             <a
               href={`/${prevCourse}`}
               class="flex items-center gap-2 btn btn-outline flex-nowrap"

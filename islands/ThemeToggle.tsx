@@ -10,7 +10,7 @@ export default function ThemeToggle() {
   const updateMarkdownTheme = (theme: string) => {
     const documentDiv = document.getElementById("document");
     if (documentDiv) {
-      if (theme === "dracula") {
+      if (theme === "dim") {
         documentDiv.setAttribute("data-color-mode", "dark");
         documentDiv.setAttribute("data-dark-theme", "dark");
         window.monaco && window.monaco.editor.setTheme("vs-dark");
@@ -32,7 +32,7 @@ export default function ThemeToggle() {
 
   const handleThemeChange = () => {
     const storedTheme = localStorage.getItem("selectedTheme");
-    const newTheme = storedTheme === "dracula" ? "nord" : "dracula";
+    const newTheme = storedTheme === "dim" ? "nord" : "dim";
     document.documentElement.setAttribute("data-theme", newTheme);
     localStorage.setItem("selectedTheme", newTheme);
     updateMarkdownTheme(newTheme);

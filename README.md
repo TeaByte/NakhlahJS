@@ -33,13 +33,6 @@ help you achieve your learning goals.
 - **Community Support:** Engage with fellow learners, ask questions, and share
   your experiences through our vibrant community forum.
 
-## TODO LIST
-
-- [ ] Blogs page
-- [ ] Quizes system
-- [ ] Improve phone users experience
-- [ ] Next and prev lesson buttons (maybe?)
-
 ---
 
 ### Run It Localy

@@ -7,7 +7,10 @@ export default function ProgressBar(props: { progress: number }) {
           className="absolute top-0 bottom-0 right-0 rounded-box bg-[#5bbcd1]"
           style={widthStyle}
         >
-          <div className="relative text-black font-medium text-sm text-center">
+          <div
+            className={"relative font-medium text-sm text-center " +
+              (props.progress > 0 && "text-black")}
+          >
             {props.progress}%
           </div>
         </div>

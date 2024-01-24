@@ -5,8 +5,8 @@ require.config({
 });
 
 require(["vs/editor/editor.main"], () => {
-  const isNord = localStorage.getItem("selectedTheme") === "nord";
-  const vsTheme = isNord ? "vs-light" : "vs-dark";
+  const isnord = localStorage.getItem("selectedTheme") === "nord";
+  const vsTheme = isnord ? "vs-light" : "vs-dark";
   window.editor = monaco.editor.create(document.getElementById("editor"), {
     language: "javascript",
     theme: vsTheme,

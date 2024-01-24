@@ -7,8 +7,8 @@ populateCache();
 
 export default async function Layout(req: Request, ctx: FreshContext) {
   return (
-    // Don't delete data-theme="dracula", used for defult theme and styles
-    <html dir="rtl" lang="ar" data-theme="dracula">
+    // Don't delete data-theme="dim", used for defult theme and styles
+    <html dir="rtl" lang="ar" data-theme="dim">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />

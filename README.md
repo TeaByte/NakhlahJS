@@ -1,12 +1,14 @@
 # NakhlahJS (نخلة جي أس)
 
+![Deploy Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/build-deno.yml/badge.svg)
+
+🚧 Still in a preliminary version and under continuous development
+
 NakhlahJS is a dynamic Arabic JavaScript learning platform, drawing inspiration
 from the style of [freeCodeCamp](https://www.freecodecamp.org/learn/). Our
 comprehensive lessons are structured based on the principles of freeCodeCamp and
 the extensive documentation available on
 [MDN Web Docs](https://developer.mozilla.org/en-US/).
-
-🚧 It is still in a preliminary version and under continuous development
 
 ## Overview
 
@@ -34,9 +36,9 @@ help you achieve your learning goals.
 ## TODO LIST
 
 - [ ] Blogs page
-- [x] Quizes system
+- [ ] Quizes system
 - [ ] Improve phone users experience
-- [x] Next and prev lesson buttons
+- [ ] Next and prev lesson buttons (maybe?)
 
 ---
 

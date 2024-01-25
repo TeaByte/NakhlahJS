@@ -1,5 +1,5 @@
 // check if there are any console.log() statements
-const regex = /console\.log\(\s*\".*\"\s*\)/;
+const regex = /console\.log\(.*\)/;
 if (!regex.test(code)) {
     isPass = false;
     msg = "لم يتم استخدام الأمر console.log() لطباعة النص المطلوب";

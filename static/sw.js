@@ -1,4 +1,5 @@
 const CACHE_NAME = 'cache-v1';
+
 self.addEventListener('install', async function (event) {
   const cacheNames = await caches.keys();
   await Promise.all(
@@ -10,30 +11,83 @@ self.addEventListener('install', async function (event) {
   );
   const resp = await fetch('/sw-cache.json');
   const data = await resp.json();
-  caches.open(CACHE_NAME).then(function (cache) {
+  await caches.open(CACHE_NAME).then(function (cache) {
     return cache.addAll([...data, "/"]);
-  })
-
+  });
 });
+
 self.addEventListener('activate', function (event) {
   event.waitUntil(
-    caches.open(CACHE_NAME).then(async function (cache) {
-      const resp = await fetch('/sw-cache.json');
-      const data = await resp.json();
-      return cache.addAll([...data, "/"]);
-    })
+    cacheNewResources()
   );
 });
+
+async function cacheNewResources() {
+  const resp = await fetch('/sw-cache.json');
+  const data = await resp.json();
+  const cache = await caches.open(CACHE_NAME);
+  await cache.addAll([...data, "/"]);
+}
+
 self.addEventListener('fetch', function (event) {
-  // TODO: make external resources cache first and the rest network first and if offline use cache if available and if not use fallback
+  const requestUrl = new URL(event.request.url);
+  // Cache external resources first
+  if (!requestUrl.origin.includes(self.location.hostname)) {
+    event.respondWith(
+      caches.match(event.request).then(function (response) {
+        if (response) {
+          return response;
+        } else {
+          // cache external resources
+          if (requestUrl.protocol === 'http:' || requestUrl.protocol === 'https:') {
+            return fetch(event.request).then(function (response) {
+              const responseClone = response.clone();
+              caches.open(CACHE_NAME).then(function (cache) {
+                cache.put(event.request, responseClone);
+              });
+              return response;
+            });
+          } else {
+            return fetch(event.request);
+          }
+        }
+      })
+    );
+    return;
+  }
+
+  // For non-GET requests, use the network
+  if (event.request.method !== 'GET') {
+    event.respondWith(fetch(event.request));
+    return;
+  }
+
   event.respondWith(
-    caches.match(event.request).then(function (response) {
-      if (!response) {
-        caches.open(CACHE_NAME).then(function (cache) {
-          cache.add(event.request.url);
+    caches.open(CACHE_NAME).then(function (cache) {
+      return cache.match(event.request).then(function (response) {
+        const fetchPromise = fetch(event.request).then(function (networkResponse) {
+          // If the request is successful, update the cache
+          if (networkResponse.ok) {
+            cache.put(event.request, networkResponse.clone());
+          }
+          return networkResponse;
         });
-      }
-      return response || fetch(event.request);
+
+        // Use the cache first, and fall back to the network if offline
+        return response || fetchPromise;
+      });
     })
   );
 });
+
+self.addEventListener('sync', function (event) {
+  if (event.tag === 'syncData') {
+    event.waitUntil(syncData());
+  }
+});
+
+async function syncData() {
+  // Implement your data synchronization logic here
+  // This function will be called when the connection is restored
+  console.log('Syncing data...');
+}

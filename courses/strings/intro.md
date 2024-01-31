@@ -81,3 +81,6 @@ console.log(sampleStr);
 Hello;
 World;
 ```
+<div class="quiz">
+قم بإنشاء سلسة تحتوي إسمك
+</div>

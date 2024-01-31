@@ -20,3 +20,6 @@ console.log(str.length);
 
 سنتعرف في دروس لاحقا عن الكائنات(Objects) وال خواص(Property).
 </mark>
+<div class="quiz">
+ليس هناك اي اختبار لهذا الدرس.
+</div>

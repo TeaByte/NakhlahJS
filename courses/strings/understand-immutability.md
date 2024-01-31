@@ -23,3 +23,7 @@ myPet[0] = "B";
 let myPet = "Cat";
 myPet = "Bat";
 ```
+<div class="quiz">
+يبدوا أني قد كتبت كلمة فيل بطريقة خاطئة. قم بتغيير الحرف الأول من
+السلسلة <code>animal</code> إلى ف.
+</div>

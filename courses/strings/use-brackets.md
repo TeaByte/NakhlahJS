@@ -20,3 +20,7 @@ console.log(firstLetter);
 ```
 
 `firstLetter` سيكون لها قيمة السلسلة `Y`.
+
+<div class="quiz">
+قم بطباعة حرف <code>r</code> من المتغير <code>country</code> في وحدة التحكم.
+</div>

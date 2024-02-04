@@ -1,1 +1,1 @@
-var youAreHappy;
+var myName;

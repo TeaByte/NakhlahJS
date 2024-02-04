@@ -13,17 +13,18 @@ order: 4
 
 ## طريقة التسمية المفضلة
 
-طريقه التسمية المفضلة في مجتمع JavaScript هي ال`CamelCase` يمكنك التعرف عن
-ال`CamelCase`. عبر
+طريقه التسمية المفضلة في مجتمع JavaScript هي ال`camelCase` يمكنك التعرف عن
+ال`camelCase`. عبر
 [MDN](https://developer.mozilla.org/en-US/docs/Glossary/Camel_case).
 
-امثلة التسمية في ال`CamelCase`:
+امثلة التسمية في ال`camelCase`:
 
 ```js
 var someVariable;
 var anotherVariableName;
 var thisVariableNameIsSoLong;
 ```
+
 <div class="quiz">
-قم بطباعة متغير قيمته 5
+قم بطباعة المتغير الذي يحقق تسميه الcamelCase
 </div>

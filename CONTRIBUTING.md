@@ -1,1 +1,1 @@
-## Contributing docs are available here: <https://nakhlahjs.deno.dev/contribute>.
+## Contributing docs are available here: <https://nakhlahjs.site/contribute>.

@@ -1,2 +1,2 @@
-var x = "1. ";
-var y = "Hi";
+var x = "JavaScript ";
+var y = "Is fun";

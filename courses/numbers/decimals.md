@@ -23,8 +23,9 @@ console.log(prd); // 0
 const div = 1.0 / 2.0;
 console.log(div); // 0.5
 ```
+
 <div class="quiz">
-- اكتب كود JavaScript يخزّن الرقم العشري 3.14 في متغير يسمّى myDecimal.<br>
-- ثم اكتب كودًا يضرب myDecimal في 4 ويخزّن النتيجة في متغير يسمّى product.<br>
-- اطبع قيمة product إلى وحدة التحكم.<br>
+1. اكتب كود JavaScript يخزّن الرقم العشري 3.14 في متغير يسمّى myDecimal.<br>
+2. ثم اكتب كودًا يضرب myDecimal في 4 ويخزّن النتيجة في متغير يسمّى product.<br>
+3. اطبع قيمة product إلى وحدة التحكم.<br>
 </div>

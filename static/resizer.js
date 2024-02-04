@@ -47,6 +47,14 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }, 100);
 
+  const loadingDiv = document.getElementById("loading");
+  setTimeout(function () {
+    loadingDiv.style.opacity = "0";
+    setTimeout(function () {
+      loadingDiv.style.display = "none";
+    }, 200);
+  }, 200);
+
   window.testPassedEffect = function () {
     const duration = 15 * 200,
       animationEnd = Date.now() + duration,

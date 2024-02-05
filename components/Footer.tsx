@@ -58,13 +58,13 @@ export default function Footer() {
       <div class="mb-4" data-fresh-key="المجتمع">
         <div class="font-bold">المجتمع</div>
         <ul class="mt-2">
-          <li class="mt-2" data-fresh-key="قناه التلغرام">
+          <li class="mt-2" data-fresh-key="قناة التلغرام">
             <a
               class="text-gray-500 hover:text-gray-700"
               href="https://t.me/NakhlahJS"
               target="_blank"
             >
-              قناه التلغرام
+              قناة التلغرام
             </a>
           </li>
           <li class="mt-2" data-fresh-key="المجتمع">

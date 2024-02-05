@@ -31,5 +31,5 @@ console.log(c); // "undefined String!"
 </mark>
 
 <div class="quiz">
-قم بتعريف أي متغير ثم غير قيمته إلى "عربي"
+قم بتعريف أي متغير ثم غير قيمته إلى <code>عربي</code>.
 </div>

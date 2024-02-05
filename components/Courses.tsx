@@ -4,7 +4,6 @@ import { Course, CourseGroup } from "@/utils/types.ts";
 import Collapse from "./Collapse.tsx";
 import CourseCard from "./CourseCard.tsx";
 import ProgressSection from "@/islands/ProgressSection.tsx";
-import SW from "@/islands/SW.tsx";
 
 export default function Courses(
   { courses, total }: {
@@ -19,7 +18,6 @@ export default function Courses(
           total={total}
         />
       </div>
-      {/* <SW /> Self-DOS :) */}
       <section class="flex flex-col gap-2 mb-4 mt-6">
         {courses.map((course, index) => {
           // Group of courses

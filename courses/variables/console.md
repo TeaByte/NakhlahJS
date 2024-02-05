@@ -20,12 +20,12 @@ JavaScript. يمكنك عبر المثال التالي:
 var myName = "Yazan";
 console.log(myName);
 ```
+
+سيكون مخرج التعليمات البرمجية السابقه `Yazan` على الشاشة.
+
 <div class="quiz">
 قم بطباعة أي شيء على الشاشة
 </div>
-سيكون مخرج التعليمات البرمجية السابقه `Yazan` على الشاشة. **يمكن تنفي التعليمات
-السابقه في الموقع عبر الضغط على الرابط التالي **
-[هنا](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string).
 
 يمكنك التعمق في المزيد عن الداله Object عبر
 [MDN](https://developer.mozilla.org/en-US/docs/Web/API/console). سنتعمق قريبا في

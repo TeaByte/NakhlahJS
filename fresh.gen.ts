@@ -14,7 +14,6 @@ import * as $Editor from "./islands/Editor.tsx";
 import * as $ProgressBar from "./islands/ProgressBar.tsx";
 import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
 import * as $ProgressSection from "./islands/ProgressSection.tsx";
-import * as $SW from "./islands/SW.tsx";
 import * as $ThemeToggle from "./islands/ThemeToggle.tsx";
 import * as $Toast from "./islands/Toast.tsx";
 import * as $signals_store from "./islands/signals/store.ts";
@@ -37,7 +36,6 @@ const manifest = {
     "./islands/ProgressBar.tsx": $ProgressBar,
     "./islands/ProgressCheck.tsx": $ProgressCheck,
     "./islands/ProgressSection.tsx": $ProgressSection,
-    "./islands/SW.tsx": $SW,
     "./islands/ThemeToggle.tsx": $ThemeToggle,
     "./islands/Toast.tsx": $Toast,
     "./islands/signals/store.ts": $signals_store,

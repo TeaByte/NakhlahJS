@@ -3,8 +3,7 @@ import { cache } from "../utils/course-cache.ts";
 import ThemeToggle from "../islands/ThemeToggle.tsx";
 import Drawer from "./Drawer.tsx";
 
-export default function NavBar(
-) {
+export default function NavBar() {
   return (
     <nav class="bg-base-300 w-full py-4 px-4 flex items-center gap-4 border-b-2 nav">
       <div class="flex items-center flex-1">

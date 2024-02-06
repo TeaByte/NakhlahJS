@@ -7,6 +7,11 @@
   --rounded-btn: 0.2rem;
 }
 
+.ghost-color {
+  background-color: oklch(var(--bc)/0.2) !important;
+  border-color: transparent !important;
+}
+
 .nav {
   border-color: oklch(var(--bc)/0.2) !important;
 }

@@ -159,7 +159,7 @@ export default function Editor(props: EditorProps) {
             تشغيل
           </button>
           <button
-            class="btn btn-active btn-ghost grow"
+            class="btn btn-active ghost-color grow"
             onClick={handleCodeClear}
           >
             مسح
@@ -167,7 +167,7 @@ export default function Editor(props: EditorProps) {
           <button
             class={`btn grow border-0 ${
               isTestPassed === undefined
-                ? "btn-active btn-ghost"
+                ? "btn-active ghost-color"
                 : isTestPassed
                 ? "btn-info bg-success hover:bg-[#9bc27a]"
                 : "btn-info bg-error hover:bg-[#ff6868]"

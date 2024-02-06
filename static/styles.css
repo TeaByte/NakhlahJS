@@ -149,28 +149,6 @@ body::-moz-scrollbar-thumb {
   background-color: var(--fallback-bc,oklch(var(--bc)/.2));
   border-radius: 0.2rem;
 }
-.animation-toast {
-  animation: toast 6s
-}
-@keyframes toast {
-  0% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  30% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  70% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-  100% {
-    transform: translateY(100px);
-    opacity: 0;
-  }
-  
-}
 
 /* loader */
 .code-loader {

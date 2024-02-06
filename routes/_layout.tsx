@@ -1,6 +1,5 @@
 import { FreshContext, Handlers, type PageProps } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
-import Toast from "../islands/Toast.tsx";
 
 import { populateCache } from "../utils/course-cache.ts";
 populateCache();
@@ -38,7 +37,6 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         <div class="h-screen">
           <NavBar />
           <ctx.Component />
-          <Toast />
         </div>
       </body>
     </html>

@@ -95,6 +95,7 @@ export default function Editor(props: EditorProps) {
         setOutput(`[Test Failed, ${numberOfTest}] -> ${msg}`);
         setIsTestPassed(false);
         setTesting(false);
+        setIsError(true);
         setNumberOfTest(numberOfTest + 1);
         return;
       }

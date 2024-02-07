@@ -5,7 +5,7 @@ if (storedTheme) {
   localStorage.setItem("selectedTheme", "dim");
 }
 
-window.dataLayer = globalThis.dataLayer || [];
+globalThis.dataLayer = globalThis.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());
 gtag('config', 'G-TDHJL7ZT23');

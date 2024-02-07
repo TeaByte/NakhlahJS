@@ -7,7 +7,7 @@ require.config({
 require(["vs/editor/editor.main"], () => {
   const isnord = localStorage.getItem("selectedTheme") === "nord";
   const vsTheme = isnord ? "vs-light" : "vs-dark";
-  window.editor = monaco.editor.create(document.getElementById("editor"), {
+  globalThis.editor = monaco.editor.create(document.getElementById("editor"), {
     language: "javascript",
     theme: vsTheme,
     minimap: { enabled: false },

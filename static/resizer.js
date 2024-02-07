@@ -1,5 +1,5 @@
 function isMobile() {
-  return window.innerWidth <= 699;
+  return globalThis.innerWidth <= 699;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -55,7 +55,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 200);
   }, 200);
 
-  window.testPassedEffect = function () {
+  globalThis.testPassedEffect = function () {
     const duration = 15 * 200,
       animationEnd = Date.now() + duration,
       defaults = { startVelocity: 30, spread: 360, ticks: 60, zIndex: 999 };

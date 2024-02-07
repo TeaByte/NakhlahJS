@@ -1,30 +1,10 @@
-// check if output is = [19, 12, 13, 14, 15];
-function handleCodeRun(code) {
-  try {
-    const capturedOutput = [];
-    const originalConsoleLog = console.log;
-    console.log = (...args) => {
-      capturedOutput.push(
-        args.map((arg) => {
-          if (typeof arg === "object" && arg !== null) {
-            return JSON.stringify(arg);
-          }
-          return arg.toString();
-        }).join(" "),
-      );
-      originalConsoleLog(...args);
-    };
-    if (code) {
-      eval(code);
-    }
-    console.log = originalConsoleLog;
-    return capturedOutput.join("\n");
-  } catch (error) {
-    return `${error}`;
-  }
+// check if in the code there are array and it contains names
+const regex = /(let|const|var)\s*\w*\s*=\s*\[(("|`|')\w*\3(,|)(\s*|)(,|)(\s*|))*\]/g;
+if (regex.test(code)) {
+  isPass = true;
+  msg = 'Good job!';
 }
-const output = handleCodeRun(code);
-if (output === "19\n12\n13\n14\n15") {
-    isPass = true;
-    msg = "Pass";
+else {
+  isPass = false;
+  msg = "تحقق من الشروط المطلوبة"
 }

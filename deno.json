@@ -11,10 +11,7 @@
   },
   "lint": {
     "exclude": ["testcases/**/*", "precodes/**/*"],
-    "rules": {
-      "tags": ["fresh", "recommended"],
-      "exclude": ["no-unused-vars"]
-    }
+    "rules": { "tags": ["fresh", "recommended"], "exclude": ["no-unused-vars"] }
   },
   "exclude": ["**/_fresh/*"],
   "imports": {

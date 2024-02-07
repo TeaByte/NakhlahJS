@@ -1,9 +1,3 @@
 /*
-output:
-19
-12
-13
-14
-15
+write any array containing name of anyone you know :)
 */
-const numbers = [9, 2, 3, 4, 5];

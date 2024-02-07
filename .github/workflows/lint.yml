@@ -38,5 +38,6 @@ jobs:
       - name: Run linter
         run: deno lint
 
-      - name: Run tests
-        run: deno test -A
+      # We don't have test yet
+      # - name: Run tests
+      #   run: deno test -A

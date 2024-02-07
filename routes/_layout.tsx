@@ -4,6 +4,7 @@ import NavBar from "../components/Nav.tsx";
 import { populateCache } from "../utils/course-cache.ts";
 populateCache();
 
+// deno-lint-ignore require-await
 export default async function Layout(req: Request, ctx: FreshContext) {
   return (
     // Don't delete data-theme="dim", used for defult theme and styles

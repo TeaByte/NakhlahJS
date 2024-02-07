@@ -68,8 +68,7 @@ export default function Editor(props: EditorProps) {
       setIsError(false);
       eval(props.testingCode);
       if (isPass) {
-        let courseSlug: string;
-        courseSlug = props.slug;
+        const courseSlug = props.slug;
         const passedCourses = localStorage.getItem("passedCourses");
         // check if there are a value in the local storage
         if (passedCourses) {
@@ -159,7 +158,7 @@ export default function Editor(props: EditorProps) {
             تشغيل
           </button>
           <button
-            class="btn btn-active ghost-color grow"
+            class="btn ghost-color grow"
             onClick={handleCodeClear}
           >
             مسح
@@ -167,7 +166,7 @@ export default function Editor(props: EditorProps) {
           <button
             class={`btn grow border-0 ${
               isTestPassed === undefined
-                ? "btn-active ghost-color"
+                ? "ghost-color"
                 : isTestPassed
                 ? "btn-info bg-success hover:bg-[#9bc27a]"
                 : "btn-info bg-error hover:bg-[#ff6868]"

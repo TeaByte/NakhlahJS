@@ -1,8 +1,8 @@
 # NakhlahJS (نخلة جي أس)
 
-![Deploy Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/build-deno.yml/badge.svg)
-
-🚧 Still in a preliminary version and under continuous development
+[![Deploy Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/build-deno.yml/badge.svg)](https://github.com/TeaByte/NakhlahJS/actions/workflows/build-deno.yml)
+[![Lint Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/lint.yml/badge.svg)](https://github.com/TeaByte/NakhlahJS/actions/workflows/lint.yml)
+[![Deploy Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/codeql.yml/badge.svg)](https://github.com/TeaByte/NakhlahJS/actions/workflows/codeql.yml/)
 
 NakhlahJS is a dynamic Arabic JavaScript learning platform, drawing inspiration
 from the style of [freeCodeCamp](https://www.freecodecamp.org/learn/). Our

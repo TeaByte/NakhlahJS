@@ -8,7 +8,7 @@ import "$std/dotenv/load.ts";
 
 import { start } from "$fresh/server.ts";
 import manifest from "./fresh.gen.ts";
-import config from "./fresh.config.ts";
+// import config from "./fresh.config.ts";
 
 import { freshSEOPlugin } from "https://deno.land/x/fresh_seo/mod.ts";
 import { walk } from "https://deno.land/std/fs/mod.ts";

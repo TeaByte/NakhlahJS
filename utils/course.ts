@@ -109,7 +109,7 @@ export async function getCourses(
   return cache;
 }
 
-export async function getFlatSlugs() {
+export function getFlatSlugs() {
   if (FlatSlugsCache.length > 0) {
     // console.log("Using cache");
     return FlatSlugsCache;
@@ -126,13 +126,13 @@ export async function getFlatSlugs() {
   FlatSlugsCache = FlatSlugs;
   return FlatSlugs;
 }
-export async function getNumberOfCourses() {
-  const FlatSlugs = await getFlatSlugs();
+export function getNumberOfCourses() {
+  const FlatSlugs = getFlatSlugs();
   return FlatSlugs.length;
 }
 
-export async function findNextCourse(slug: string) {
-  const FlatSlugs = await getFlatSlugs();
+export function findNextCourse(slug: string) {
+  const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
   if (index === -1) {
     return slug;
@@ -140,8 +140,8 @@ export async function findNextCourse(slug: string) {
   return FlatSlugs[index + 1];
 }
 
-export async function findPrevCourse(slug: string) {
-  const FlatSlugs = await getFlatSlugs();
+export function findPrevCourse(slug: string) {
+  const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
   if (index === 1) {
     return slug;

@@ -27,8 +27,8 @@ export const handler: Handlers<Props> = {
       let lable: string | undefined;
       const course = await getCourse(ctx.params.slug);
       if (course === null) return ctx.renderNotFound();
-      const nextCourse = await findNextCourse(ctx.params.slug);
-      const prevCourse = await findPrevCourse(ctx.params.slug);
+      const nextCourse = findNextCourse(ctx.params.slug);
+      const prevCourse = findPrevCourse(ctx.params.slug);
       if (ctx.params.slug.includes("/")) {
         const [lableSlug, lable] = await getJson(ctx.params.slug.split("/")[0]);
         return ctx.render({ course, lable, lableSlug, nextCourse, prevCourse });

@@ -7,9 +7,9 @@ export default function SW_cache(
     const SW_cacheMiddleware: PluginMiddleware = {
         path: "/",
         middleware: {
-            handler: async (_, ctx) => {
+            handler: (_, ctx) => {
                 if (ctx.url.pathname == "/sw-cache.json") {
-                    const resp = new Response(JSON.stringify(await getFlatSlugs()), {
+                    const resp = new Response(JSON.stringify(getFlatSlugs()), {
                         headers: {
                             "content-type": "application/json",
                         }
@@ -25,7 +25,7 @@ export default function SW_cache(
 
     return {
         name: "sw-cache",
-        async configResolved(config) {
+        configResolved(config) {
             if (config.dev) {
                 staticDir = config.staticDir;
                 middlewares.push(SW_cacheMiddleware);
@@ -36,7 +36,7 @@ export default function SW_cache(
             staticDir = config.staticDir;
             console.log("SW_cache buildStart");
             const outFilePath = path.join(staticDir, "sw-cache.json");
-            const slugs = await getFlatSlugs();
+            const slugs = getFlatSlugs();
             const data = JSON.stringify(slugs);
             await Deno.writeTextFile(outFilePath, data);
         },

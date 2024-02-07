@@ -14,9 +14,9 @@ interface Props {
   total: number;
 }
 export const handler: Handlers<Props> = {
-  async GET(_req, ctx) {
+  GET(_req, ctx) {
     const courses = cache.courses;
-    const total = await getNumberOfCourses();
+    const total = getNumberOfCourses();
     return ctx.render({
       total,
       courses: courses,

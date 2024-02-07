@@ -1,8 +1,10 @@
 import { useEffect } from "preact/hooks";
 
+// deno-lint-ignore no-var
 declare var window: Window & typeof globalThis;
 
 interface Window {
+  // deno-lint-ignore no-explicit-any
   monaco: any;
 }
 
@@ -39,7 +41,7 @@ export default function ThemeToggle() {
   };
 
   return (
-    <label class="swap swap-rotate btn btn-active ghost-color">
+    <label class="swap swap-rotate btn ghost-color">
       <input
         type="checkbox"
         onChange={handleThemeChange}

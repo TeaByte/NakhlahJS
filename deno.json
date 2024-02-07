@@ -9,7 +9,13 @@
     "preview": "deno run --unstable -A main.ts",
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
-  "lint": { "rules": { "tags": ["fresh", "recommended"] } },
+  "lint": {
+    "exclude": ["testcases/**/*", "precodes/**/*"],
+    "rules": {
+      "tags": ["fresh", "recommended"],
+      "exclude": ["no-unused-vars"]
+    }
+  },
   "exclude": ["**/_fresh/*"],
   "imports": {
     "@/": "./",

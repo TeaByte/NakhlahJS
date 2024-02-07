@@ -1,6 +1,6 @@
 const CACHE_NAME = 'cache-v1';
 
-self.addEventListener('install', async function (event) {
+self.addEventListener('install', async function (_event) {
   const cacheNames = await caches.keys();
   await Promise.all(
     cacheNames.map(function (cacheName) {
@@ -86,7 +86,7 @@ self.addEventListener('sync', function (event) {
   }
 });
 
-async function syncData() {
+function syncData() {
   // Implement your data synchronization logic here
   // This function will be called when the connection is restored
   console.log('Syncing data...');

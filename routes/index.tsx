@@ -40,12 +40,13 @@ export default function BlogIndexPage(
           content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
         />
       </Head>
-      <main className="h-[75vh] relative">
+      <main className="h-[90vh] relative">
         <section class="w-fulloverflow-hidden">
           <div class="container relative w-full px-8 pt-16 mx-auto lg:px-4 z-[999]">
             <div class="flex flex-col w-full mb-12 text-center">
-              <h1 class="mb-6 text-5xl font-bold tracking-tighter lg:text-6xl">
-                نخلة جي أس
+              <h1 class="mb-6 text-6xl font-bold tracking-tighter lg:text-6xl">
+                <span class="text-yellow-500 font-bold">JS</span>
+                <span class="ml-2 font-bold">نخلة</span>
               </h1>
               <p class="text-3xl mb-2">
                 اكتسب مهارات بسهولة وفعالية
@@ -58,7 +59,7 @@ export default function BlogIndexPage(
               <div class="rounded-lg mt-4">
                 <a
                   href="/courses"
-                  class="inline-flex items-center px-8 py-3 text-lg text-base-content transition-all duration-500 ease-in-out transform g border-2 border-black rounded-lg md:mb-2 lg:mb-0 hover:border-white hover:opacity-80 focus:ring-2 ring-offset-current ring-offset-2"
+                  class="btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content "
                 >
                   <IconArrowBigRightLines class="ml-2" />
                   ابدأ الآن

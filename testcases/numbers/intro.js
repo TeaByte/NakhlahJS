@@ -27,7 +27,6 @@ if (output != "50") {
   isPass = false;
   msg = "هناك خطاء في الكود";
 } else {
-  // TODO: complete the regex
   const regexWidth = /(let|const|var)(\s*)width(\s*)?=(\s*)?10(;)?/g
   const regexLength = /(let|const|var)(\s*)length(\s*)?=(\s*)?5(;)?/g
   const regexArea = /(let|const|var)(\s*)area(\s*)?=(\s*)?((width[\s*]?\*[\s*]?length)|(length[\s*]?\*[\s*]?width))/g

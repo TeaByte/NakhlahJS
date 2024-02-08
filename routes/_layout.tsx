@@ -35,7 +35,7 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         <script type="module" src="/sw-rg.js"></script>
       </head>
       <body>
-        <div class="h-screen">
+        <div class="">
           <NavBar />
           <ctx.Component />
         </div>

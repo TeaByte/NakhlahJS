@@ -1,8 +1,34 @@
-const regex = /\b(?:let|var)\s+(\w+)\s*=\s*\d+\s*(?:;)?\s*\1\s*=\s*\1\s*\+\s*\d+\s*\b(?:;)?/;
-if (regex.test(code)) {
-  isPass = true;
-  msg = 'Good job!';
+function handleCodeRun(code) {
+  try {
+    const capturedOutput = [];
+    const originalConsoleLog = console.log;
+    console.log = (...args) => {
+      capturedOutput.push(
+        args.map((arg) => {
+          if (typeof arg === "object" && arg !== null) {
+            return JSON.stringify(arg);
+          }
+          return arg.toString();
+        }).join(" "),
+      );
+      originalConsoleLog(...args);
+    };
+    if (code) {
+      eval(code);
+    }
+    console.log = originalConsoleLog;
+    return capturedOutput.join("\n");
+  } catch (error) {
+    return `${error}`;
+  }
+}
+const output = handleCodeRun(code);
+if (!output.includes(50)) {
+  isPass = false;
+  msg = "هناك خطاء في الكود";
 } else {
-    isPass = false;
-    msg = "تحقق من الشروط المطلوبة"
+  // TODO: complete the regex
+  const regexWidth = ''
+  const regexLength = ''
+  const regexArea = ''
 }

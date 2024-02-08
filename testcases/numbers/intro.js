@@ -23,12 +23,21 @@ function handleCodeRun(code) {
   }
 }
 const output = handleCodeRun(code);
-if (!output.includes(50)) {
+if (output != "50") {
   isPass = false;
   msg = "هناك خطاء في الكود";
 } else {
   // TODO: complete the regex
-  const regexWidth = ''
-  const regexLength = ''
-  const regexArea = ''
+  const regexWidth = /(let|const|var)(\s*)width(\s*)?=(\s*)?10(;)?/g
+  const regexLength = /(let|const|var)(\s*)length(\s*)?=(\s*)?5(;)?/g
+  const regexArea = /(let|const|var)(\s*)area(\s*)?=(\s*)?((width[\s*]?\*[\s*]?length)|(length[\s*]?\*[\s*]?width))/g
+  const regex = [regexWidth, regexLength, regexArea]
+  const results = regex.map((reg) => reg.test(code))
+  if (results.includes(false)) {
+    isPass = false;
+    msg = "هناك خطاء في الكود";
+  } else {
+    isPass = true;
+    msg = "احسنت";
+  }
 }

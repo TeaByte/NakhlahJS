@@ -59,7 +59,7 @@ export default function BlogIndexPage(
               <div class="rounded-lg mt-4">
                 <a
                   href="/courses"
-                  class="btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content "
+                  class="btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-lg"
                 >
                   <IconArrowBigRightLines class="ml-2" />
                   ابدأ الآن

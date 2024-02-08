@@ -8,8 +8,9 @@ import * as $_app from "./routes/_app.tsx";
 import * as $_layout from "./routes/_layout.tsx";
 import * as $about from "./routes/about.tsx";
 import * as $group_slug_ from "./routes/group/[slug].tsx";
-import * as $index from "./routes/index.tsx";
+import * as $courses from "./routes/courses.tsx";
 import * as $offline from "./routes/offline.tsx";
+import * as $index from "./routes/index.tsx";
 import * as $Editor from "./islands/Editor.tsx";
 import * as $ProgressBar from "./islands/ProgressBar.tsx";
 import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
@@ -28,6 +29,7 @@ const manifest = {
     "./routes/group/[slug].tsx": $group_slug_,
     "./routes/index.tsx": $index,
     "./routes/offline.tsx": $offline,
+    "./routes/courses.tsx": $courses,
   },
   islands: {
     "./islands/Editor.tsx": $Editor,

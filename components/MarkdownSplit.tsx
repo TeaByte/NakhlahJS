@@ -50,7 +50,7 @@ export default function MarkdownSplit({
             <div class="flex flex-col-reverse text-sm breadcrumbs" dir="rtl">
               <ul>
                 <li>
-                  <a href="/">الرئيسية</a>
+                  <a href="/courses">الدروس</a>
                 </li>
                 {lable && (
                   <li>

@@ -7,14 +7,20 @@ order: 1
 في علوم الكمبيوتر، البيانات هي أي شيء له معنى بالنسبة للكمبيوتر. توفر JavaScript
 ثمانية أنواع مختلفة من البيانات:
 
-- [boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean)
-- [number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number)
-- [string](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string)
-- [object](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object)
-- [bigint](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/bigInt)
-- [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
-- [null](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null)
-- [symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/symbol)
+<!-- Markdown don't support ltr! -->
+<ul style="
+    direction: ltr;
+    list-style-type: circle;
+">
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/boolean" rel="noopener noreferrer">boolean</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" rel="noopener noreferrer">number</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" rel="noopener noreferrer">string</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/object" rel="noopener noreferrer">object</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/bigInt" rel="noopener noreferrer">bigint</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined" rel="noopener noreferrer">undefined</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/null" rel="noopener noreferrer">null</a></li>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/symbol" rel="noopener noreferrer">symbol</a></li>
+</ul>
 
 <mark>
 

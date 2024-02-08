@@ -22,8 +22,8 @@ export default function Offline() {
             <p class="my-4">
               أنت غير متصل بالانترنت، تأكد من اتصالك بالانترنت وحاول مرة اخرى.
             </p>
-            <a title="العودى الى الصفحة الرئيسية" href="/" class="underline">
-              العودى الى الصفحة الرئيسية
+            <a title="العودى الى صفحة الدروس" href="/courses" class="underline">
+              العودى الى صفحة الدروس
             </a>
           </div>
         </div>

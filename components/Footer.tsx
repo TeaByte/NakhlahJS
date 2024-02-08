@@ -38,14 +38,9 @@ export default function Footer() {
       <div class="mb-4" data-fresh-key="الصفحات">
         <div class="font-bold">الصفحات</div>
         <ul class="mt-2">
-          <li class="mt-2" data-fresh-key="الصفحة الرئيسية">
-            <a
-              class="text-gray-500 hover:text-gray-700"
-              href="/"
-              data-current="true"
-              aria-current="page"
-            >
-              الصفحة الرئيسية
+          <li class="mt-2" data-fresh-key="من نحن">
+            <a class="text-gray-500 hover:text-gray-700" href="/courses">
+              الدروس
             </a>
           </li>
           <li class="mt-2" data-fresh-key="من نحن">

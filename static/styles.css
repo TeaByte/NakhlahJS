@@ -157,7 +157,7 @@ body::-moz-scrollbar-thumb {
 
 /* loader */
 .code-loader {
-  color: #fff;
+  color: var(--fallback-bc,oklch(var(--bc)/1));
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 100px;
@@ -181,7 +181,6 @@ body::-moz-scrollbar-thumb {
 }
 
 /* copy button */
-
 .highlight {
   position: relative;
 }
@@ -194,4 +193,9 @@ body::-moz-scrollbar-thumb {
   top: 5px;
   right: 5px;
   cursor: pointer;
+}
+
+/* Ladning page */
+.bg-patternTop {
+  background-image: url(../patternTop.svg);
 }

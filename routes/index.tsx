@@ -58,7 +58,7 @@ export default function BlogIndexPage(
               <div class="rounded-lg mt-4">
                 <a
                   href="/courses"
-                  class="inline-flex items-center px-8 py-3 text-lg text-white transition-all duration-500 ease-in-out transform bg-black border-2 border-black rounded-lg md:mb-2 lg:mb-0 hover:border-white hover:opacity-80 focus:ring-2 ring-offset-current ring-offset-2"
+                  class="inline-flex items-center px-8 py-3 text-lg text-base-content transition-all duration-500 ease-in-out transform g border-2 border-black rounded-lg md:mb-2 lg:mb-0 hover:border-white hover:opacity-80 focus:ring-2 ring-offset-current ring-offset-2"
                 >
                   <IconArrowBigRightLines class="ml-2" />
                   ابدأ الآن

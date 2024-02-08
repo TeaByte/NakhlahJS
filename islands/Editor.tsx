@@ -181,7 +181,7 @@ export default function Editor(props: EditorProps) {
           </button>
         </div>
         <pre
-          className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow " +
+          className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow font-bold " +
             (isError ? "text-error" : isTestPassed ? "text-success" : "")}
         >
           {output}

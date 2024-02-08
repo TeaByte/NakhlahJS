@@ -13,7 +13,7 @@ export default function Footer() {
               <img
                 title="نخله جي اس"
                 alt="Website logo"
-                src="/logo.webp?__frsh_c=406399b6edbccfcd296d1e5878263837430ef992"
+                src="/Images/logo.webp"
                 class="h-8 w-8"
               />
             </a>

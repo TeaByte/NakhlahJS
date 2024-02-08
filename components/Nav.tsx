@@ -12,7 +12,7 @@ export default function NavBar() {
             <img
               title="نخله جي اس"
               alt="Website logo"
-              src="/logo.webp"
+              src="/Images/logo.webp"
               class="h-8 w-8"
             />
           </a>

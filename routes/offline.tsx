@@ -12,7 +12,7 @@ export default function Offline() {
           <div class="max-w-screen-md mx-auto flex flex-col md:mt-8 items-center justify-center">
             <img
               class="my-6"
-              src="/logo.webp"
+              src="/Images/logo.webp"
               width="128"
               height="128"
               title="لوغو نخلة جي اس"

@@ -9,13 +9,26 @@ export default function AboutPage() {
     <>
       <Head>
         <title>من نحن</title>
+        <meta
+          name="description"
+          content="التعريف بمنصة نخلة"
+        />
+        <meta
+          name="keywords"
+          content="قائمه دروس جافا سكريبت"
+        />
+        <meta property="og:title" content="من نحن" />
+        <meta
+          property="og:description"
+          content="التعريف بمنصة نخلة"
+        />
       </Head>
       <main class="flex flex-col h-full-minus-bar">
         <div class="px-4 py-8 mx-auto grow">
           <div class="max-w-screen-md mx-auto flex flex-col items-center justify-center">
             <img
               class="my-6"
-              src="/logo.webp"
+              src="/Images/logo.webp"
               width="128"
               height="128"
               title="لوغو نخلة جي اس"

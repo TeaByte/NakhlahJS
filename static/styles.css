@@ -57,6 +57,10 @@ pre {
   background-color: var(--fallback-b3,oklch(var(--b3)/1)) !important;
 }
 
+.markdown-body .highlight pre .comment {
+  color: #608B44 !important;
+}
+
 mark {
   background-color: oklch(var(--b3));
   color: inherit;

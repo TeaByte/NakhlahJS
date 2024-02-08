@@ -31,18 +31,19 @@ export default function BlogIndexPage(
   return (
     <>
       <Head>
+        <title>قائمه الدروس</title>
         <meta
           name="description"
-          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
+          content="قائمه دروس جافا سكريبت"
         />
         <meta
           name="keywords"
-          content="Nakhlahjs, Nakhlah, تعلم جافاسكربت, جافاسكربت, تعليم جافاسكربت, كورس جافاسربت, كورس جافاسكربت مجاني, كورس جافاسكربت"
+          content="قائمه دروس جافا سكريبت"
         />
-        <meta property="og:title" content="نخلة جي أس" />
+        <meta property="og:title" content="قائمه الدروس" />
         <meta
           property="og:description"
-          content="وجهتك الأمثل لاكتساب مهارات جافاسكربت بسهولة وفعالية. رحلة تعليمية شيقة تمتد من الأساسيات إلى المستويات المتقدمة"
+          content="قائمه دروس جافا سكريبت"
         />
       </Head>
       <main className="max-w-screen-md px-4 pt-8 mx-auto mb-6">

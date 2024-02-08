@@ -74,8 +74,8 @@ export default function CoursePage(
         </script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/split.js/1.1.1/split.min.js">
         </script>
-        <script src="/monaco.js"></script>
-        <script src="/courses-page.js" />
+        <script src="/JavaScript/monaco.js"></script>
+        <script src="/JavaScript/courses-page.js" />
       </Head>
       <main>
         <div

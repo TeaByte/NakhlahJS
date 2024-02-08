@@ -23,7 +23,6 @@ export default async function Layout(req: Request, ctx: FreshContext) {
           href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap"
           rel="stylesheet"
         />
-
         <script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-TDHJL7ZT23"
@@ -31,8 +30,8 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         </script>
 
         <link rel="manifest" href="/manifest.json" />
-        <script src="/index.js"></script>
-        <script type="module" src="/sw-rg.js"></script>
+        <script src="/JavaScript/index.js"></script>
+        <script type="module" src="/JavaScript/sw-rg.js"></script>
       </head>
       <body>
         <NavBar />

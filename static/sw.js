@@ -29,56 +29,56 @@ async function cacheNewResources() {
   await cache.addAll([...data, "/"]);
 }
 
-self.addEventListener('fetch', function (event) {
-  const requestUrl = new URL(event.request.url);
-  // Cache external resources first
-  if (!requestUrl.origin.includes(self.location.hostname)) {
-    event.respondWith(
-      caches.match(event.request).then(function (response) {
-        if (response) {
-          return response;
-        } else {
-          // cache external resources
-          if (requestUrl.protocol === 'http:' || requestUrl.protocol === 'https:') {
-            return fetch(event.request).then(function (response) {
-              const responseClone = response.clone();
-              caches.open(CACHE_NAME).then(function (cache) {
-                cache.put(event.request, responseClone);
-              });
-              return response;
-            });
-          } else {
-            return fetch(event.request);
-          }
-        }
-      })
-    );
-    return;
-  }
+// self.addEventListener('fetch', function (event) {
+//   const requestUrl = new URL(event.request.url);
+//   // Cache external resources first
+//   if (!requestUrl.origin.includes(self.location.hostname)) {
+//     event.respondWith(
+//       caches.match(event.request).then(function (response) {
+//         if (response) {
+//           return response;
+//         } else {
+//           // cache external resources
+//           if (requestUrl.protocol === 'http:' || requestUrl.protocol === 'https:') {
+//             return fetch(event.request).then(function (response) {
+//               const responseClone = response.clone();
+//               caches.open(CACHE_NAME).then(function (cache) {
+//                 cache.put(event.request, responseClone);
+//               });
+//               return response;
+//             });
+//           } else {
+//             return fetch(event.request);
+//           }
+//         }
+//       })
+//     );
+//     return;
+//   }
 
-  // For non-GET requests, use the network
-  if (event.request.method !== 'GET') {
-    event.respondWith(fetch(event.request));
-    return;
-  }
+//   // For non-GET requests, use the network
+//   if (event.request.method !== 'GET') {
+//     event.respondWith(fetch(event.request));
+//     return;
+//   }
 
-  event.respondWith(
-    caches.open(CACHE_NAME).then(function (cache) {
-      return cache.match(event.request).then(function (response) {
-        const fetchPromise = fetch(event.request).then(function (networkResponse) {
-          // If the request is successful, update the cache
-          if (networkResponse.ok) {
-            cache.put(event.request, networkResponse.clone());
-          }
-          return networkResponse;
-        });
+//   event.respondWith(
+//     caches.open(CACHE_NAME).then(function (cache) {
+//       return cache.match(event.request).then(function (response) {
+//         const fetchPromise = fetch(event.request).then(function (networkResponse) {
+//           // If the request is successful, update the cache
+//           if (networkResponse.ok) {
+//             cache.put(event.request, networkResponse.clone());
+//           }
+//           return networkResponse;
+//         });
 
-        // Use the cache first, and fall back to the network if offline
-        return response || fetchPromise;
-      });
-    })
-  );
-});
+//         // Use the cache first, and fall back to the network if offline
+//         return response || fetchPromise;
+//       });
+//     })
+//   );
+// });
 
 self.addEventListener('sync', function (event) {
   if (event.tag === 'syncData') {

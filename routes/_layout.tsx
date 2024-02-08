@@ -7,8 +7,8 @@ populateCache();
 // deno-lint-ignore require-await
 export default async function Layout(req: Request, ctx: FreshContext) {
   return (
-    // Don't delete data-theme="dim", used for defult theme and styles
-    <html dir="rtl" lang="ar" data-theme="dim">
+    // Don't delete data-theme="nord", used for defult theme and styles
+    <html dir="rtl" lang="ar" data-theme="nord">
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -35,10 +35,8 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         <script type="module" src="/sw-rg.js"></script>
       </head>
       <body>
-        <div class="">
-          <NavBar />
-          <ctx.Component />
-        </div>
+        <NavBar />
+        <ctx.Component />
       </body>
     </html>
   );

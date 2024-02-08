@@ -31,7 +31,7 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         </script>
 
         <link rel="manifest" href="/manifest.json" />
-        <script src="/theme-loader.js"></script>
+        <script src="/index.js"></script>
         <script type="module" src="/sw-rg.js"></script>
       </head>
       <body>

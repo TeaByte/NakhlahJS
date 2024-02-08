@@ -1,3 +1,4 @@
+// Theme loader
 const storedTheme = localStorage.getItem("selectedTheme");
 if (storedTheme) {
   document.documentElement.setAttribute("data-theme", storedTheme);
@@ -5,6 +6,7 @@ if (storedTheme) {
   localStorage.setItem("selectedTheme", "dim");
 }
 
+// Google analytics
 globalThis.dataLayer = globalThis.dataLayer || [];
 function gtag() { dataLayer.push(arguments); }
 gtag('js', new Date());

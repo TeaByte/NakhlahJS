@@ -179,3 +179,19 @@ body::-moz-scrollbar-thumb {
     opacity: 0.5;
   }
 }
+
+/* copy button */
+
+.highlight {
+  position: relative;
+}
+
+.copy-button {
+  background-color: oklch(var(--bc)/0.2);
+  padding: 5px;
+  border-radius: 0.2rem;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  cursor: pointer;
+}

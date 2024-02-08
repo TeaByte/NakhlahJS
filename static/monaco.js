@@ -4,6 +4,7 @@ require.config({
   },
 });
 
+// Monaco Editor
 require(["vs/editor/editor.main"], () => {
   const isnord = localStorage.getItem("selectedTheme") === "nord";
   const vsTheme = isnord ? "vs-light" : "vs-dark";

@@ -195,7 +195,7 @@ body::-moz-scrollbar-thumb {
 }
 
 /* Ladning page background image */
-[data-theme="dim"] {
+[data-theme="dim"] .bg-patternTop {
   filter: invert(91%) sepia(9%) saturate(664%) hue-rotate(161deg) brightness(90%) contrast(84%);
 }
 

@@ -6,6 +6,7 @@ import Footer from "../components/Footer.tsx";
 import { getNumberOfCourses } from "@/utils/course.ts";
 
 import IconArrowBigRightLines from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/arrow-big-right-lines.tsx";
+import AboutIcons from "@/components/AboutIcons.tsx";
 
 interface Props {
   total: number;
@@ -41,7 +42,7 @@ export default function BlogIndexPage(
       </Head>
       <main className="h-[90vh] relative">
         <section class="w-fulloverflow-hidden">
-          <div class="container relative w-full px-8 pt-16 mx-auto lg:px-4 z-[999]">
+          <div class="container relative w-full px-8 pt-16 mx-auto lg:px-4 z-[5]">
             <div class="flex flex-col w-full mb-12 text-center">
               <h1 class="mb-4 text-6xl font-bold tracking-tighter lg:text-6xl">
                 <span class="text-yellow-500 font-bold">JS</span>
@@ -55,15 +56,16 @@ export default function BlogIndexPage(
                 مبتكرة وتفاعلية. يحتوي الموقع على سلسله دروس تفاعليه مع اختبارات
                 قصيره لتعزيز فهمك وتفاعلك.
               </p>
-              <div class="rounded-lg mt-4">
+              <div class="rounded-lg mt-4 mb-2">
                 <a
                   href="/courses"
-                  class="btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-lg"
+                  class="px-8 text-lg btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-box"
                 >
                   <IconArrowBigRightLines class="ml-2" />
                   ابدأ الآن
                 </a>
               </div>
+              <AboutIcons />
             </div>
           </div>
           <div className="bg-center text-blue-500 bg-no-repeat bg-cover bg-patternTop h-full w-full absolute bottom-0 left-0">

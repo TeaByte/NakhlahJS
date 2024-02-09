@@ -7,11 +7,6 @@
   --rounded-btn: 0.2rem;
 }
 
-.ghost-color {
-  background-color: oklch(var(--bc)/0.2) !important;
-  border-color: transparent !important;
-}
-
 .nav {
   border-color: oklch(var(--bc)/0.2) !important;
 }
@@ -199,11 +194,11 @@ body::-moz-scrollbar-thumb {
   cursor: pointer;
 }
 
-/* Ladning page and course page background images */
-[data-theme="dim"] .bg-patternTop, [data-theme="dim"] .bg-waves {
+/* Ladning page background image */
+[data-theme="dim"] {
   filter: invert(91%) sepia(9%) saturate(664%) hue-rotate(161deg) brightness(90%) contrast(84%);
 }
 
 .bg-patternTop {
-  background-image: url(../patternTop.svg);
+  background-image: url(../Images/patternTop.svg);
 }

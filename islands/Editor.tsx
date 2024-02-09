@@ -41,6 +41,7 @@ export default function Editor(props: EditorProps) {
     window.editor.setValue("");
     setOutput("");
   }
+
   function handleCodeTest() {
     setTesting(true);
     const code: string = window.editor.getValue() || "";
@@ -158,19 +159,18 @@ export default function Editor(props: EditorProps) {
             تشغيل
           </button>
           <button
-            class="btn ghost-color grow"
+            class="btn btn-active grow"
             onClick={handleCodeClear}
           >
             مسح
           </button>
           <button
-            class={`btn grow border-0 ${
-              isTestPassed === undefined
-                ? "ghost-color"
-                : isTestPassed
+            class={`btn grow border-0 ${isTestPassed === undefined
+              ? "btn-active"
+              : isTestPassed
                 ? "btn-info bg-success hover:bg-[#9bc27a]"
                 : "btn-info bg-error hover:bg-[#ff6868]"
-            }`}
+              }`}
             onClick={handleCodeTest}
             disabled={testing}
           >

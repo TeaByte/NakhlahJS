@@ -18,7 +18,7 @@ export default function Drawer(
       <div class="drawer-content">
         <label
           for="my-drawer-4"
-          class="drawer-button btn ghost-color"
+          class="drawer-button btn btn-active"
         >
           <IconLayoutSidebarLeftCollapse aria-hidden="true" />
         </label>

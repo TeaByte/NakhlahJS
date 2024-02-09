@@ -1,8 +1,6 @@
 import { Head } from "$fresh/runtime.ts";
+import AboutIcons from "@/components/AboutIcons.tsx";
 import Footer from "../components/Footer.tsx";
-
-import IconBrandTelegram from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-telegram.tsx";
-import IconBrandGithub from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/brand-github.tsx";
 
 export default function AboutPage() {
   return (
@@ -110,26 +108,7 @@ export default function AboutPage() {
                 </span>
               </p>
             </div>
-
-            <div class="flex gap-2">
-              <a
-                class="hover:opacity-75"
-                target="_blank"
-                title="تلغرام منصه نخله"
-                href="https://t.me/NakhlahJS"
-              >
-                <IconBrandTelegram />
-              </a>
-              <a
-                class="hover:opacity-75"
-                target="_blank"
-                title="سورس منصه نخله"
-                href="https://github.com/TeaByte/NakhlahJS"
-              >
-                <IconBrandGithub />
-              </a>
-            </div>
-
+            <AboutIcons />
             <a title="العودى الى الصفحة الرئيسية" href="/" class="underline">
               العودى الى الصفحة الرئيسية
             </a>

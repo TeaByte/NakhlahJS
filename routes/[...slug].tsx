@@ -4,14 +4,12 @@ import { PageProps } from "$fresh/server.ts";
 import { CSS } from "$gfm";
 
 import { Course } from "../utils/types.ts";
-import { getCourse, getJson } from "../utils/course.ts";
+import { getCourse, getJson, findNextCourse, findPrevCourse } from "../utils/course.ts";
 
 import EditorSplit from "../components/EditorSplit.tsx";
 import MarkdownSplit from "../components/MarkdownSplit.tsx";
-
-import IconAppWindow from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/app-window.tsx";
-import { findNextCourse } from "../utils/course.ts";
-import { findPrevCourse } from "../utils/course.ts";
+import SmallScreenButton from "@/components/SmallScreenButton.tsx";
+import CourseLoading from "@/components/CourseLoading.tsx";
 
 interface Props {
   course: Course;
@@ -78,27 +76,11 @@ export default function CoursePage(
         <script src="/JavaScript/courses-page.js" />
       </Head>
       <main>
-        <div
-          class="btn btn-info bg-[#5bbcd1] hover:bg-[#5bbcd1] flex items-center gap-1 md:hidden mt-2 fixed z-[999] bottom-2 right-2"
-          id="open-editor"
-        >
-          <IconAppWindow />
-          <p>
-            فتح المحرر
-          </p>
-        </div>
-        <div
-          id="loading"
-          class="flex-grow h-full-minus-bar w-full absolute bg-base-300 z-[9999] transition-opacity duration-500 ease-in-out opacity-100"
-        >
-          <div className="flex flex-col justify-center items-center h-[89%] bg-base-100 opacity-90 dark:opacity-100 dark:bg-transparent p-5 rounded-lg">
-            <div className="code-loader">
-              <span>{"{"}</span>
-              <span>{"}"}</span>
-            </div>
-            <p className="text-2xl">جاري تحميل المحتوى</p>
-          </div>
-        </div>
+        {/* Small screen editor/docs toggle button */}
+        <SmallScreenButton />
+        {/* Course page loading */}
+        <CourseLoading />
+        {/* The split section */}
         <div dir="ltr" class="split flex-grow h-full-minus-bar">
           <div id="split-0" class="flex flex-col">
             <EditorSplit slug={course.slug} />
@@ -114,7 +96,6 @@ export default function CoursePage(
           </div>
         </div>
       </main>
-      {/* <ProgressTrack slug={course.slug} /> */}
     </>
   );
 }

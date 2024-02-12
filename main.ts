@@ -13,6 +13,7 @@ import manifest from "./fresh.gen.ts";
 import { freshSEOPlugin } from "https://deno.land/x/fresh_seo/mod.ts";
 import { walk } from "https://deno.land/std/fs/mod.ts";
 
+// Geting the path name of all courses to feed it to the SEO plugin
 async function getAllPaths(directory: string): Promise<string[]> {
   const paths: string[] = [];
   for await (const entry of walk(directory, { includeDirs: false })) {
@@ -32,8 +33,8 @@ async function getAllPaths(directory: string): Promise<string[]> {
 
 const allPaths = await getAllPaths("courses");
 const coursesPath = allPaths.slice(1);
-// console.log(coursesPath);
 
+// Genrating sitemap.xml
 await start(manifest, {
   plugins: [
     freshSEOPlugin(manifest, {

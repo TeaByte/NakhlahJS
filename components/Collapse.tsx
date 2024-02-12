@@ -19,7 +19,7 @@ export default function Collapse(
               class="gray-200 hover:opacity-75 list-none"
               style={{ order: course.order }}
             >
-              <h3 class="text-gray-500 font-bold flex gap-1 items-centerrounded-btn flex gap-1 items-center">
+              <h3 class="text-gray-500 font-bold items-centerrounded-btn flex gap-1 items-center">
                 <ProgressCheck slug={course.slug} />
                 {course.title}
               </h3>

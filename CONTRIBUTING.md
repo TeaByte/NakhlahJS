@@ -1,1 +1,5 @@
-## Contributing docs are available here: <https://nakhlahjs.site/contribute>.
+<div dir="rtl">
+
+## مستندات المساهمة متاحة هنا: <https://nakhlahjs.site/contribute>.
+
+</div>

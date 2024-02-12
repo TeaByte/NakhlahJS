@@ -4,38 +4,38 @@
 [![Lint Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/lint.yml/badge.svg)](https://github.com/TeaByte/NakhlahJS/actions/workflows/lint.yml)
 [![Deploy Workflow](https://github.com/TeaByte/NakhlahJS/actions/workflows/codeql.yml/badge.svg)](https://github.com/TeaByte/NakhlahJS/actions/workflows/codeql.yml/)
 
-NakhlahJS is a dynamic Arabic JavaScript learning platform, drawing inspiration
-from the style of [freeCodeCamp](https://www.freecodecamp.org/learn/). Our
-comprehensive lessons are structured based on the principles of freeCodeCamp and
-the extensive documentation available on
-[MDN Web Docs](https://developer.mozilla.org/en-US/).
+<div dir="rtl">
 
-## Overview
+منصة تعليمية عربية. مخصصة لاكتساب مهارات لغة البرمجة جافاسكريبت بشكل ممتع
+ومبتكر. نتبنى نهجًا فريدًا يركز على التعلم التفاعلي والتطبيق العملي المباشر، مما
+يمكّن المتعلمين من فهم الأساسيات بشكل أعمق وتطبيق مهاراتهم على الفور.
 
-Learning JavaScript has never been more accessible. NakhlahJS is designed to
-empower Arabic-speaking developers and enthusiasts by offering a rich and
-interactive educational experience. Whether you are a beginner or looking to
-enhance your JavaScript skills, NakhlahJS provides a supportive environment to
-help you achieve your learning goals.
+## ما نقدمه
 
-## Key Features
+في موقعنا، نُقدم مجموعة شاملة من الموارد التعليمية لتعلم لغة البرمجة جافاسكريبت
+بسهولة وبساطة. بدءًا من دروس البرمجة الأساسية وصولاً إلى المستويات المتقدمة، نركز
+على تسهيل فهم المفاهيم من خلال التفاعل والتطبيق العملي. نشجع بشدة على التفاعل مع
+المحتوى والمشاركة الفعَّالة، مما يساعد في بناء مهارات البرمجة بشكل أفضل. هدفنا هو
+توفير تجربة تعلم فعَّالة وممتعة تعتمد على البساطة والتفاعل، لضمان تطوير مهاراتك
+بثقة وسهولة.
 
-- **Inspired by freeCodeCamp:** Benefit from a learning structure proven
-  effective by millions of learners worldwide.
+## ملامح بارزة
 
-- **MDN Web Docs Integration:** Our lessons are crafted using the authoritative
-  and detailed documentation from MDN Web Docs, ensuring accuracy and relevance.
-
-- **Interactive Coding Challenges:** Reinforce your learning with hands-on
-  coding exercises and challenges to solidify your understanding of JavaScript
-  concepts.
-
-- **Community Support:** Engage with fellow learners, ask questions, and share
-  your experiences through our vibrant community forum.
+منصتنا مستوحاة من منصة [(freeCodeCamp)](https://www.freecodecamp.org/learn/)،
+حيث نقدم لك هيكل تعلم أثبت فعاليته لدى الملايين حول العالم. نتكامل بشكل وثيق مع
+مستندات [(MDN Web Docs)](https://developer.mozilla.org/en-US/)، حيث تم صياغة
+دروسنا باستخدام وثائق موثوقة ومفصلة، مما يعزز دقة وارتباط المحتوى. تقدم منصتنا
+تحديات البرمجة التفاعلية لتعزيز فهمك لمفاهيم JavaScript من خلال تمارين وتحديات
+برمجية تفاعلية، مساهمة في تعزيز تعلمك بشكل فعّال. وفي سياق الدعم المجتمعي، نشجع
+على التواصل مع زملائك في التعلم. يُشجع عليك طرح الأسئلة ومشاركة تجاربك من خلال
+منتدى مجتمعنا النابض بالحياة. نؤمن بأهمية بناء مجتمع فعّال يدعم عملية التعلم
+وتبادل المعرفة بين أفراده.
 
 ---
 
-### Run It Localy
+### تشغيل المشروع محليا
+
+<div dir="ltr">
 
 1. **Clone the Repository**
 
@@ -49,3 +49,6 @@ help you achieve your learning goals.
    ```sh
    deno task start
    ```
+
+</div>
+</div>

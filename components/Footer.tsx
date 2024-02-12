@@ -6,12 +6,12 @@ export default function Footer() {
           <div class="flex items-center gap-1">
             <a
               href="/"
-              title="نخله جي اس"
+              title="نخلة جي اس"
               data-current="true"
               aria-current="page"
             >
               <img
-                title="نخله جي اس"
+                title="نخلة جي اس"
                 alt="Website logo"
                 src="/Images/logo.webp"
                 class="h-8 w-8"
@@ -19,7 +19,7 @@ export default function Footer() {
             </a>
             <a
               href="/"
-              title="نخله جي اس"
+              title="نخلة جي اس"
               class="text-2xl ml-1 font-bold hover:animate-pulse"
               data-current="true"
               aria-current="page"

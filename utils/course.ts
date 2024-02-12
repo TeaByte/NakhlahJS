@@ -7,6 +7,7 @@ import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
 export let CoursesCount = 0;
 export let FlatSlugsCache: string[] = [];
 
+// Geting the course dir meta data from _data.json file
 export async function getGroupJsonData(
   groupPath: string,
 ): Promise<{ order: number; label: string; lableSlug: string } | undefined> {
@@ -23,6 +24,7 @@ export async function getGroupJsonData(
   }
 }
 
+// Geting the course meta data
 export async function getCourse(
   slug: string,
 ): Promise<Course> {
@@ -47,8 +49,9 @@ export async function getJson(
   return [json.lableSlug, json.label];
 }
 
+// Geting the name/data/path of all courses
 export async function getCourses(
-  cache: { courses: (Course | CourseGroup)[] } = { courses: [] },
+  cache: { courses: (Course | CourseGroup)[], numberOfCourses: number } = { courses: [], numberOfCourses: 0 },
 ): Promise<{ courses: (Course | CourseGroup)[] }> {
   if (cache.courses.length > 0) {
     return cache;
@@ -80,7 +83,7 @@ export async function getCourses(
       courses,
       order: groupData?.order || 999,
       label: groupData?.label || "بدون عنوان",
-      lableSlug: groupData?.lableSlug || "No Label",
+      lableSlug: groupData?.lableSlug || "no-label",
     };
   };
 
@@ -103,6 +106,7 @@ export async function getCourses(
   merged.sort((a, b) => a.order - b.order);
 
   cache.courses = merged;
+  cache.numberOfCourses = CoursesCount;
 
   const endTime = performance.now();
   console.log(`Caching data took ${(endTime - startTime) / 1000} seconds`);
@@ -126,11 +130,13 @@ export function getFlatSlugs() {
   FlatSlugsCache = FlatSlugs;
   return FlatSlugs;
 }
+
+// Get the number of total courses
 export function getNumberOfCourses() {
-  const FlatSlugs = getFlatSlugs();
-  return FlatSlugs.length;
+  return CourceCache.numberOfCourses;
 }
 
+// Find the next course ( used in the next button )
 export function findNextCourse(slug: string) {
   const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
@@ -140,6 +146,7 @@ export function findNextCourse(slug: string) {
   return FlatSlugs[index + 1];
 }
 
+// Find the previous course ( used in the previous button )
 export function findPrevCourse(slug: string) {
   const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);

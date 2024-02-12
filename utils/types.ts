@@ -18,10 +18,12 @@ export interface CourseAttributes {
   snippet: string;
   order: number;
 }
+
 export interface student {
   sessionId: string;
   completedCourses: string[];
 }
+
 export interface Result {
   ok: boolean;
 }

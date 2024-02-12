@@ -8,9 +8,9 @@ export default function NavBar() {
     <nav class="bg-base-300 w-full py-4 px-4 flex items-center gap-4 border-b-2 nav">
       <div class="flex items-center flex-1">
         <div class="flex items-center gap-1 pr-2">
-          <a href="/" title="نخله جي اس">
+          <a href="/" title="نخلة جي اس">
             <img
-              title="نخله جي اس"
+              title="نخلة جي اس"
               alt="Website logo"
               src="/Images/logo.webp"
               class="h-8 w-8"
@@ -18,7 +18,7 @@ export default function NavBar() {
           </a>
           <a
             href="/"
-            title="نخله جي اس"
+            title="نخلة جي اس"
             class="text-2xl ml-1 font-bold hover:animate-pulse"
           >
             <div class="flex items-center">

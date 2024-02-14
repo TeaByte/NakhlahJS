@@ -103,6 +103,9 @@ mark::before {
   background-color: oklch(var(--b3));
   background-repeat: no-repeat;
   background-position: 50%;
+  border-radius: 0.2rem;
+  height: 99%;
+  margin-top: 4px;
 }
 
 .gutter::before {
@@ -186,7 +189,7 @@ body::-moz-scrollbar-thumb {
 
 .copy-button {
   background-color: oklch(var(--bc)/0.2);
-  padding: 5px;
+  padding: 3px;
   border-radius: 0.2rem;
   position: absolute;
   top: 5px;

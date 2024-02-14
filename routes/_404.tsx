@@ -20,10 +20,10 @@ export default function Error404() {
             />
             <h1 class="text-4xl font-bold">الصفحة غير موجودة</h1>
             <p class="my-4">
-              تأكد من صحه الرابط.
+              تأكد من صحة الرابط.
             </p>
-            <a title="العودى الى صفحة الدروس" href="/courses" class="underline">
-              العودى الى صفحة الدروس
+            <a title="العودة الى صفحة الدروس" href="/courses" class="underline">
+              العودة الى صفحة الدروس
             </a>
           </div>
         </div>

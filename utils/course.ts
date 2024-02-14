@@ -140,9 +140,6 @@ export function getNumberOfCourses() {
 export function findNextCourse(slug: string) {
   const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
-  if (index === -1) {
-    return slug;
-  }
   return FlatSlugs[index + 1];
 }
 
@@ -150,8 +147,5 @@ export function findNextCourse(slug: string) {
 export function findPrevCourse(slug: string) {
   const FlatSlugs = getFlatSlugs();
   const index = FlatSlugs.indexOf(slug);
-  if (index === 1) {
-    return slug;
-  }
   return FlatSlugs[index - 1];
 }

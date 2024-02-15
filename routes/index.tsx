@@ -35,7 +35,7 @@ export default function IndexPage() {
               <p class="mx-auto text-lg leading-snug lg:w-1/2">
                 منصة تعليمية عربية. مخصصة لاكتساب مهارات لغة البرمجة جافاسكريبت بشكل ممتع ومبتكر. نتبنى نهجًا فريدًا يركز على التعلم التفاعلي والتطبيق العملي المباشر، مما يمكّن المتعلمين من فهم الأساسيات بشكل أعمق وتطبيق مهاراتهم على الفور.
               </p>
-              <div class="rounded-lg mt-4 mb-2">
+              <div class="mt-4 mb-2 flex flex-col md:flex-row justify-center items-center gap-1">
                 <a
                   href="/courses"
                   class="px-8 text-lg btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-box"
@@ -43,6 +43,7 @@ export default function IndexPage() {
                   <IconArrowBigRightLines class="ml-2" />
                   ابدأ الآن
                 </a>
+                <button id="install-pwa" class="px-6 text-lg btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-box" style={{ display: 'none' }}>تحميل التطبيق</button>
               </div>
               <AboutIcons />
             </div>

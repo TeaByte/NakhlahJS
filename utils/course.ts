@@ -122,9 +122,9 @@ export function getFlatSlugs() {
   const slugs = courses.map((c) => {
     if ("courses" in c) {
       c.courses.sort((a, b) => a.order - b.order);
-      return c.courses.map((c) => c.slug.replace("\\", "/"));
+      return c.courses.map((c) => c.slug.replace(/\\/g, "/"));
     }
-    return c.slug.replace("\\", "/");
+    return c.slug.replace(/\\/g, "/");
   });
   const FlatSlugs = slugs.flat();
   FlatSlugsCache = FlatSlugs;

@@ -70,26 +70,4 @@ self.addEventListener('fetch', async function (event) {
         );
     }
     // TODO: Implement cache strategy
-    //   if (no_cache_urls.includes(url)) {
-    //     event.respondWith(fetch(event.request));
-    //   } else {
-    //     event.respondWith(
-    //       caches.match(event.request).then(function (response) {
-    //         if (response) {
-    //           return response;
-    //         } else {
-    //           if (event.request.method === 'GET') {
-    //             return fetch(event.request).then(function (response) {
-    //               return caches.open(CACHE_NAME).then(function (cache) {
-    //                 cache.put(event.request, response.clone());
-    //                 return response;
-    //               });
-    //             });
-    //           } else {
-    //             return fetch(event.request);
-    //           }
-    //         }
-    //       })
-    //     );
-    //   }
 });

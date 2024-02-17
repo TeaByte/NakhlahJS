@@ -41,8 +41,20 @@ async function cacheNewResources() {
     await cache.addAll([...data, "/", "/offline", "/courses"]);
 }
 
-self.addEventListener('fetch', function (event) {
+self.addEventListener('fetch', async function (event) {
     const url = new URL(event.request.url).pathname
+    // ! this code update cache on every request it is not good for performance, but it make app works offline
+    // TODO: remove this code block
+    if (event.request.method === 'GET' && navigator.onLine && event.request.url.startsWith('http')) {
+        try {
+            const cache = await caches.open(CACHE_NAME);
+            const resp = await fetch(event.request);
+            cache.put(event.request, resp.clone());
+            event.respondWith(resp);
+        } catch (error) {
+            // console.error('Error fetching and caching:', error);
+        }
+    }
     // ! this code block is for offline support temproray
     // TODO: remove this code block
     if (!navigator.onLine) {
@@ -55,13 +67,6 @@ self.addEventListener('fetch', function (event) {
                 }
             })
         );
-    }
-    // ! this code update cache on every request it is not good for performance, but it make app works offline
-    // TODO: remove this code block
-    if (event.request.method === 'GET' && event.request.url.origin === location.origin) {
-        const cache = await caches.open(CACHE_NAME);
-        cache.add(event.request.url);
-        return fetch(event.request);
     }
     // TODO: Implement cache strategy
     //   if (no_cache_urls.includes(url)) {

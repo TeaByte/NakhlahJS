@@ -52,6 +52,7 @@ self.addEventListener('fetch', async function (event) {
             cache.put(event.request, resp.clone());
             event.respondWith(resp);
         } catch (error) {
+            // TODO: handle error
             // console.error('Error fetching and caching:', error);
         }
     }

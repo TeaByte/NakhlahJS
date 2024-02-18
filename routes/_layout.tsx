@@ -36,8 +36,8 @@ export default async function Layout(req: Request, ctx: FreshContext) {
       <body>
         <NavBar />
         {/* Update your browser message */}
-        <section id="old-check" class="flex-grow text-center justify-center items-center h-[100%] w-full absolute bg-base-300 z-[9999] transition-opacity duration-500 ease-in-out opacity-100 overflow-hidden hidden">
-          <div className="flex flex-col justify-center items-center h-[89%] bg-base-100 opacity-90 dark:opacity-100 dark:bg-transparent p-5 rounded-lg">
+        <section id="old-check" class="flex-grow h-[100%] w-full h-full absolute bg-base-300 z-[9999] hidden">
+          <div className="flex flex-col justify-center items-center text-center h-[89%] gap-2 p-5">
             <p class="text-2xl">
               يعتبر المتصفح الذي تستخدمه قديمًا وغير مدعوم حاليًا. يُرجى تحديث المتصفح الخاص بك أو استخدام متصفح آخر لضمان تجربة متصفح فعّالة.
             </p>

@@ -25,9 +25,9 @@ export default function IndexPage() {
         <section class="w-fulloverflow-hidden">
           <div class="container relative w-full px-8 pt-16 mx-auto lg:px-4 z-[5]">
             <div class="flex flex-col w-full mb-12 text-center">
-              <h1 class="mb-4 text-6xl font-bold tracking-tighter lg:text-6xl">
-                <span class="text-yellow-500 font-bold">JS</span>
-                <span class="ml-2 font-bold">نخلة</span>
+              <h1 class="mb-4 text-6xl font-bold tracking-tighter lg:text-9xl">
+                <span class="bg-gradient-to-br from-yellow-500 to-yellow-300 bg-clip-text text-transparent font-bold">JS</span>
+                <span class="ml-2 bg-gradient-to-bl from-slate-900 to-slate-600 bg-clip-text text-transparent font-bold">نخلة</span>
               </h1>
               <p class="text-3xl mb-2">
                 تعلم بسهولة وفعالية

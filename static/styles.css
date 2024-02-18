@@ -100,7 +100,7 @@ mark::before {
 .gutter {
   position: relative;
   z-index: 2;
-  background-color: oklch(var(--b3));
+  background-color: oklch(var(--b3)) !important;
   background-repeat: no-repeat;
   background-position: 50%;
   border-radius: 0.2rem;

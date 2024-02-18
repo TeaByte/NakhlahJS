@@ -7,7 +7,7 @@ export default function EditorSplit(props: { slug: string }) {
   const testingcode = getTestingCode(props.slug);
   return (
     <>
-      <div class="mt-2">
+      <div class="mt-2 overflow-hidden">
         <div class="mx-2 border-[6px] border-base-300 bg-base-300 rounded-btn pb-2">
           <div
             class="h-[400px] rounded-box"

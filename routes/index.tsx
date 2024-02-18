@@ -26,14 +26,14 @@ export default function IndexPage() {
         <section class="w-fulloverflow-hidden">
           <div class="container relative w-full px-8 pt-16 mx-auto lg:px-4 z-[5]">
             <div class="flex flex-col w-full mb-12 text-center">
-              <h1 class="mb-4 text-6xl font-bold tracking-tighter lg:text-9xl">
+              <h1 class="mb-4 text-6xl font-bold tracking-tighter lg:text-8xl">
                 <span class="bg-gradient-to-br from-yellow-500 to-yellow-300 bg-clip-text text-transparent font-bold">JS</span>
                 <span class="ml-2 bg-gradient-to-bl from-base-content to-base-content/80 bg-clip-text text-transparent font-bold">نخلة</span>
               </h1>
+              {/* <CodeBox /> | It don't really look good and in small screen its an issue */}
               <p class="text-3xl mb-2">
                 تعلم بسهولة وفعالية
               </p>
-              <CodeBox />
               <p class="mx-auto text-lg leading-snug lg:w-1/2">
                 منصة تعليمية عربية. مخصصة لاكتساب مهارات لغة البرمجة جافاسكريبت بشكل ممتع ومبتكر. نتبنى نهجًا فريدًا يركز على التعلم التفاعلي والتطبيق العملي المباشر، مما يمكّن المتعلمين من فهم الأساسيات بشكل أعمق وتطبيق مهاراتهم على الفور.
               </p>

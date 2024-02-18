@@ -34,6 +34,14 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         <script type="module" src="/JavaScript/sw-rg.js"></script>
       </head>
       <body>
+        <section id="old-check" class="flex flex-col w-full justify-center items-center h-screen z-[99999] bg-base-300 p-5 gap-2 text-center hidden">
+          <p class="text-2xl">
+            يعتبر المتصفح الذي تستخدمه قديمًا وغير مدعوم حاليًا. يُرجى تحديث المتصفح الخاص بك أو استخدام متصفح آخر لضمان تجربة متصفح فعّالة.
+          </p>
+          <p>
+            نحن نلتزم بتوفير الدعم لمتصفحاتكم، حيث نعمل بجد لضمان تجربة موثوقة وفعّالة لجميع المستخدمين
+          </p>
+        </section>
         <NavBar />
         <ctx.Component />
       </body>

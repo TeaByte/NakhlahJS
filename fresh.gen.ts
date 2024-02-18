@@ -11,6 +11,7 @@ import * as $courses from "./routes/courses.tsx";
 import * as $group_slug_ from "./routes/group/[slug].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $offline from "./routes/offline.tsx";
+import * as $CodeBox from "./islands/CodeBox.tsx";
 import * as $Editor from "./islands/Editor.tsx";
 import * as $ProgressBar from "./islands/ProgressBar.tsx";
 import * as $ProgressCheck from "./islands/ProgressCheck.tsx";
@@ -32,6 +33,7 @@ const manifest = {
     "./routes/offline.tsx": $offline,
   },
   islands: {
+    "./islands/CodeBox.tsx": $CodeBox,
     "./islands/Editor.tsx": $Editor,
     "./islands/ProgressBar.tsx": $ProgressBar,
     "./islands/ProgressCheck.tsx": $ProgressCheck,

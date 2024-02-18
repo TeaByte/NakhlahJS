@@ -3,6 +3,7 @@ import { Head } from "$fresh/runtime.ts";
 import Footer from "../components/Footer.tsx";
 import IconArrowBigRightLines from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/arrow-big-right-lines.tsx";
 import AboutIcons from "@/components/AboutIcons.tsx";
+import CodeBox from "@/islands/CodeBox.tsx";
 
 export default function IndexPage() {
   return (
@@ -32,6 +33,7 @@ export default function IndexPage() {
               <p class="text-3xl mb-2">
                 تعلم بسهولة وفعالية
               </p>
+              <CodeBox />
               <p class="mx-auto text-lg leading-snug lg:w-1/2">
                 منصة تعليمية عربية. مخصصة لاكتساب مهارات لغة البرمجة جافاسكريبت بشكل ممتع ومبتكر. نتبنى نهجًا فريدًا يركز على التعلم التفاعلي والتطبيق العملي المباشر، مما يمكّن المتعلمين من فهم الأساسيات بشكل أعمق وتطبيق مهاراتهم على الفور.
               </p>

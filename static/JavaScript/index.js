@@ -7,14 +7,14 @@ if (storedTheme) {
 }
 
 // To check if the browser supports oklch ( is new browser ) 
-(function supportsOklch() {
+function supportsOklch() {
   const testElement = document.createElement('div');
   testElement.style.color = 'oklch(var(--b3))';
   document.body.appendChild(testElement);
-  const style = window.getComputedStyle(testElement).color;
+  const style = globalThis.getComputedStyle(testElement).color;
   document.body.removeChild(testElement);
   return style.indexOf('oklch') !== -1;
-})()
+}
 
 // PWA install button
 let installPrompt = null;
@@ -25,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('old-check').style.display = 'block';
   }
 
+  // Check if browser supports PWA
   if ('serviceWorker' in navigator && 'PushManager' in globalThis) {
     globalThis.addEventListener('beforeinstallprompt', (e) => {
       console.log('beforeinstallprompt fired');
@@ -50,6 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Hide the install button
   function disableInAppInstallPrompt() {
     installPrompt = null;
     document.getElementById('install-pwa').style.display = 'none';

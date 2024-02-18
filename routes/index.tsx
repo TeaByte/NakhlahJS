@@ -3,7 +3,7 @@ import { Head } from "$fresh/runtime.ts";
 import Footer from "../components/Footer.tsx";
 import IconArrowBigRightLines from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/arrow-big-right-lines.tsx";
 import AboutIcons from "@/components/AboutIcons.tsx";
-import CodeBox from "@/islands/CodeBox.tsx";
+// import CodeBox from "@/islands/CodeBox.tsx";
 
 export default function IndexPage() {
   return (

@@ -34,15 +34,18 @@ export default async function Layout(req: Request, ctx: FreshContext) {
         <script type="module" src="/JavaScript/sw-rg.js"></script>
       </head>
       <body>
-        <section id="old-check" class="flex flex-col w-full justify-center items-center h-screen z-[99999] bg-base-300 p-5 gap-2 text-center hidden">
-          <p class="text-2xl">
-            يعتبر المتصفح الذي تستخدمه قديمًا وغير مدعوم حاليًا. يُرجى تحديث المتصفح الخاص بك أو استخدام متصفح آخر لضمان تجربة متصفح فعّالة.
-          </p>
-          <p>
-            نحن نلتزم بتوفير الدعم لمتصفحاتكم، حيث نعمل بجد لضمان تجربة موثوقة وفعّالة لجميع المستخدمين
-          </p>
-        </section>
         <NavBar />
+        {/* Update your browser message */}
+        <section id="old-check" class="flex-grow text-center justify-center items-center h-[100%] w-full absolute bg-base-300 z-[9999] transition-opacity duration-500 ease-in-out opacity-100 overflow-hidden hidden">
+          <div className="flex flex-col justify-center items-center h-[89%] bg-base-100 opacity-90 dark:opacity-100 dark:bg-transparent p-5 rounded-lg">
+            <p class="text-2xl">
+              يعتبر المتصفح الذي تستخدمه قديمًا وغير مدعوم حاليًا. يُرجى تحديث المتصفح الخاص بك أو استخدام متصفح آخر لضمان تجربة متصفح فعّالة.
+            </p>
+            <p>
+              نحن نلتزم بتوفير الدعم لمتصفحاتكم، حيث نعمل بجد لضمان تجربة موثوقة وفعّالة لجميع المستخدمين
+            </p>
+          </div>
+        </section>
         <ctx.Component />
       </body>
     </html>

@@ -30,8 +30,9 @@ export default function Drawer(
           class="drawer-overlay"
         >
         </label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content gap-2">
+        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content gap-1">
           {courses.map((course, index) => {
+            // Group of courses
             if ("courses" in course) {
               return (
                 <Collapse
@@ -40,12 +41,13 @@ export default function Drawer(
                 />
               );
             } else {
+              // Single course
               return (
                 <li key={course.slug}>
                   <a
                     title={course.title}
                     href={`/${course.slug}`}
-                    class="gray-200 hover:opacity-75 list-none bg-base-100 rounded-btn py-4"
+                    class="gray-200 hover:opacity-75 list-none bg-base-300 rounded-btn py-4"
                     style={{ order: course.order }}
                   >
                     <h3 class="text-gray-500 font-bold flex gap-1 items-center">

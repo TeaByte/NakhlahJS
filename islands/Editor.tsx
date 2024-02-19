@@ -146,8 +146,8 @@ export default function Editor(props: EditorProps) {
   }
 
   return (
-    <>
-      <div class="flex flex-col gap-2 grow overflow-hidden mt-2 mx-2">
+    <div class="mt-2 mx-2 h-[42%] mb-2">
+      <div class="flex h-full flex-col gap-2 overflow-hidden">
         <div dir="rtl" class="flex gap-2">
           <button
             class={"btn btn-info hover:bg-[#5bbcd1] grow border-0 " +
@@ -180,13 +180,16 @@ export default function Editor(props: EditorProps) {
             اختبار
           </button>
         </div>
-        <pre
-          className={" bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 grow font-bold " +
-            (isError ? "text-error" : isTestPassed ? "text-success" : "")}
-        >
-          {output}
-        </pre>
+        <div class="h-full min-h-[357px]">
+          <pre
+            style="text-wrap: wrap;"
+            className={"h-full pb-[60px] transform transition-all duration-300 ease-in-out bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 font-bold " +
+              (isError ? "text-error" : isTestPassed ? "text-success" : "")}
+          >
+            {output}
+          </pre>
+        </div>
       </div>
-    </>
+    </div>
   );
 }

@@ -18,7 +18,7 @@ export default function Courses(
           total={total}
         />
       </div>
-      <section class="flex flex-col gap-2 mb-4 mt-6">
+      <section class="flex flex-col gap-2 mb-4 mt-6" f-client-nav={false}>
         {courses.map((course, index) => {
           // Group of courses
           if ("courses" in course) {

@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
-import { Handlers } from "$fresh/server.ts";
+import { Handlers, RouteConfig } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS } from "$gfm";
 
@@ -43,6 +43,10 @@ export const handler: Handlers<Props> = {
     }
   },
 };
+
+export const config: RouteConfig = {
+  skipInheritedLayouts: true,
+}
 
 export default function CoursePage(
   props: PageProps<Props>,

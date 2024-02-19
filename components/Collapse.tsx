@@ -12,12 +12,11 @@ export default function Collapse(
       </div>
       <div class="collapse-content flex flex-col gap-2">
         {courses.map((course) => (
-          <div key={course.slug}>
+          <div key={course.slug} style={{ order: course.order }}>
             <a
               title={course.title}
               href={`/${course.slug}`}
               class="gray-200 hover:opacity-75 list-none"
-              style={{ order: course.order }}
             >
               <h3 class="text-gray-500 font-bold items-centerrounded-btn flex gap-1 items-center">
                 <ProgressCheck slug={course.slug} />

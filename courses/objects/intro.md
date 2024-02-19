@@ -1,5 +1,5 @@
 ---
-title: بناء الكائنات
+title: الكائنات والتعامل معها
 snippet: الكائنات تشبه المصفوفات باستثناء أنه بدلاً من استخدام الفهارس
 order: 1
 ---
@@ -17,7 +17,7 @@ order: 1
 
 ```js
 const cat = {
-  "name": "Whiskers",
+  "name": "Lucifer",
   "legs": 4,
   "tails": 1,
   "enemies": ["Water", "Dogs"],

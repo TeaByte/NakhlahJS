@@ -22,9 +22,7 @@ interface Props {
 export const handler: Handlers<Props> = {
   async GET(_req, ctx) {
     try {
-      let lable: string | undefined;
       const course = await getCourse(ctx.params.slug);
-      if (course === null) return ctx.renderNotFound();
       const nextCourse = findNextCourse(ctx.params.slug);
       const prevCourse = findPrevCourse(ctx.params.slug);
       if (ctx.params.slug.includes("/")) {

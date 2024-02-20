@@ -3,7 +3,6 @@ import { Head } from "$fresh/runtime.ts";
 import Footer from "../components/Footer.tsx";
 import IconArrowBigRightLines from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/arrow-big-right-lines.tsx";
 import AboutIcons from "@/components/AboutIcons.tsx";
-// import CodeBox from "@/islands/CodeBox.tsx";
 
 export default function IndexPage() {
   return (
@@ -30,7 +29,6 @@ export default function IndexPage() {
                 <span class="bg-gradient-to-br from-yellow-500 to-yellow-300 bg-clip-text text-transparent font-bold">JS</span>
                 <span class="ml-2 bg-gradient-to-bl from-base-content to-base-content/80 bg-clip-text text-transparent font-bold">نخلة</span>
               </h1>
-              {/* <CodeBox /> | It don't really look good and in small screen its an issue */}
               <p class="text-3xl mb-2">
                 تعلم بسهولة وفعالية
               </p>

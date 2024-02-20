@@ -1,4 +1,8 @@
-export default function EditButton({ slug }: { slug: string }) {
+interface EditButtonProps {
+  slug: string;
+}
+
+export default function EditButton({ slug }: EditButtonProps) {
   return (
     <a
       target="_blank"

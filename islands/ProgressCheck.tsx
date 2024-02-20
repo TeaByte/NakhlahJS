@@ -2,7 +2,12 @@ import IconCircleCheckFilled from "https://deno.land/x/tabler_icons_tsx@0.0.5/ts
 import IconCircle from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/circle.tsx";
 import { useEffect, useState } from "preact/hooks";
 import { newPassSignal } from "./signals/store.ts";
-export default function ProgressCheck(props: { slug: string }) {
+
+interface ProgressCheckProps {
+    slug: string;
+}
+
+export default function ProgressCheck(props: ProgressCheckProps) {
     const [isPassed, setIsPassed] = useState<boolean>(false);
     useEffect(() => {
         const passedTEXT = localStorage.getItem("passedCourses");

@@ -6,8 +6,12 @@ import Collapse from "./Collapse.tsx";
 import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
 
+interface DrawerProps {
+  courses: (Course | CourseGroup)[];
+}
+
 export default function Drawer(
-  { courses }: { courses: (Course | CourseGroup)[] },
+  { courses }: DrawerProps,
 ) {
   return (
     <div class="drawer">
@@ -36,12 +40,13 @@ export default function Drawer(
             <p class="text-lg">قائمة الدروس</p>
             <IconChevronDown />
           </div>
-          {courses.map((course, index) => {
+          {courses.map((course) => {
             // Group of courses
             if ("courses" in course) {
               return (
                 <Collapse
-                  title={course.label || "بدون عنوان"}
+                  key={course.label}
+                  title={course.label}
                   courses={course.courses}
                 />
               );

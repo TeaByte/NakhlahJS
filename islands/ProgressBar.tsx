@@ -1,4 +1,8 @@
-export default function ProgressBar(props: { progress: number }) {
+interface ProgressBarProps {
+  progress: number;
+}
+
+export default function ProgressBar(props: ProgressBarProps) {
   // min default must be 5 for better style
   const defultWidth = (props.progress < 5 && props.progress > 0) ? 5 : props.progress;
   const widthStyle = { width: `${defultWidth}%` };

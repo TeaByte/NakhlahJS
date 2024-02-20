@@ -15,11 +15,11 @@ export default function ThemeToggle() {
       if (theme === "dim") {
         documentDiv.setAttribute("data-color-mode", "dark");
         documentDiv.setAttribute("data-dark-theme", "dark");
-        window.monaco && window.monaco.editor.setTheme("vs-dark");
+        window.monaco?.editor.setTheme("vs-dark");
       } else {
         documentDiv.setAttribute("data-color-mode", "light");
         documentDiv.setAttribute("data-light-theme", "light");
-        window.monaco && window.monaco.editor.setTheme("vs-light");
+        window.monaco?.editor.setTheme("vs-light");
       }
     }
   };

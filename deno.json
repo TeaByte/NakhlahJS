@@ -25,7 +25,7 @@
     "tailwindcss/": "npm:/tailwindcss@3.3.5/",
     "tailwindcss/plugin": "npm:/tailwindcss@3.3.5/plugin.js",
     "$std/": "https://deno.land/std@0.208.0/",
-    "$gfm": "https://deno.land/x/gfm@0.1.26/mod.ts",
+    "$gfm": "https://deno.land/x/gfm@0.6.0/mod.ts",
     "daisyui": "npm:daisyui@latest"
   },
   "compilerOptions": { "jsx": "react-jsx", "jsxImportSource": "preact" },

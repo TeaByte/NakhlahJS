@@ -1,8 +1,18 @@
-import { render } from "https://deno.land/x/gfm/mod.ts";
+import { render } from "$gfm";
 import { Course } from "../utils/types.ts";
+
+import EditButton from "../components/EditButton.tsx";
+
 import IconPlayerTrackNext from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/player-track-next.tsx";
 import IconPlayerTrackPrev from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/player-track-prev.tsx";
-import EditButton from "../components/EditButton.tsx";
+
+interface MarkdownSplitProps {
+  course: Course;
+  lable: string | undefined;
+  lableSlug: string | undefined;
+  nextCourse: string | undefined;
+  prevCourse: string | undefined;
+}
 
 export default function MarkdownSplit({
   course,
@@ -10,13 +20,7 @@ export default function MarkdownSplit({
   lableSlug,
   nextCourse,
   prevCourse,
-}: {
-  course: Course;
-  lable: string | undefined;
-  lableSlug: string | undefined;
-  nextCourse: string | undefined;
-  prevCourse: string | undefined;
-}) {
+}: MarkdownSplitProps) {
   return (
     <>
       <div class="flex px-2 pt-2 gap-2">

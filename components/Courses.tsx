@@ -1,52 +1,44 @@
-import { getNumberOfCourses } from "@/utils/course.ts";
 import { Course, CourseGroup } from "@/utils/types.ts";
 
 import Collapse from "./Collapse.tsx";
 import CourseCard from "./CourseCard.tsx";
 import ProgressSection from "@/islands/ProgressSection.tsx";
 
-export default function Courses(
-  { courses, total }: {
-    courses: (Course | CourseGroup)[];
-    total: number;
-  },
-) {
+interface CoursesProps {
+  courses: (Course | CourseGroup)[];
+  total: number;
+}
+
+export default function Courses({ courses, total }: CoursesProps) {
   return (
     <>
       <div className="py-2 bg-base-300 p-4 rounded-md">
-        <ProgressSection
-          total={total}
-        />
+        <ProgressSection total={total} />
       </div>
-      <section class="flex flex-col gap-2 mb-4 mt-6" f-client-nav={false}>
+      <section className="flex flex-col gap-2 mb-4 mt-6" f-client-nav={false}>
         {courses.map((course, index) => {
           // Group of courses
           if ("courses" in course) {
             return (
-              <div key={index}>
-                <Collapse
-                  title={course.label}
-                  courses={course.courses}
-                />
+              <div key={course.label}>
+                <Collapse title={course.label} courses={course.courses} />
               </div>
             );
           } else {
             // Single course
             return (
               <div key={course.slug}>
-                <CourseCard
-                  course={course}
-                />
+                <CourseCard course={course} />
               </div>
             );
           }
         })}
 
         <div>
-          <p class="mt-3 text-2xl">نعمل على الدروس القادمة...</p>
+          <p className="mt-3 text-2xl">نعمل على الدروس القادمة...</p>
           <a
             href="https://github.com/TeaByte/NakhlahJS"
-            class="text-gray-500 hover:underline"
+            className="text-gray-500 hover:underline"
             target="_blank"
           >
             هل تود المساهمه في الموقع ؟

@@ -2,7 +2,11 @@ import Editor from "../islands/Editor.tsx";
 import { getPreCode } from "../utils/precode.ts";
 import { getTestingCode } from "../utils/testingcode.ts";
 
-export default function EditorSplit(props: { slug: string }) {
+interface EditorSplitProps {
+  slug: string;
+}
+
+export default function EditorSplit(props: EditorSplitProps) {
   const precode = getPreCode(props.slug);
   const testingcode = getTestingCode(props.slug);
   return (

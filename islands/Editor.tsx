@@ -51,6 +51,7 @@ export default function Editor(props: EditorProps) {
       setTesting(false);
       return;
     }
+    // isPass will get changed from the testcase javascript file
     // deno-lint-ignore prefer-const
     let isPass = false;
     // deno-lint-ignore prefer-const

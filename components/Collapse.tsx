@@ -1,8 +1,13 @@
 import ProgressCheck from "@/islands/ProgressCheck.tsx";
 import { Course } from "../utils/types.ts";
 
+interface CloseProps {
+  title: string;
+  courses: Course[];
+}
+
 export default function Collapse(
-  { title, courses }: { title: string; courses: Course[] },
+  { title, courses }: CloseProps,
 ) {
   return (
     <div class="collapse collapse-arrow bg-base-300">

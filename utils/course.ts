@@ -33,10 +33,10 @@ export async function getCourse(
   const courseAttrs = attrs as CourseAttributes;
   const course: Course = {
     slug,
-    title: courseAttrs.title || "بدون عنوان",
-    content: body || "لايوجد محتوى",
-    snippet: courseAttrs.snippet || "لا يوجد",
-    order: courseAttrs.order || 999,
+    title: courseAttrs.title ?? "بدون عنوان",
+    content: body ?? "لايوجد محتوى",
+    snippet: courseAttrs.snippet ?? "لا يوجد",
+    order: courseAttrs.order ?? 999,
   };
   return course;
 }
@@ -81,9 +81,9 @@ export async function getCourses(
 
     return {
       courses,
-      order: groupData?.order || 999,
-      label: groupData?.label || "بدون عنوان",
-      lableSlug: groupData?.lableSlug || "no-label",
+      order: groupData?.order ?? 999,
+      label: groupData?.label ?? "بدون عنوان",
+      lableSlug: groupData?.lableSlug ?? "no-label",
     };
   };
 

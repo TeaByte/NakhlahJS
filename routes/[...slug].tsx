@@ -77,7 +77,7 @@ export default function CoursePage(
         <script src="/JavaScript/monaco.js"></script>
         <script src="/JavaScript/courses-page.js" />
       </Head>
-      <main>
+      <main f-client-nav>
         {/* Small screen editor/docs toggle button */}
         <SmallScreenButton />
         {/* Course page loading */}

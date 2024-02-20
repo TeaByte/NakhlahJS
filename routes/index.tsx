@@ -37,6 +37,7 @@ export default function IndexPage() {
               </p>
               <div class="mt-4 mb-2 flex flex-col md:flex-row justify-center items-center gap-1">
                 <a
+                  f-partial="/courses"
                   href="/courses"
                   class="px-8 text-lg btn bg-base-content text-base-100 hover:bg-base-200 hover:text-base-content rounded-box"
                 >

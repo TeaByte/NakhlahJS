@@ -1,3 +1,4 @@
+import { Partial } from "$fresh/runtime.ts";
 import Editor from "../islands/Editor.tsx";
 import { getPreCode } from "../utils/precode.ts";
 import { getTestingCode } from "../utils/testingcode.ts";
@@ -30,11 +31,13 @@ export default function EditorSplit(props: EditorSplitProps) {
           </div>
         </div>
       </div>
-      <Editor
-        preCode={precode}
-        testingCode={testingcode}
-        slug={props.slug}
-      />
+      <Partial name="editor">
+        <Editor
+          preCode={precode}
+          testingCode={testingcode}
+          slug={props.slug}
+        />
+      </Partial>
     </div>
   );
 }

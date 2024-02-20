@@ -29,6 +29,7 @@ export default function MarkdownSplit({
           {nextCourse && (
             <div class="grow">
               <a
+                f-partial={`/${nextCourse}`}
                 href={`/${nextCourse}`}
                 class="flex items-center gap-2 btn btn-outline flex-nowrap"
               >
@@ -41,6 +42,7 @@ export default function MarkdownSplit({
           {prevCourse && (
             <div class="grow">
               <a
+                f-partial={`/${prevCourse}`}
                 href={`/${prevCourse}`}
                 class="flex items-center gap-2 btn btn-outline flex-nowrap"
               >

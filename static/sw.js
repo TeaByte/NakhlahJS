@@ -1,7 +1,7 @@
 const CACHE_NAME = 'cache-v1';
-const no_cache_urls = [
-    "/sw-cache.json",
-]
+// const no_cache_urls = [
+//     "/sw-cache.json",
+// ]
 self.addEventListener('install', function (event) {
     event.waitUntil(
         () => {
@@ -42,7 +42,7 @@ async function cacheNewResources() {
 }
 
 self.addEventListener('fetch', async function (event) {
-    const url = new URL(event.request.url).pathname
+    // const url = new URL(event.request.url).pathname
     // ! this code update cache on every request it is not good for performance, but it make app works offline
     // TODO: remove this code block
     if (event.request.method === 'GET' && navigator.onLine && event.request.url.startsWith('http')) {

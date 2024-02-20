@@ -16,7 +16,7 @@ export default function Courses({ courses, total }: CoursesProps) {
         <ProgressSection total={total} />
       </div>
       <section className="flex flex-col gap-2 mb-4 mt-6" f-client-nav={false}>
-        {courses.map((course, index) => {
+        {courses.map((course) => {
           // Group of courses
           if ("courses" in course) {
             return (

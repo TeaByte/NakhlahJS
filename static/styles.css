@@ -12,19 +12,16 @@
 }
 
 body, .markdown-body {
-    font-family: 'Cairo', sans-serif !important;
+    font-family: Cairo, sans-serif !important;
 }
 
 .h-full-minus-bar {
+
   /* screen - navbar */
   height: calc(100vh - 82px);
 }
 
 /* Monaco Editor */
-/* .monaco-editor, .overflow-guard {
-  border-radius: 0.2rem;
-} */
-
 .iPadShowKeyboard{
   display: none;
 }
@@ -49,7 +46,7 @@ pre {
 }
 
 .markdown-body .highlight pre {
-  background-color: var(--fallback-b3,oklch(var(--b3)/1)) !important;
+  background-color: var(--fallback-b3,oklch(var(--b3)/100%)) !important;
 }
 
 .markdown-body .highlight pre .comment {
@@ -74,6 +71,7 @@ mark::before {
   display: block;
   font-weight: bold;
 }
+
 .quiz {
   background-color: oklch(var(--b3));
   color: inherit;
@@ -85,12 +83,14 @@ mark::before {
   border-radius: 0.2rem;
   margin-bottom: 10px;
 }
+
 .quiz::before {
   content: "إختبار 🧪";
   font-size: 20px;
   display: block;
   font-weight: bold;
 }
+
 /* Split Panel */
 .split {
   display: flex;
@@ -135,7 +135,7 @@ mark::before {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--fallback-bc,oklch(var(--bc)/.2));
+  background-color: var(--fallback-bc,oklch(var(--bc)/20%));
   border-radius: 0.2rem;
 }
 
@@ -145,7 +145,7 @@ mark::before {
 
 body {
   scrollbar-width: thin;
-  scrollbar-color: var(--fallback-bc,oklch(var(--bc)/.2)) var(--fallback-bc,oklch(var(--bc)/.2));
+  scrollbar-color: var(--fallback-bc,oklch(var(--bc)/20%)) var(--fallback-bc,oklch(var(--bc)/20%));
 }
 
 body::-moz-scrollbar-track {
@@ -153,13 +153,13 @@ body::-moz-scrollbar-track {
 }
 
 body::-moz-scrollbar-thumb {
-  background-color: var(--fallback-bc,oklch(var(--bc)/.2));
+  background-color: var(--fallback-bc,oklch(var(--bc)/20%));
   border-radius: 0.2rem;
 }
 
 /* loader */
 .code-loader {
-  color: var(--fallback-bc,oklch(var(--bc)/1));
+  color: var(--fallback-bc,oklch(var(--bc)/100%));
   font-family: Consolas, Menlo, Monaco, monospace;
   font-weight: bold;
   font-size: 100px;
@@ -203,7 +203,7 @@ body::-moz-scrollbar-thumb {
 }
 
 .bg-patternTop {
-  background-image: url(../Images/patternTop.svg);
+  background-image: url('../Images/patternTop.svg');
 }
 
 .flikering-cursor {

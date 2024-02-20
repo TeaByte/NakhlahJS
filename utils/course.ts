@@ -33,10 +33,10 @@ export async function getCourse(
   const courseAttrs = attrs as CourseAttributes;
   const course: Course = {
     slug,
-    title: courseAttrs.title ?? "بدون عنوان",
-    content: body ?? "لايوجد محتوى",
-    snippet: courseAttrs.snippet ?? "لا يوجد",
-    order: courseAttrs.order ?? 999,
+    title: courseAttrs.title,
+    content: body,
+    snippet: courseAttrs.snippet,
+    order: courseAttrs.order,
   };
   return course;
 }

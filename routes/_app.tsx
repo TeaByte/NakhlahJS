@@ -2,7 +2,7 @@ import { FreshContext } from "$fresh/server.ts";
 import NavBar from "../components/Nav.tsx";
 
 import { populateCache } from "../utils/course-cache.ts";
-populateCache().then(() => console.log("Course cache populated")).catch((err) => console.error("Error populating course cache", err));
+populateCache().then(() => { console.log("Course cache populated"); }).catch((err) => console.error("Error populating course cache", err));
 
 // deno-lint-ignore require-await
 export default async function Layout(req: Request, ctx: FreshContext) {

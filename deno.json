@@ -10,7 +10,7 @@
     "update": "deno run -A -r https://fresh.deno.dev/update ."
   },
   "lint": {
-    "exclude": ["testcases/**/*", "precodes/**/*"],
+    "exclude": ["testcases/**/*", "precodes/**/*", "courses/**/*"],
     "rules": { "tags": ["fresh", "recommended"], "exclude": ["no-unused-vars"] }
   },
   "exclude": ["**/_fresh/*"],

@@ -28,3 +28,7 @@ calculateGrade(75); // Grade C
 calculateGrade(65); // Grade D
 calculateGrade(55); // Grade F
 ```
+
+<div class="quiz">
+نعتذر عن عدم وجود اختبار لهذا الدرس حالياً. نحن نعمل بجد لإعداد اختبارات لجميع الدروس وسنقوم بتوفيرها في أقرب وقت ممكن.
+</div>

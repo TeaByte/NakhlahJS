@@ -21,3 +21,7 @@ function welcomeToBooleans() {
 let t = welcomeToBooleans();
 let f = false;
 ```
+
+<div class="quiz">
+نعتذر عن عدم وجود اختبار لهذا الدرس حالياً. نحن نعمل بجد لإعداد اختبارات لجميع الدروس وسنقوم بتوفيرها في أقرب وقت ممكن.
+</div>

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "preact/hooks";
 import { newPassSignal } from "./signals/store.ts";
+
 interface EditorProps {
   preCode: string;
   testingCode: string;
@@ -180,10 +181,10 @@ export default function Editor(props: EditorProps) {
             اختبار
           </button>
         </div>
-        <div class="h-full min-h-[357px]">
+        <div class="h-full min-h-[296px]">
           <pre
             style="text-wrap: wrap;"
-            className={"h-full pb-[60px] transform transition-all duration-300 ease-in-out bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 font-bold " +
+            className={"h-full transform transition-all duration-300 ease-in-out bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 font-bold " +
               (isError ? "text-error" : isTestPassed ? "text-success" : "")}
           >
             {output}

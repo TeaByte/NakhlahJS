@@ -45,7 +45,7 @@ export default function CoursePage(props: PageProps<Props>) {
               </h2>
               <IconChevronDown />
             </div>
-            <div class="flex flex-col mt-2 pr-3 gap-3">
+            <div f-client-nav={false} class="flex flex-col mt-2 pr-3 gap-3">
               {foundCourseGroup.courses.map((course) => (
                 <a
                   title={course.title}

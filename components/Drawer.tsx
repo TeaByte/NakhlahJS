@@ -4,6 +4,7 @@ import { Course, CourseGroup } from "../utils/types.ts";
 import Collapse from "./Collapse.tsx";
 
 import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
+import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
 
 export default function Drawer(
   { courses }: { courses: (Course | CourseGroup)[] },
@@ -30,7 +31,11 @@ export default function Drawer(
           class="drawer-overlay"
         >
         </label>
-        <ul class="menu p-4 w-80 min-h-full bg-base-200 text-base-content gap-1">
+        <ul class="menu p-4 w-80 min-h-full bg-base-100 text-base-content gap-1">
+          <div class="flex items-center mb-2">
+            <p class="text-lg">قائمة الدروس</p>
+            <IconChevronDown />
+          </div>
           {courses.map((course, index) => {
             // Group of courses
             if ("courses" in course) {

@@ -184,7 +184,7 @@ export default function Editor(props: EditorProps) {
         <div class="h-full min-h-[296px]">
           <pre
             style="text-wrap: wrap;"
-            className={"h-full transform transition-all duration-300 ease-in-out bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 font-bold " +
+            className={"h-full transform bg-base-300 overflow-y-scroll rounded-box p-4 mb-2 font-bold " +
               (isError ? "text-error" : isTestPassed ? "text-success" : "")}
           >
             {output}

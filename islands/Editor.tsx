@@ -19,16 +19,17 @@ interface Window {
 export default function Editor(props: EditorProps) {
   // set the precode in the editor when it's fully loaded
   useEffect(() => {
-    const interval = setInterval(() => {
-      if (
-        document.getElementById("editor-loading")?.style.display === "none"
-      ) {
+    // i use something like htmx to load the editor in specific place in the page so useEffect will not work here make it work
+    const interval = setInterval(() => {  
+      if (window.editor) {
         window.editor.setValue(props.preCode);
         clearInterval(interval);
       }
-    }, 100);
-  }, []);
-
+    }
+    , 100);
+    return () => clearInterval(interval);
+  }
+  , [props.preCode]);
   const [output, setOutput] = useState<string>("");
   const [isError, setIsError] = useState<boolean>(false);
 

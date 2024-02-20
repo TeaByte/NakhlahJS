@@ -32,7 +32,7 @@ export default function EditorSplit(props: EditorSplitProps) {
         </div>
       </div>
       <Partial name="editor">
-        <Editor
+        <Editor 
           preCode={precode}
           testingCode={testingcode}
           slug={props.slug}

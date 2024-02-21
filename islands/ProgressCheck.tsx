@@ -9,6 +9,7 @@ interface ProgressCheckProps {
 
 export default function ProgressCheck(props: ProgressCheckProps) {
     const [isPassed, setIsPassed] = useState<boolean>(false);
+
     useEffect(() => {
         const passedTEXT = localStorage.getItem("passedCourses");
         let passed: string[] = [];
@@ -19,6 +20,7 @@ export default function ProgressCheck(props: ProgressCheckProps) {
             setIsPassed(true);
         }
     }, [newPassSignal.value]);
+
     return isPassed
         ? <IconCircleCheckFilled aria-hidden="true" class="h-4 w-4" />
         : <IconCircle aria-hidden="true" class="h-4 w-4" />;

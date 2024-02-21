@@ -9,6 +9,7 @@ interface ProgressSectionProps {
 export default function ProgressSection(
   props: ProgressSectionProps,
 ) {
+
   const [completed, setCompleted] = useState<number>(0);
   useEffect(() => {
     const passedTEXT = localStorage.getItem("passedCourses");
@@ -18,6 +19,7 @@ export default function ProgressSection(
     }
     setCompleted(passed.length);
   }, []);
+
   return (
     <div class={"flex-col py-2 " + props.className}>
       <h2 className="text-xl font-bold pb-2">تقدمك في إنجاز الدروس</h2>

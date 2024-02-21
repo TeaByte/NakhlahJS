@@ -1,6 +1,6 @@
-import Editor from "../islands/Editor.tsx";
-import { getPreCode } from "../utils/precode.ts";
-import { getTestingCode } from "../utils/testingcode.ts";
+import Editor from "@/islands/Editor.tsx";
+import { getPreCode } from "@/utils/precode.ts";
+import { getTestingCode } from "@/utils/testingcode.ts";
 
 interface EditorSplitProps {
   slug: string;

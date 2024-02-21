@@ -1,7 +1,8 @@
-import { cache } from "../utils/course-cache.ts";
+import { cache } from "@/utils/course-cache.ts";
 
-import ThemeToggle from "../islands/ThemeToggle.tsx";
-import Drawer from "./Drawer.tsx";
+import ThemeToggle from "@/islands/ThemeToggle.tsx";
+import Drawer from "@/components/Nav/Drawer.tsx";
+import Icon from "@/components/Nav/Icon.tsx";
 
 export default function NavBar() {
   return (
@@ -21,10 +22,7 @@ export default function NavBar() {
             title="نخلة جي اس"
             class="text-2xl ml-1 font-bold hover:animate-pulse"
           >
-            <div class="flex items-center">
-              <span class="text-yellow-500">JS</span>
-              <span class="ml-2 font-bold text-2xl">نخلة</span>
-            </div>
+            <Icon />
           </a>
         </div>
       </div>

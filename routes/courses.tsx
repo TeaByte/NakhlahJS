@@ -3,11 +3,11 @@ import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 
 import { getNumberOfCourses } from "@/utils/course.ts";
-import { Course, CourseGroup } from "../utils/types.ts";
-import { cache } from "../utils/course-cache.ts";
+import { Course, CourseGroup } from "@/utils/types.ts";
+import { cache } from "@/utils/course-cache.ts";
 
-import Footer from "../components/Footer.tsx";
-import Courses from "../components/Courses.tsx";
+import Footer from "@/components/Main/Footer.tsx";
+import Courses from "@/components/Main/Courses.tsx";
 
 interface Props {
   courses: (Course | CourseGroup)[];

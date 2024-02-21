@@ -1,8 +1,9 @@
 import { Head } from "$fresh/runtime.ts";
 
-import Footer from "../components/Footer.tsx";
+import Footer from "@/components/Main/Footer.tsx";
+import AboutIcons from "@/components/Main/AboutIcons.tsx";
+
 import IconArrowBigRightLines from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/arrow-big-right-lines.tsx";
-import AboutIcons from "@/components/AboutIcons.tsx";
 
 export default function IndexPage() {
   return (

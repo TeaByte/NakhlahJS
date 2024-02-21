@@ -3,13 +3,13 @@ import { Handlers, RouteConfig } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 import { CSS } from "$gfm";
 
-import { Course } from "../utils/types.ts";
-import { getCourse, getJson, findNextCourse, findPrevCourse } from "../utils/course.ts";
+import { Course } from "@/utils/types.ts";
+import { getCourse, getJson, findNextCourse, findPrevCourse } from "@/utils/course.ts";
 
-import EditorSplit from "../components/EditorSplit.tsx";
-import MarkdownSplit from "../components/MarkdownSplit.tsx";
-import SmallScreenButton from "@/components/SmallScreenButton.tsx";
-import CourseLoading from "@/components/CourseLoading.tsx";
+import EditorSplit from "@/components/CoursePage/EditorPart/EditorSplit.tsx";
+import MarkdownSplit from "@/components/CoursePage/MarkdownPart/MarkdownSplit.tsx";
+import SmallScreenButton from "@/components/CoursePage/MarkdownPart/SmallScreenButton.tsx";
+import CourseLoading from "@/components/CoursePage/MarkdownPart/CourseLoading.tsx";
 
 interface Props {
   course: Course;

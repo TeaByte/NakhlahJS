@@ -1,7 +1,7 @@
 import { Head } from "$fresh/runtime.ts";
 
-import AboutIcons from "@/components/AboutIcons.tsx";
-import Footer from "../components/Footer.tsx";
+import AboutIcons from "@/components/Main/AboutIcons.tsx";
+import Footer from "@/components/Main/Footer.tsx";
 
 export default function AboutPage() {
   return (

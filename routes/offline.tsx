@@ -1,5 +1,5 @@
 import { Head } from "$fresh/runtime.ts";
-import Footer from "@/components/Footer.tsx";
+import Footer from "@/components/Main/Footer.tsx";
 
 export default function Offline() {
   return (

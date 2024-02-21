@@ -1,3 +1,5 @@
+import Icon from "@/components/Nav/Icon.tsx";
+
 export default function Footer() {
   return (
     <footer class="bg-base-300 flex flex-col md:flex-row w-full gap-8 md:gap-16 px-8 py-8 text-sm">
@@ -24,10 +26,7 @@ export default function Footer() {
               data-current="true"
               aria-current="page"
             >
-              <div class="flex items-center">
-                <span class="text-yellow-500">JS</span>
-                <span class="ml-2 font-bold text-2xl">نخلة</span>
-              </div>
+              <Icon />
             </a>
           </div>
         </div>

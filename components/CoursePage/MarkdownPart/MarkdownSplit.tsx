@@ -1,7 +1,7 @@
 import { render } from "$gfm";
-import { Course } from "../utils/types.ts";
+import { Course } from "@/utils/types.ts";
 
-import EditButton from "../components/EditButton.tsx";
+import EditButton from "./EditButton.tsx";
 
 import IconPlayerTrackNext from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/player-track-next.tsx";
 import IconPlayerTrackPrev from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/player-track-prev.tsx";

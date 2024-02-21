@@ -2,7 +2,7 @@ import { join } from "$std/path/mod.ts";
 import { readJson } from "https://deno.land/std@0.66.0/fs/read_json.ts";
 import { extract } from "https://deno.land/std@0.151.0/encoding/front_matter.ts";
 import { cache as CourceCache } from "@/utils/course-cache.ts";
-import { Course, CourseAttributes, CourseGroup } from "../utils/types.ts";
+import { Course, CourseAttributes, CourseGroup } from "@/utils/types.ts";
 
 export let CoursesCount = 0;
 export let FlatSlugsCache: string[] = [];

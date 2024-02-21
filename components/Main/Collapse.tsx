@@ -1,5 +1,5 @@
 import ProgressCheck from "@/islands/ProgressCheck.tsx";
-import { Course } from "../utils/types.ts";
+import { Course } from "@/utils/types.ts";
 
 interface CloseProps {
   title: string;

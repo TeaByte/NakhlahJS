@@ -1,6 +1,8 @@
 import { Plugin, PluginMiddleware } from "$fresh/server.ts";
 import * as path from "https://deno.land/std@0.207.0/path/mod.ts";
+
 import { getFlatSlugs } from "@/utils/course.ts";
+
 export default function SW_cache(
 ): Plugin {
     let staticDir = path.join(Deno.cwd(), "static");

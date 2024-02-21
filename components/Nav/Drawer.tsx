@@ -1,7 +1,7 @@
 import ProgressCheck from "@/islands/ProgressCheck.tsx";
-import { Course, CourseGroup } from "../utils/types.ts";
+import { Course, CourseGroup } from "@/utils/types.ts";
 
-import Collapse from "./Collapse.tsx";
+import Collapse from "@/components/Main/Collapse.tsx";
 
 import IconLayoutSidebarLeftCollapse from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/layout-sidebar-left-collapse.tsx";
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";

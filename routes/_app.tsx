@@ -1,7 +1,7 @@
 import { FreshContext } from "$fresh/server.ts";
-import NavBar from "../components/Nav.tsx";
+import NavBar from "@/components/Nav/Nav.tsx";
 
-import { populateCache } from "../utils/course-cache.ts";
+import { populateCache } from "@/utils/course-cache.ts";
 populateCache().then(() => { console.log("Course cache populated"); }).catch((err) => console.error("Error populating course cache", err));
 
 // deno-lint-ignore require-await
@@ -36,7 +36,7 @@ export default async function Layout(req: Request, ctx: FreshContext) {
       <body>
         <NavBar />
         {/* Update your browser message */}
-        <section id="old-check" class="flex-grow h-[100%] w-full h-full absolute bg-base-300 z-[9999] hidden">
+        <section id="old-check" class="flex-grow w-full h-full absolute bg-base-300 z-[9999] hidden">
           <div className="flex flex-col justify-center items-center text-center h-[89%] gap-2 p-5">
             <p class="text-2xl">
               يعتبر المتصفح الذي تستخدمه قديمًا وغير مدعوم حاليًا. يُرجى تحديث المتصفح الخاص بك أو استخدام متصفح آخر لضمان تجربة متصفح فعّالة.

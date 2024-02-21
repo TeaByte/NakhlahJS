@@ -2,10 +2,10 @@ import { Head } from "$fresh/runtime.ts";
 import { Handlers } from "$fresh/server.ts";
 import { PageProps } from "$fresh/server.ts";
 
-import { Course, CourseGroup } from "../../utils/types.ts";
-import { cache } from "../../utils/course-cache.ts";
+import { Course, CourseGroup } from "@/utils/types.ts";
+import { cache } from "@/utils/course-cache.ts";
 
-import Footer from "../../components/Footer.tsx";
+import Footer from "@/components/Main/Footer.tsx";
 
 import IconChevronDown from "https://deno.land/x/tabler_icons_tsx@0.0.5/tsx/chevron-down.tsx";
 import ProgressCheck from "@/islands/ProgressCheck.tsx";

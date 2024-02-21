@@ -53,9 +53,8 @@ console.log(threeArr);
 const ourArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 ```
+والدالة `()shift` ستزيل القيمة `Stimpson` من `ourArray` وستعيدها كقيمة. يعني قيمة `removedFromOurArray` ستكون `Stimpson` و `ourArray` ستكون `["J", "cat"]`.
 
-`removeFromOURArray` لها قيمة السلسلة `Stimpson،` و `ourArray` سيكون لها
-`["J"، ["cat"]]`.
 
 ## unshift
 

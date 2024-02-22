@@ -15,7 +15,7 @@ order: 1
 
 ```js
 const doubleQuote = "This is a string";
-const singleQuote = "This is also a string";
+const singleQuote = 'This is also a string';
 ```
 
 السبب وراء رغبتك في استخدام نوع واحد من علامات الاقتباس على الآخر هو إذا كنت
@@ -29,13 +29,13 @@ const conversation = 'Ahmad exclaims to Adam, "Algebraic!"';
 ## التخطي ( Escaping )
 
 عندما تقوم بتعريف سلسلة، يجب أن تبدأ وتنتهي بعلامة اقتباس مفردة أو مزدوجة. ماذا
-يحدث عندما تحتاج إلى اقتباس حرفي: `"` أو `'` داخل السلسلة الخاصة بك؟
+يحدث عندما تحتاج إلى اقتباس حرفي: (`"`) أو (`'`) داخل السلسلة الخاصة بك؟
 
 في جافاسكربت، يمكنك تجنب اعتبار الاقتباس نهاية لاقتباس سلسلة عن طريق وضع شرطة
-مائلة عكسية `\` أمام الاقتباس.
+مائلة عكسية (`\`) أمام الاقتباس.
 
 ```js
-const sampleStr = 'Adam said, "Yazan is learning JavaScript".';
+const sampleStr = 'Adam said, "Yazan is learning JavaScript"'.;
 ```
 
 يشير هذا إلى جافاسكربت أن الاقتباس المراد ليس نهاية السلسلة، ولكن يجب أن يظهر
@@ -45,7 +45,7 @@ const sampleStr = 'Adam said, "Yazan is learning JavaScript".';
 `Adam said, "Yazan is learning JavaScript".`
 
 <mark>
-لا ينبغي الخلط بين الشرطة المائلة العكسية \ والشرطة المائلة للأمام /. إنهم لا
+لا ينبغي الخلط بين الشرطة المائلة العكسية (<code>\</code>) والشرطة المائلة للأمام (<code>/</code>) إنهم لا
 يفعلون نفس الشيء.
 </mark>
 
@@ -74,8 +74,8 @@ const sampleStr = "Hello\nWorld";
 console.log(sampleStr);
 ```
 
-يشير هذا إلى جافاسكربت أن المراد سطر جديد `n\` .لذا، إذا كنت تريد طباعة هذا على
-وحدة التحكم، فستحصل على:
+يشير هذا إلى جافاسكربت أن المراد سطر جديد (`n\`) .لذا، إذا كنت تريد طباعة هذا
+على وحدة التحكم، فستحصل على:
 
 ```js
 Hello;

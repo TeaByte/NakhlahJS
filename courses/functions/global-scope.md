@@ -8,21 +8,23 @@ order: 2
 الوظيفة لها نطاق عالمي. وهذا يعني أنه يمكن رؤيتها في كل مكان في كود جافاسكربت
 الخاص بك.
 
-يتم إنشاء المتغيرات التي تم الإعلان عنها بدون الكلمات الأساسية Let أو const
+يتم إنشاء المتغيرات التي تم الإعلان عنها بدون الكلمات الأساسية `let` أو `const`
 تلقائيًا في النطاق العام. يمكن أن يؤدي هذا إلى عواقب غير مقصودة في مكان آخر من
 التعليمات البرمجية الخاصة بك أو عند تشغيل وظيفة مرة أخرى. يجب عليك دائمًا الإعلان
-عن المتغيرات الخاصة بك باستخدام Let أو const.
+عن المتغيرات الخاصة بك باستخدام `let` أو `const`.
 
 ```js
-let x = 3; // x is in the global scope
+let x = 3; // ( x ) موجود في النطاق العالمي
 function fun1() {
-  x = 5; // x is in the global scope
-  const y = 7; // y is in the local scope
+  x = 5; // ( x ) تم تعريفه في النطاق العالمي
+  const y = 7; // ( y ) موجود في النطاق المحلي
 }
+
 console.log(x);
 fun1();
 console.log(x);
-// console.log(y); // ReferenceError: y is not defined
+
+// console.log(y); // حدوث خطأ => ( ReferenceError: y is not defined )
 ```
 
 <div class="quiz">

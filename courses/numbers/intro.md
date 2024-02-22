@@ -1,6 +1,6 @@
 ---
 title: الأرقام والتعامل معها
-snippet: هو نوع بيانات في JavaScript يمثل بيانات رقمية.
+snippet: هو نوع بيانات في JavaScript يمثل بيانات رقمية
 order: 1
 ---
 

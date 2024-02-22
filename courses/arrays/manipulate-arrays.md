@@ -1,6 +1,6 @@
 ---
 title: التعامل مع المصفوفات
-snippet: push, pop, shift, unshift
+snippet: استعمال push, pop, shift, unshift
 order: 3
 ---
 
@@ -53,8 +53,9 @@ console.log(threeArr);
 const ourArray = ["Stimpson", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 ```
-والدالة `()shift` ستزيل القيمة `Stimpson` من `ourArray` وستعيدها كقيمة. يعني قيمة `removedFromOurArray` ستكون `Stimpson` و `ourArray` ستكون `["J", "cat"]`.
 
+والدالة `()shift` ستزيل القيمة `Stimpson` من `ourArray` وستعيدها كقيمة. يعني
+قيمة `removedFromOurArray` ستكون `Stimpson` و `ourArray` ستكون `["J", "cat"]`.
 
 ## unshift
 

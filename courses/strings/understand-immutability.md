@@ -1,6 +1,6 @@
 ---
 title: فهم ثبات السلسلة
-snippet: في JavaScript، تكون قيم السلسلة غير قابلة للتغيير 
+snippet: في JavaScript تكون قيم السلسلة غير قابلة للتغيير
 order: 5
 ---
 
@@ -23,6 +23,7 @@ myPet[0] = "B";
 let myPet = "Cat";
 myPet = "Bat";
 ```
+
 <div class="quiz">
 يبدوا أني قد كتبت كلمة فيل بطريقة خاطئة. قم بتغيير الحرف الأول من
 السلسلة <code>animal</code> إلى ف.

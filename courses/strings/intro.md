@@ -1,6 +1,6 @@
 ---
 title: السلاسل والتعامل معها
-snippet: هو نوع بيانات في JavaScript يمثل نص من عدا حروف. 
+snippet: هو نوع بيانات في JavaScript يمثل نص من عدا حروف
 order: 1
 ---
 

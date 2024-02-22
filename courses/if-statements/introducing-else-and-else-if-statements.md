@@ -1,6 +1,6 @@
 ---
 title: التعريف بي ( else و else if )
-snippet: لا يوجد
+snippet: وماذا عندما يكون هذا الشرط خطأ
 order: 6
 ---
 

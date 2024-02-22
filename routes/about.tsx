@@ -104,8 +104,8 @@ export default function AboutPage() {
               </p>
             </div>
             <AboutIcons />
-            <a title="العودة الى الصفحة الرئيسية" href="/" class="underline">
-              العودة الى الصفحة الرئيسية
+            <a title="العودة إلى الصفحة الرئيسية" href="/" class="underline">
+              العودة إلى الصفحة الرئيسية
             </a>
           </div>
         </div>

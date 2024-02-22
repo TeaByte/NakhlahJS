@@ -4,7 +4,7 @@ snippet: عندما يتم الإعلان عن متغيرات تكون قيمت�
 order: 3
 ---
 
-عندما يتم الإعلان عن متغيرات JavaScript، تكون قيمتها الأولية غير محددة (
+عندما يتم الإعلان عن متغيرات جافاسكربت، تكون قيمتها الأولية غير محددة (
 [undefined](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/undefined)
 ). إذا أجريت عملية حسابية على متغير غير محدد فستكون النتيجة (
 [NaN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/NaN)

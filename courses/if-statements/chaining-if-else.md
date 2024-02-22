@@ -10,23 +10,23 @@ order: 8
 ```js
 function calculateGrade(score) {
   if (score >= 90) {
-    console.log("Grade A");
+    console.log("A");
   } else if (score >= 80) {
-    console.log("Grade B");
+    console.log("B");
   } else if (score >= 70) {
-    console.log("Grade C");
+    console.log("C");
   } else if (score >= 60) {
-    console.log("Grade D");
+    console.log("D");
   } else {
-    console.log("Grade F");
+    console.log("F");
   }
 }
 
-calculateGrade(95); // Grade A
-calculateGrade(85); // Grade B
-calculateGrade(75); // Grade C
-calculateGrade(65); // Grade D
-calculateGrade(55); // Grade F
+calculateGrade(95); // A
+calculateGrade(85); // B
+calculateGrade(75); // C
+calculateGrade(65); // D
+calculateGrade(55); // F
 ```
 
 <div class="quiz">

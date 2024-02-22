@@ -61,8 +61,8 @@ export default function CoursePage(props: PageProps<Props>) {
               ))}
             </div>
             <div class="flex w-full">
-              <a title="العودة الى صفحة الدروس" href="/courses" class="underline mt-4">
-                العودة الى صفحة الدروس
+              <a title="العودة إلى صفحة الدروس" href="/courses" class="underline mt-4">
+                العودة إلى صفحة الدروس
               </a>
             </div>
           </div>

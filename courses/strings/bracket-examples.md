@@ -12,25 +12,27 @@ order: 6
 الحرف الصفري.
 
 ```js
-const firstName = "Ada";
+const firstName = "Adam";
 const secondLetterOfFirstName = firstName[1];
+console.log(secondLetterOfFirstName);
 ```
 
-سيكون لـ `SecondLetterOfFirstName` قيمة السلسلة `d`.
+سيكون إلى `SecondLetterOfFirstName` قيمة السلسلة `d`.
 
 ## استخدم الأقواس للعثور على الحرف الأخير في سلسلة
 
 للحصول على الحرف الأخير من السلسلة، يمكنك طرح حرف واحد من طول السلسلة.
 
-على سبيل المثال، إذا كان `const firstName = "Ada"`، فيمكنك الحصول على قيمة الحرف
+على سبيل المثال، إذا كان `"const firstName = "Ada`، فيمكنك الحصول على قيمة الحرف
 الأخير من السلسلة باستخدام `firstName[firstName.length - 1]`.
 
 ```js
-const firstName = "Ada";
+const firstName = "Adam";
 const lastLetter = firstName[firstName.length - 1];
+console.log(lastLetter);
 ```
 
-`lastLetter` سيكون له قيمة السلسلة `a`.
+`lastLetter` سيكون له قيمة السلسلة `m`.
 
 <!-- quiz make use get the char last the last letter -->
 <!--
@@ -38,5 +40,5 @@ const firstName = "Augusta";
 const thirdToLastLetter = firstName[firstName.length - 3];
  -->
 <div class="quiz">
-قم بطباعة الحرف الثالث من الأخير في السلسلة `Augusta`.
+قم بطباعة الحرف الثالث من الأخير في السلسلة <code>Augusta</code>.
 <div>

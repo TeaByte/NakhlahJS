@@ -1,15 +1,15 @@
 ---
 title: المصفوفات والتعامل معها 
-snippet: هو نوع بيانات في JavaScript يمثل بيانات مجموعة معا
+snippet: هو نوع بيانات في جافاسكربت يمثل بيانات مجموعة معا
 order: 1
 ---
 
-[Array](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
-هو نوع بيانات في JavaScript يمثل بيانات مجموعة معا.
+[(Array)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array)
+هو نوع بيانات في جافاسكربت يمثل بيانات مجموعة معا.
 
 ## كتابة المصفوفات
 
-باستخدام متغيرات مصفوفة JavaScript، يمكننا تخزين عدة أجزاء من البيانات في مكان
+باستخدام متغيرات مصفوفة جافاسكربت، يمكننا تخزين عدة أجزاء من البيانات في مكان
 واحد.
 
 تبدأ تعريف المصفوفة بقوس مربع للفتح، وتنتهي بقوس مربع للإغلاق، وتضع فاصلة بين كل
@@ -24,10 +24,10 @@ const sandwich = ["peanut butter", "jelly", "bread"];
 يمكنك أيضًا دمج المصفوفات ضمن مصفوفات أخرى، كما هو موضح أدناه:
 
 ```js
-const teams = [["Bulls", 23], ["White Sox", 45]];
+const teams = [["Hackers", 23], ["Coders", 45]];
 ```
 
-ويسمى هذا أيضًا بمصفوفة متعددة الأبعاد (Multidimensional Array).
+ويسمى هذا أيضًا بمصفوفة متعددة الأبعاد (`Multidimensional Array`).
 
 ## التعامل مع المصفوفات
 

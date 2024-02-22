@@ -1,21 +1,21 @@
 ---
 title: السلاسل والتعامل معها
-snippet: هو نوع بيانات في JavaScript يمثل نص من عدا حروف
+snippet: هو نوع بيانات في جافاسكربت يمثل نص من عدا حروف
 order: 1
 ---
 
-[String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
-هو نوع بيانات في JavaScript يمثل نص من عدا حروف.
+[(String)](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String)
+هو نوع بيانات في جافاسكربت يمثل نص من عدا حروف.
 
 ## كتابة السلسلة
 
-يمكن كتابة قيم السلسلة في JavaScript بعلامات اقتباس مفردة أو مزدوجة، طالما أنك
+يمكن كتابة قيم السلسلة في جافاسكربت بعلامات اقتباس مفردة أو مزدوجة، طالما أنك
 تبدأ وتنتهي بنفس نوع الاقتباس. على عكس بعض لغات البرمجة الأخرى، تعمل علامات
-الاقتباس المفردة والمزدوجة بنفس الطريقة في JavaScript.
+الاقتباس المفردة والمزدوجة بنفس الطريقة في جافاسكربت.
 
 ```js
-const doubleQuoteStr = "This is a string";
-const singleQuoteStr = "This is also a string";
+const doubleQuote = "This is a string";
+const singleQuote = "This is also a string";
 ```
 
 السبب وراء رغبتك في استخدام نوع واحد من علامات الاقتباس على الآخر هو إذا كنت
@@ -23,7 +23,7 @@ const singleQuoteStr = "This is also a string";
 المحادثة بين علامتي اقتباس.
 
 ```js
-const conversation = 'Finn exclaims to Jake, "Algebraic!"';
+const conversation = 'Ahmad exclaims to Adam, "Algebraic!"';
 ```
 
 ## التخطي ( Escaping )
@@ -31,18 +31,18 @@ const conversation = 'Finn exclaims to Jake, "Algebraic!"';
 عندما تقوم بتعريف سلسلة، يجب أن تبدأ وتنتهي بعلامة اقتباس مفردة أو مزدوجة. ماذا
 يحدث عندما تحتاج إلى اقتباس حرفي: `"` أو `'` داخل السلسلة الخاصة بك؟
 
-في JavaScript، يمكنك تجنب اعتبار الاقتباس نهاية لاقتباس سلسلة عن طريق وضع شرطة
+في جافاسكربت، يمكنك تجنب اعتبار الاقتباس نهاية لاقتباس سلسلة عن طريق وضع شرطة
 مائلة عكسية `\` أمام الاقتباس.
 
 ```js
-const sampleStr = 'Alan said, "Peter is learning JavaScript".';
+const sampleStr = 'Adam said, "Yazan is learning JavaScript".';
 ```
 
-يشير هذا إلى JavaScript أن الاقتباس المراد ليس نهاية السلسلة، ولكن يجب أن يظهر
+يشير هذا إلى جافاسكربت أن الاقتباس المراد ليس نهاية السلسلة، ولكن يجب أن يظهر
 داخل السلسلة بدلاً من ذلك. لذا، إذا كنت تريد طباعة هذا على وحدة التحكم، فستحصل
 على:
 
-`Alan said, "Peter is learning JavaScript".`
+`Adam said, "Yazan is learning JavaScript".`
 
 <mark>
 لا ينبغي الخلط بين الشرطة المائلة العكسية \ والشرطة المائلة للأمام /. إنهم لا
@@ -74,7 +74,7 @@ const sampleStr = "Hello\nWorld";
 console.log(sampleStr);
 ```
 
-يشير هذا إلى JavaScript أن المراد سطر جديد `n\` .لذا، إذا كنت تريد طباعة هذا على
+يشير هذا إلى جافاسكربت أن المراد سطر جديد `n\` .لذا، إذا كنت تريد طباعة هذا على
 وحدة التحكم، فستحصل على:
 
 ```js

@@ -22,8 +22,8 @@ export default function Error404() {
             <p class="my-4">
               تأكد من صحة الرابط.
             </p>
-            <a title="العودة الى صفحة الدروس" href="/courses" class="underline">
-              العودة الى صفحة الدروس
+            <a title="العودة إلى صفحة الدروس" href="/courses" class="underline">
+              العودة إلى صفحة الدروس
             </a>
           </div>
         </div>

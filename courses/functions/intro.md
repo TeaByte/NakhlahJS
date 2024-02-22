@@ -1,13 +1,13 @@
 ---
 title: الدوال والتعامل معها
-snippet: في JavaScript، يمكننا تقسيم الكود الخاص بنا إلى أجزاء قابلة لإعادة الاستخدام
+snippet: في جافاسكربت، يمكننا تقسيم الكود الخاص بنا إلى أجزاء قابلة لإعادة الاستخدام
 order: 1
 ---
 
 ## كتابة الدوال
 
-في JavaScript، يمكننا تقسيم الكود الخاص بنا إلى أجزاء قابلة لإعادة الاستخدام
-تسمى الدوال او الدوال
+في جافاسكربت، يمكننا تقسيم الكود الخاص بنا إلى أجزاء قابلة لإعادة الاستخدام تسمى
+الدوال او الدوال
 ([Function](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function)).
 
 ```js
@@ -77,7 +77,7 @@ const answer = plusThree(5);
 
 `answer` له القيمة `8`.
 
-يأخذ `plusThree` وسيطة لـ `num` ويعيد قيمة تساوي `num + 3`.
+يأخذ `plusThree` وسيطة إلى `num` ويعيد قيمة تساوي `num + 3`.
 
 <div class="quiz">
 قم بكتابة دالة اسمها <code>area</code> تأخذ وسيطتين <code>width</code> و <code>height</code> وترجع مساحة المستطيل

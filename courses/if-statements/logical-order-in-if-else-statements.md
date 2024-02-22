@@ -12,11 +12,11 @@ order: 7
 ```js
 function foo(x) {
   if (x < 1) {
-    return "Less than one";
+    return "أقل من واحد";
   } else if (x < 2) {
-    return "Less than two";
+    return "أقل من اثنين";
   } else {
-    return "Greater than or equal to two";
+    return "أكبر من أو يساوي اثنين";
   }
 }
 ```
@@ -24,11 +24,11 @@ function foo(x) {
 ```js
 function bar(x) {
   if (x < 2) {
-    return "Less than two";
+    return "أقل من اثنين";
   } else if (x < 1) {
-    return "Less than one";
+    return "أقل من واحد";
   } else {
-    return "Greater than or equal to two";
+    return "أكبر من أو يساوي اثنين";
   }
 }
 ```
@@ -41,8 +41,7 @@ foo(0);
 bar(0);
 ```
 
-سوف يقوم `foo(0)` بإرجاع `Less than one`، وسيقوم `bar(0)` بإرجاع
-`Less than two`.
+سوف يقوم `foo(0)` بإرجاع `أقل من واحد`، وسيقوم `bar(0)` بإرجاع `أقل من اثنين`.
 
 <div class="quiz">
 نعتذر عن عدم وجود اختبار لهذا الدرس حالياً. نحن نعمل بجد لإعداد اختبارات لجميع الدروس وسنقوم بتوفيرها في أقرب وقت ممكن.

@@ -15,12 +15,12 @@ order: 3
 const arr1 = [1, 2, 3];
 arr1.push(4, 5);
 
-const arr2 = ["Stimpson", "J", "cat"];
+const arr2 = ["dog", "J", "cat"];
 arr2.push(["happy", "joy"]);
 ```
 
-أصبح لـ `arr1` الآن القيمة`[5, 4, 3, 2, 1]` و `arr2` له القيمة
-`[["happy", "joy"], "Stimpson", "J", "cat"]`.
+أصبح إلى `arr1` الآن القيمة`[5, 4, 3, 2, 1]` و `arr2` له القيمة
+`[["happy", "joy"], "dog", "J", "cat"]`.
 
 ## pop
 
@@ -50,12 +50,12 @@ console.log(threeArr);
 الأول بدلاً من الأخير.
 
 ```js
-const ourArray = ["Stimpson", "J", ["cat"]];
+const ourArray = ["dog", "J", ["cat"]];
 const removedFromOurArray = ourArray.shift();
 ```
 
-والدالة `()shift` ستزيل القيمة `Stimpson` من `ourArray` وستعيدها كقيمة. يعني
-قيمة `removedFromOurArray` ستكون `Stimpson` و `ourArray` ستكون `["J", "cat"]`.
+والدالة `()shift` ستزيل القيمة `dog` من `ourArray` وستعيدها كقيمة. يعني قيمة
+`removedFromOurArray` ستكون `dog` و `ourArray` ستكون `["J", "cat"]`.
 
 ## unshift
 
@@ -66,14 +66,14 @@ const removedFromOurArray = ourArray.shift();
 يضيف `()unshift` العنصر في بداية المصفوفة.
 
 ```js
-const ourArray = ["Stimpson", "J", "cat"];
+const ourArray = ["dog", "J", "cat"];
 ourArray.shift();
 ourArray.unshift("Happy");
 ```
 
-بعد `shift` سيكون لـ `ourArray` القيمة `["J", "cat"]`. بعد `unshift` سيكون لـ
+بعد `shift` سيكون إلى `ourArray` القيمة `["J", "cat"]`. بعد `unshift` سيكون إلى
 `ourArray` القيمة `["Happy"، "J"، "cat"]`.
 
 <div class="quiz">
-`قم بحذف أول عنصر من المصفوفة myArray وأضف العنصر <code>[Ali", 35"]</code> إلى بداية المصفوفة.`
+قم بحذف أول عنصر من المصفوفة <code>myArray</code> وأضف العنصر <code>[Ali", 35"]</code> إلى بداية المصفوفة.
 </div>

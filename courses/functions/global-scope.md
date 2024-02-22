@@ -14,15 +14,17 @@ JavaScript الخاص بك.
 عن المتغيرات الخاصة بك باستخدام Let أو const.
 
 ```js
+let x = 3; // x is in the global scope
 function fun1() {
-  x = 5;
-  return 5;
+  x = 5; // x is in the global scope
+  const y = 7; // y is in the local scope
 }
-
-console.log(fun1());
 console.log(x);
+fun1();
+console.log(x);
+// console.log(y); // ReferenceError: y is not defined
 ```
 
 <div class="quiz">
-نعتذر عن عدم وجود اختبار لهذا الدرس حالياً. نحن نعمل بجد لإعداد اختبارات لجميع الدروس وسنقوم بتوفيرها في أقرب وقت ممكن.
+لا يوجد اختبار لهذا الدرس.
 </div>

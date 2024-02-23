@@ -1,3 +1,2 @@
-/*
-write any array containing name of anyone you know :)
-*/
+const levelsPoints = [50, 40, 30];
+console.log(levelsPoints)

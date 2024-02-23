@@ -1,2 +1,2 @@
 const x = "Augusta"
-console.log(x)
+console.log(x[0])

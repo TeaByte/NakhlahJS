@@ -25,5 +25,5 @@ var thisVariableNameIsSoLong;
 ```
 
 <div class="quiz">
-قم بطباعة المتغير الذي يحقق تسميه الcamelCase
+قم بطباعة المتغير الذي يحقق تسميه ال <code>camelCase</code>
 </div>

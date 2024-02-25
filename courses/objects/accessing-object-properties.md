@@ -60,5 +60,11 @@ myObj["NoSpace"];
 </mark>
 
 <div class="quiz">
-نعتذر عن عدم وجود اختبار لهذا الدرس حالياً. نحن نعمل بجد لإعداد اختبارات لجميع الدروس وسنقوم بتوفيرها في أقرب وقت ممكن.
+عندك كائن اسمه <code>fighter</code> ولديه الخصائص التالية:
+<code>name</code>، <code>country</code>، <code>speed</code>، <code>maxAltitude</code>، و<code>maxAltitudeUnit</code>.
+قم بالوصول لأقصى إرتفاع يمكن للطائرة الحربية <code>fighter</code> الوصول إليه من ثم قم بتحول الوحدة من <code>ft</code> إلى <code>m</code>. 
+<br>
+يعني حول الرقم من قدم إلى متر. 1 قدم = 0.3048 متر.
+<br>
+يجب عليك طباعة النتيجة.
 </div>

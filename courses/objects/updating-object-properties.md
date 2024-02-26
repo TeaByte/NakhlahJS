@@ -60,7 +60,6 @@ const ourDog = {
 ourDog.bark = "bow-wow";
 ```
 
-
 <div class="quiz">
-قم بحول الكائن <code>fighter</code> إلى كائن يحتوي على خاصية <code>speed</code> بقيمة 2450 ووحدة قياسها km/h
+قم بتحديث الكائن <code>fighter</code> إلى كائن يحتوي على خاصية <code>speed</code> بقيمة <code>2450</code>.
 </div>

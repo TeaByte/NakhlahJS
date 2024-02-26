@@ -5,4 +5,5 @@ const fighter = {
     maxAltitude: 65000,
     maxAltitudeUnit: 'ft',
 }
+
 const Country = 'country';

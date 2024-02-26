@@ -27,18 +27,13 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
-// if the code contain console.log() write message
-if (code.includes("console.log(")) {
-    isPass = false;
-    msg = "اكتب الجواب بدون استخدام console.log";
+
+code += "\nconsole.log(fighter.speed+fighter.speedUnit)"
+const output = handleCodeRun(code);
+const expectedOutput = "2450";
+if (output.includes(expectedOutput)) {
+    isPass = true;
 } else {
-    code += "\nconsole.log(fighter.speed+fighter.speedUnit)"
-    const output = handleCodeRun(code);
-    const expectedOutput = "2450km/h";
-    if (output == expectedOutput) {
-        isPass = true;
-    } else {
-        isPass = false;
-        msg = "الله يبارك فيك ركز شوية وحاول مره ثانية"
-    }
+    isPass = false;
+    msg = "الله يبارك فيك ركز شوية وحاول مره ثانية"
 }

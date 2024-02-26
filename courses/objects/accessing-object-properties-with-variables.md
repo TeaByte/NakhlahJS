@@ -29,5 +29,5 @@ console.log(myBreed);
 </mark>
 
 <div class="quiz">
-قم بطاعة  خاصية الدولة من الكائن <code>country</code>  بستخدام المتغير المُخزن<code>Country</code>.
+قم بطاعة  خاصية الدولة (<code>country</code>) من الكائن <code>fighter</code> بأستحدام المتغير المُخزن <code>Country</code> في وحده التحكم.
 </div>

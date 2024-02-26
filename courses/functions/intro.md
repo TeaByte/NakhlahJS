@@ -81,4 +81,6 @@ const answer = plusThree(5);
 
 <div class="quiz">
 قم بكتابة دالة اسمها <code>area</code> تأخذ وسيطتين <code>width</code> و <code>height</code> وترجع مساحة المستطيل
+<br>
+ان علمت ان قانون المساحه هو <code>width * height</code>.
 </div>

@@ -36,5 +36,5 @@ delete ourDog.bark;
 ```
 
 <div class="quiz">
-إحذف خاصية <code>operator</code> فقط.
+إحذف خاصية <code>operator</code> من الكائن <code>fighter</code>.
 </div>

@@ -1,0 +1,3 @@
+function area() {
+    return null;
+}

@@ -60,11 +60,13 @@ myObj["NoSpace"];
 </mark>
 
 <div class="quiz">
-عندك كائن اسمه <code>fighter</code> ولديه الخصائص التالية:
-<code>name</code>، <code>country</code>، <code>speed</code>، <code>maxAltitude</code>، و<code>maxAltitudeUnit</code>.
-قم بالوصول لأقصى إرتفاع يمكن للطائرة الحربية <code>fighter</code> الوصول إليه من ثم قم بتحول الوحدة من <code>ft</code> إلى <code>m</code>. 
+لديك الكائن <code>fighter</code> ولديه الخصائص التالية:
+<code>name</code>، <code>country</code>، <code>speed</code>، <code>maxAltitude</code>، و <code>maxAltitudeUnit</code>.
 <br>
-يعني حول الرقم من قدم إلى متر. 1 قدم = 0.3048 متر.
+قم بالوصول لأقصى إرتفاع يمكن للطائرة الحربية <code>fighter</code> الوصول إليه.
 <br>
-يجب عليك طباعة النتيجة.
+من ثم قم بتحول الوحدة من <code>ft</code> إلى <code>m</code>
+اي حول الرقم من قدم (<code>ft</code>) إلى متر (<code>m</code>). ان علمت ان <code>1 قدم = 0.3048 متر</code>
+<br>
+يجب عليك طباعة النتيجة في وحده التحكم!.
 </div>

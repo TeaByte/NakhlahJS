@@ -27,5 +27,5 @@ console.log(div); // 0.5
 <div class="quiz">
 1. اكتب كود جافاسكربت يخزّن الرقم العشري <code>3.14</code> في متغير يسمّى <code>myDecimal</code>.<br>
 2. ثم اكتب كودًا يضرب <code>myDecimal</code> في <code>4</code> ويخزّن النتيجة في متغير يسمّى <code>product</code>.<br>
-3. اطبع قيمة<code>product</code> إلى وحدة التحكم.<br>
+3. اطبع قيمة <code>product</code> إلى وحدة التحكم.<br>
 </div>

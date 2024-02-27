@@ -11,7 +11,7 @@ if (!regex.test(code)) {
         isPass = false;
         msg = "ما حد طلب منك تعريف أكثر من متغير غير مهيأة "
     } else {
-        regex = /\w+\s+=\s+("|'|`)عربي("|'|`)/
+        regex = /\w+(\s+|)=(\s+|)("|'|`)عربي("|'|`)/
         if (!regex.test(code)) {
             isPass = false;
             msg = "لم تقم بتغير قيمة المتغير غير المهيأة"

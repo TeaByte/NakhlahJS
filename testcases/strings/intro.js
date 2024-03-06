@@ -29,14 +29,13 @@ function handleCodeRun(code) {
 }
 
 const output = handleCodeRun(code);
-// const regex = /(let|const|var)\s+\w+\s*=\s*('|`|')\w+(`|'|")/;
-// if (regex.test(code)) {
-//   console.log("You have declared a variable with a string value");
-// }
-
-if (output == "Ich Bin Yazan\nI am Yazan") {
-  isPass = true;
-} else {
-  isPass = false;
-  msg = "The output is not correct";
+const regex = /(let|const|var)\s+\w+\s*=/;
+if (regex.test(code)) {
+    if (output == "Ich Bin Yazan\nI am Yazan") {
+        isPass = true;
+    } else {
+        isPass = false;
+        msg = "The output is not correct";
+    }
 }
+

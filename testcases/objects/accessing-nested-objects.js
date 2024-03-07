@@ -27,18 +27,15 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
-if (!code.includes('october-73')) {
-    isPass = false;
-    msg = "هل قمت بتعديل القيمة الصحيحة؟";
-} else {
-    const output = handleCodeRun(code + "\nconsole.log(fighter.wars[0]);")
-    console.log(output);
-    if (output.includes("october-73")) {
-        isPass = true;
-        msg = "احسنت";
-    } else {
+const output = handleCodeRun(code)
+if (output == "1500") {
+    if (code.includes("console.log(1500)" || 'console.log("1500")' || "console.log('1500')")) {
         isPass = false;
-        msg = "هل قمت بتعديل القيمة الصحيحة؟";
+        msg = "لا تحتال علينا, حاول مرة أخرى";
+    } else {
+        isPass = true;
     }
-
+} else {
+    isPass = false;
+     msg = "حاول مرة أخرى";
 }

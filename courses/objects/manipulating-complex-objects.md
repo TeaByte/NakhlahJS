@@ -38,5 +38,5 @@ const ourMusic = [
 </mark>
 
 <div class="quiz">
-قم بتغير العنصر <code>wars</code> من الكائن <code>fighter</code> و قم بإضافة حرب أكتوبر <code>october-73</code> إلى المصفوفة.
+قم بتغير العنصر <code>wars</code> من الكائن <code>fighter</code> واضاف عليه حرب أكتوبر <code>october-73</code> إلى المصفوفة.
 </div>

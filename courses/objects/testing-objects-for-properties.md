@@ -40,5 +40,5 @@ checkForProperty({ top: "hat", bottom: "pants" }, "middle"); // false
 يُرجع استدعاء الدالة `checkForProperty` الأول `true`، بينما يُرجع الثاني `false`.
 
 <div class="quiz">
-قم بكتابة سطر برمجي يقوم بالتحقق من وجود خاصية `speed` على الكائن `fighter` و من ثم طباعة النتيجة في الكونسول.
+قم بكتابة سطر برمجي يقوم بالتحقق من وجود خاصية  <code>speed</code> على الكائن  <code>fighter</code> و من ثم طباعة النتيجة في الكونسول.
 </div>

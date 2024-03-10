@@ -30,5 +30,5 @@ console.log(ourStorage.desk.drawer);
 `OurStorage.desk.drawer` هو سلسلة `stapler`.
 
 <div class="quiz">
-قم بكتابة الكود الذي يقوم بطباعة السرعة القصوى للطائرة فقط!!!
+قم بكتابة الكود الذي يقوم بطباعة السرعة القصوى للطائرة (<code>maxSpeed</code>)
 </div>

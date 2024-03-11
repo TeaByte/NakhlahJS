@@ -21,16 +21,15 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
+
 if (code.includes("for")) {
-    let output = handleCodeRun(code+"\nconsole.log(oddNumbers);")
+    let output = handleCodeRun(code + "\nconsole.log(oddNumbers);")
     output = output[output.length - 1];
     if (output == JSON.stringify([1, 3, 5, 7, 9])) {
         isPass = true;
     } else {
-        isPass = false;
         msg = "تأكد من النتائج";
     }
 } else {
-    isPass = false;
     msg = "الرجاء التأكد من استخدام الحلقة الصحيحة للتكرار.";
 }

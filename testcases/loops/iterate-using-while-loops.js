@@ -22,16 +22,15 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
+
 if (code.includes("while")) {
-    const output = handleCodeRun(code); 
+    const output = handleCodeRun(code);
     console.log(output);
-    if (JSON.stringify(output) === JSON.stringify([ '1', '2', '3', '4', '5' ])) {
+    if (JSON.stringify(output) === JSON.stringify(['1', '2', '3', '4', '5'])) {
         isPass = true;
     } else {
-        isPass = false;
         msg = "الرجاء التأكد من استخدام الحلقة الصحيحة للتكرار.";
     }
 } else {
-    isPass = false;
     msg = "الرجاء التأكد من استخدام الحلقة الصحيحة للتكرار.";
 }

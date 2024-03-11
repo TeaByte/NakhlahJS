@@ -1,8 +1,3 @@
-/**
- * Executes the provided code and captures the output of console.log.
- * @param {string} code - The code to be executed.
- * @returns {string} - The captured output of console.log.
- */
 function handleCodeRun(code) {
     try {
         const capturedOutput = [];
@@ -27,15 +22,14 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
+
 const output = handleCodeRun(code)
 if (output == "1500") {
     if (code.includes("console.log(1500)" || 'console.log("1500")' || "console.log('1500')")) {
-        isPass = false;
         msg = "لا تحتال علينا, حاول مرة أخرى";
     } else {
         isPass = true;
     }
 } else {
-    isPass = false;
-     msg = "حاول مرة أخرى";
+    msg = "حاول مرة أخرى";
 }

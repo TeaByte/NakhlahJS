@@ -22,23 +22,20 @@ function handleCodeRun(code) {
     return `${error}`;
   }
 }
+
 try {
   const output = handleCodeRun(code);
   if (output !== "5") {
-    isPass = false;
     msg = "القيمة المطبوعة غير صحيحة";
   }
 } catch (error) {
-  isPass = false;
   msg = error;
 }
-// make regex check if student console.log() the variable not string
 
 const regex = /console\.log\((?!("|'|`|5))(.+?)\)/
+
 if (!regex.test(code)) {
-  isPass = false;
-  msg = "لم تتم طباعة قيمة المتغير أي قيمة أو أنك تحاول الغش";
+  msg = "لم تتم طباعة قيمة المتغير";
 } else {
-    isPass = true;
-    msg = "اجابة صحيحة";
+  isPass = true;
 }

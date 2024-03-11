@@ -22,9 +22,10 @@ function handleCodeRun(code) {
     return `${error}`;
   }
 }
+
 const output = handleCodeRun(code);
+
 if (output != "50") {
-  isPass = false;
   msg = "هناك خطاء في الكود";
 } else {
   const regexWidth = /(let|const|var)(\s*)width(\s*)?=(\s*)?10(;)?/g
@@ -33,10 +34,8 @@ if (output != "50") {
   const regex = [regexWidth, regexLength, regexArea]
   const results = regex.map((reg) => reg.test(code))
   if (results.includes(false)) {
-    isPass = false;
     msg = "هناك خطاء في الكود";
   } else {
     isPass = true;
-    msg = "احسنت";
   }
 }

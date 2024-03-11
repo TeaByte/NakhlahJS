@@ -22,6 +22,6 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
-code += "\ntry { isPass = true; if (car.manufacturer == undefined || car.model == undefined) isPass = false; } catch (e) { isPass = false; msg = e.message; }"
 
+code += "\ntry { isPass = true; if (car.manufacturer == undefined || car.model == undefined) isPass = false; } catch (e) { isPass = false; msg = e.message; }"
 eval(code)

@@ -1,8 +1,3 @@
-/**
- * Executes the provided code and captures the output of console.log.
- * @param {string} code - The code to be executed.
- * @returns {string} - The captured output of console.log.
- */
 function handleCodeRun(code) {
     try {
         const capturedOutput = [];
@@ -34,6 +29,5 @@ const expectedOutput = "2450";
 if (output.includes(expectedOutput)) {
     isPass = true;
 } else {
-    isPass = false;
     msg = "الله يبارك فيك ركز شوية وحاول مره ثانية"
 }

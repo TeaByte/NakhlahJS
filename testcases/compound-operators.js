@@ -22,23 +22,22 @@ function handleCodeRun(code) {
     return `${error}`;
   }
 }
+
 code += "\nconsole.log(myVar);";
+
 try {
-    const output = handleCodeRun(code);
-    console.log("output",output);
-    if (output !== "15") {
-        isPass = false;
-        msg = "قيمة myVar غير صحيحة";
-    }
+  const output = handleCodeRun(code);
+  console.log("output", output);
+  if (output !== "15") {
+    msg = "قيمة myVar غير صحيحة";
+  }
 } catch (error) {
-    isPass = false;
-    msg = error;
+  msg = error;
 }
+
 const regex = /myVar\s*\+\=\s*10/;
 if (!regex.test(code)) {
-    isPass = false;
-    msg = "لم يتم إضافة 10 إلى قيمة myVar";
+  msg = "لم يتم إضافة 10 إلى قيمة myVar";
 } else {
-    isPass = true;
-    msg = "اجابة صحيحة";
+  isPass = true;
 }

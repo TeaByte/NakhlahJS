@@ -1,8 +1,3 @@
-/**
- * Executes the provided code and captures the output of console.log.
- * @param {string} code - The code to be executed.
- * @returns {string} - The captured output of console.log.
- */
 function handleCodeRun(code) {
     try {
         const capturedOutput = [];

@@ -22,12 +22,12 @@ function handleCodeRun(code) {
     return `${error}`;
   }
 }
+
 code += "\nconsole.log(myArray);";
 const out = handleCodeRun(code);
+
 if (out === '["b","c","d","Ali",35]') {
   isPass = true;
-  msg = "Pass!";
 } else {
-    isPass = false;
-    msg = "Fail!";
+  msg = "Fail!";
 }

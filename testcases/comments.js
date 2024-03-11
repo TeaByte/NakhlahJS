@@ -1,8 +1,7 @@
 const regex = /(?<!\\)\/\*[^*]*\*+(?:[^\/*][^*]*\*+)*\/|(?<!\\)\/\/[^\n]*(?:\n|$)/
+
 if (regex.test(code)) {
-    isPass = true,
-    msg = ""
+    isPass = true
 } else {
-    isPass = false;
-    msg =  "لا يوجد تعليقات في الكود"
+    msg = "لا يوجد تعليقات في الكود"
 }

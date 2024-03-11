@@ -1,8 +1,3 @@
-/**
- * Executes the provided code and captures the output of console.log.
- * @param {string} code - The code to be executed.
- * @returns {string} - The captured output of console.log.
- */
 function handleCodeRun(code) {
     try {
         const capturedOutput = [];
@@ -27,11 +22,11 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
+
 const output = handleCodeRun(code);
 // TODO: make the quiz uncheatable by checking the the code logic
 if (output == "19812") {
     isPass = true;
 } else {
-    isPass = false;
     msg = "الناتج خطاء"
 }

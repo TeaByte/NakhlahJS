@@ -15,7 +15,7 @@ order: 1
 
 ```js
 const doubleQuote = "This is a string";
-const singleQuote = 'This is also a string';
+const singleQuote = "This is also a string";
 ```
 
 السبب وراء رغبتك في استخدام نوع واحد من علامات الاقتباس على الآخر هو إذا كنت
@@ -61,7 +61,7 @@ const sampleStr = 'Adam said, "Yazan is learning JavaScript"'.;
 | `\\` | backslash       | شرطة معكوفة         |
 | `n\` | newline         | سطر جديد            |
 | `t\` | tab             | مسافه               |
-| `r\` | carriage return | ?                   |
+| `r\` | carriage return | carriage return     |
 | `b\` | backspace       | مسافة إلى الوراء    |
 | `f\` | form feed       | تغذية النموذج       |
 
@@ -83,8 +83,9 @@ World;
 ```
 
 <div class="quiz">
-قم بإنشاء متغير و إستخدم تسلسلات التخطي لطباعة النص التالي على وحدة التحكم <br>
-<code>Ich Bin Yazan</code><br>
-<code> am Yazan</code><br>
-يجب أن تكون في أسطر مختلفة
+قم بإنشاء متغير و إستخدم تسلسلات التخطي لطباعة النص التالي على وحدة التحكم:<br>
+<div dir="ltr">
+<code>Hello</code><br>
+<code>World</code><br>
+</div>
 </div>

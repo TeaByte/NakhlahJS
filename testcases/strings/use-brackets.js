@@ -22,17 +22,16 @@ function handleCodeRun(code) {
         return `${error}`;
     }
 }
+
 const regex = /country\[2\]/;
+
 if (regex.test(code)) {
     const output = handleCodeRun(code);
     if (output.includes("r")) {
         isPass = true;
-        msg = "احسنت";
     } else {
-        isPass = false;
-        msg = "هل قمت بطباعة الحرف r من كلمة Syria باستخدام الأقواس؟";
+        msg = "هل قمت بطباعة الحرف من الكلمة باستخدام الأقواس؟";
     }
 } else {
-    isPass = false;
-    msg = "هل قمت بطباعة الحرف r من كلمة Syria باستخدام الأقواس؟";
+    msg = "هل قمت بطباعة الحرف من الكلمة باستخدام الأقواس؟";
 }
